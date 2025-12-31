@@ -6,7 +6,7 @@
     --texto-oscuro: #222222;
     --texto-gris: #666666;
     --plata-acento: #c0c0c0;
-    --oro: #D4AF37; /* Un toque dorado para el hero */
+    --oro: #D4AF37; 
     
     --fuente: 'Montserrat', sans-serif;
     --verde-wa: #25d366;
@@ -23,30 +23,98 @@ body {
     scroll-behavior: smooth; 
 }
 
-/* ================= HEADER (TRANSPARENTOSO / FUSIÓN) ================= */
+/* ================= HEADER (SIMETRÍA PERFECTA CON GRID) ================= */
 header { 
     width: 100%; 
-    padding: 20px 0; 
-    position: absolute; /* Flota sobre el Hero */
+    padding: 15px 0; 
+    position: absolute; 
     top: 0; 
     z-index: 1000; 
-    /* El truco: Degradado de negro a transparente */
+    /* Degradado oscuro para que se lea sobre el fondo negro/gris */
     background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
 }
 
-.navbar { max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: center; gap: 60px; padding: 0 20px; }
-.nav-links { display: flex; list-style: none; gap: 40px; }
-.nav-links a { color: #ffffff; text-decoration: none; font-size: 0.75rem; letter-spacing: 3px; font-weight: 300; transition: 0.4s; text-transform: uppercase; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
-.logo-top { height: 90px; width: auto; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); }
+.navbar { 
+    max-width: 1400px; /* Ancho amplio para que quepan los textos largos */
+    margin: 0 auto; 
+    padding: 0 40px;
+    
+    /* EL TRUCO DE LA SIMETRÍA: GRID DE 3 COLUMNAS */
+    display: grid;
+    /* Columna Izq (espacio) - Columna Centro (logo) - Columna Der (espacio) */
+    grid-template-columns: 1fr auto 1fr; 
+    align-items: center;
+}
 
-/* Menú móvil */
-.hamburger span { background: #ffffff; }
-.mobile-menu { background: #000; } 
-.mobile-menu a { color: #ffffff; }
+/* Listas de enlaces */
+.nav-links { 
+    display: flex; 
+    list-style: none; 
+    gap: 40px; 
+}
 
-/* ================= HERO (FUSIÓN DE NEGRO A BLANCO) ================= */
+/* Bloque Izquierdo: Alineado a la derecha (pegado al logo) */
+.left-links {
+    justify-self: end;
+    padding-right: 50px; 
+}
+
+/* Bloque Derecho: Alineado a la izquierda (pegado al logo) */
+.right-links {
+    justify-self: start;
+    padding-left: 50px; 
+}
+
+/* Estilo de los enlaces */
+.nav-links a { 
+    color: #ffffff; 
+    text-decoration: none; 
+    font-size: 0.75rem; 
+    letter-spacing: 3px; 
+    font-weight: 300; 
+    transition: 0.4s; 
+    text-transform: uppercase; 
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5); 
+    white-space: nowrap; /* Evita saltos de línea */
+}
+
+.nav-links a:hover { color: var(--oro); }
+
+/* Logo Central */
+.logo-central { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-top { 
+    height: 90px; 
+    width: auto; 
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); 
+    transition: transform 0.3s; 
+}
+.logo-top:hover { transform: scale(1.05); }
+
+/* Menú móvil (Hamburguesa) */
+.hamburger { 
+    display: none; /* Oculto en PC */
+    flex-direction: column; 
+    gap: 6px; 
+    cursor: pointer; 
+}
+.hamburger span { background: #ffffff; height: 2px; width: 25px; }
+
+.mobile-menu { 
+    position: fixed; top: 0; right: -100%; width: 100%; height: 100vh; 
+    background: #000; display: flex; flex-direction: column; 
+    justify-content: center; align-items: center; gap: 30px; 
+    transition: 0.5s; z-index: 1500; 
+}
+.mobile-menu.active { right: 0; }
+.mobile-menu a { color: #ffffff; text-decoration: none; font-size: 1.2rem; letter-spacing: 2px; }
+
+/* ================= HERO (FUSIÓN) ================= */
 .hero { 
-    /* Aquí ocurre la magia: Empieza negro y se vuelve blanco */
     background: linear-gradient(to bottom, #000000 0%, #1a1a1a 30%, #ffffff 100%);
     min-height: 100vh; 
     display: flex; 
@@ -56,12 +124,10 @@ header {
     padding-top: 100px;
 }
 
-/* Textos del Hero (Ahora blancos porque el fondo superior es oscuro) */
 .hero-content h1 { color: #ffffff; text-shadow: 0 10px 30px rgba(0,0,0,0.5); margin-bottom: 10px; }
 .hero-content p { color: var(--plata-acento); font-size: 1.1rem; letter-spacing: 1px; margin-bottom: 30px; }
 .hero-content .subtitle { color: var(--oro); letter-spacing: 6px; font-weight: 600; }
 
-/* Botón Hero (Estilo especial para resaltar en lo oscuro) */
 .hero-btns .btn-primary { 
     background-color: transparent; 
     color: #fff !important; 
@@ -72,129 +138,268 @@ header {
     color: #000 !important; 
 }
 
-/* ================= RESTO DE SECCIONES (CLARAS) ================= */
-/* Títulos generales (para secciones blancas) */
+/* ================= GENERALES ================= */
 h1, h2, h3 { color: var(--texto-oscuro); font-weight: 700; text-transform: uppercase; }
 h1 { font-size: clamp(2rem, 6vw, 4rem); }
 
-/* Subtítulos generales */
 .subtitle { font-size: 0.7rem; letter-spacing: 5px; color: var(--texto-gris); display: block; margin-bottom: 20px; text-transform: uppercase; font-weight: 600; }
 
-/* Botón Estándar (Para formularios y secciones blancas) */
-.btn-primary { display: inline-block; background-color: var(--texto-oscuro); color: #ffffff !important; padding: 15px 35px; text-decoration: none; font-size: 0.8rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; border: none; transition: 0.4s; cursor: pointer; text-align: center; }
+.btn-primary { 
+    display: inline-block; background-color: var(--texto-oscuro); color: #ffffff !important; 
+    padding: 15px 35px; text-decoration: none; font-size: 0.8rem; font-weight: 600; 
+    letter-spacing: 2px; text-transform: uppercase; border: none; transition: 0.4s; 
+    cursor: pointer; text-align: center; 
+}
 .btn-primary:hover { background-color: #444; }
 
-/* Espaciados */
-.about, .services, .contact { padding: 100px 5%; }
+.about, .services, .contact, .team-section { padding: 100px 5%; }
 
-/* Historia: Fondo Blanco */
+/* Historia */
 .about { background: var(--blanco-fondo); }
 .about-container, .contact-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 
-/* IMAGEN FACHADA */
 .about-img { display: flex; justify-content: center; align-items: center; }
 .fachada-img {
     width: 100%; max-width: 550px; height: auto;
-    /* Sombra elegante sobre blanco */
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     border-radius: 8px; transition: transform 0.5s ease;
 }
 .fachada-img:hover { transform: translateY(-5px); }
 
-/* Servicios: Fondo Gris Claro */
+/* Servicios */
 .services.bg-light { background-color: var(--gris-claro-fondo); }
 
-/* Contacto: Fondo Blanco */
+/* Contacto */
 .contact { background: var(--blanco-fondo); }
+input, textarea { width: 100%; background: transparent; border: none; border-bottom: 1px solid #ddd; color: var(--texto-oscuro); padding: 15px 0; margin-bottom: 20px; outline: none; font-family: var(--fuente); }
+input:focus, textarea:focus { border-bottom-color: var(--texto-oscuro); }
+.map-container { margin-top: 30px; border: 1px solid #eee; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+
+/* WhatsApp */
+.whatsapp-float { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background-color: var(--verde-wa); border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 2000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: 0.3s; }
+.whatsapp-float svg { width: 30px; fill: white; }
+.whatsapp-float:hover { transform: scale(1.15); }
+
+/* Animaciones */
+.reveal { opacity: 0; transform: translateY(30px); transition: all 1.2s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
 
 /* SLIDER */
-.slider-container {
-    width: 100%; overflow: hidden; background: #ffffff; padding: 30px 0; margin-top: 30px;
-    border-top: 1px solid #eee; border-bottom: 1px solid #eee;
-}
+.slider-container { width: 100%; overflow: hidden; background: #ffffff; padding: 30px 0; margin-top: 30px; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
 .slider-track { display: flex; width: calc(350px * 14); animation: scroll-right 40s linear infinite; }
 .slide { width: 350px; color: var(--texto-oscuro); font-family: var(--fuente); font-size: 1rem; font-weight: 500; letter-spacing: 2px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; border-right: 1px solid #eee; }
 @keyframes scroll-right { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
 .slider-container:hover .slider-track { animation-play-state: paused; }
 
-/* FORMULARIO Y MAPA */
-input, textarea { width: 100%; background: transparent; border: none; border-bottom: 1px solid #ddd; color: var(--texto-oscuro); padding: 15px 0; margin-bottom: 20px; outline: none; font-family: var(--fuente); }
-input:focus, textarea:focus { border-bottom-color: var(--texto-oscuro); }
-.map-container { margin-top: 30px; border: 1px solid #eee; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+/* --- ESTILOS DE LA PÁGINA EQUIPO --- */
+.team-container { max-width: 1200px; margin: 0 auto; }
+.category-title { text-align: center; margin: 40px 0 30px 0; color: var(--oro); font-size: 1.5rem; letter-spacing: 2px; }
+.team-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-bottom: 50px; }
+.team-card { background: #fff; width: 250px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-radius: 8px; padding-bottom: 20px; transition: transform 0.3s ease; border: 1px solid #eee; }
+.team-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+.img-box { width: 100%; height: 250px; background-color: #ddd; border-radius: 8px 8px 0 0; overflow: hidden; }
+.img-box img { width: 100%; height: 100%; object-fit: cover; }
+.team-card h3 { margin: 15px 10px 5px; font-size: 0.95rem; color: var(--texto-oscuro); font-weight: 700; }
+.team-card .specialty { font-size: 0.8rem; color: var(--texto-gris); font-weight: 400; text-transform: uppercase; letter-spacing: 1px; }
+.divider { border: 0; height: 1px; background: #eee; margin: 40px auto; width: 80%; }
 
-/* WHATSAPP */
-.whatsapp-float { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background-color: var(--verde-wa); border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 2000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: 0.3s; }
-.whatsapp-float svg { width: 30px; fill: white; }
-.whatsapp-float:hover { transform: scale(1.15); }
-
-/* ANIMACIONES */
-.reveal { opacity: 0; transform: translateY(30px); transition: all 1.2s ease-out; }
-.reveal.active { opacity: 1; transform: translateY(0); }
-
-/* MÓVIL */
-.hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; }
-.mobile-menu { position: fixed; top: 0; right: -100%; width: 100%; height: 100vh; background: #000; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 30px; transition: 0.5s; z-index: 1500; }
-.mobile-menu.active { right: 0; }
-
-@media (max-width: 900px) {
-    .nav-links { display: none; }
-    .hamburger { display: flex; position: absolute; right: 20px; top: 30px; }
-    .about-container, .contact-container { grid-template-columns: 1fr; text-align: center; }
-    .hero { background: linear-gradient(to bottom, #000000 0%, #000000 40%, #ffffff 100%); } /* Ajuste móvil */
-    .hero-content h1 { font-size: 2.5rem; }
-}
 /* --- ESTILOS PÁGINA ESPECIALIDADES --- */
-.especialidad-item {
+.especialidad-item { display: flex; align-items: center; gap: 40px; margin-bottom: 60px; border-bottom: 1px solid #ddd; padding-bottom: 40px; }
+.esp-img { flex: 1; min-width: 300px; }
+.esp-img img { width: 100%; height: 250px; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: transform 0.3s; }
+.esp-img img:hover { transform: scale(1.03); }
+.esp-texto { flex: 1.5; }
+.esp-texto h2 { color: #000; margin-bottom: 15px; font-size: 1.8rem; }
+.esp-texto p { font-size: 1rem; color: #444; }
+
+/* MEDIA QUERIES (Móvil) */
+@media (max-width: 1100px) {
+    .navbar { 
+        display: flex; /* En móvil volvemos a Flex para separar logo y hamburguesa */
+        justify-content: space-between; 
+        padding: 0 20px;
+    }
+    .nav-links { display: none; }
+    .hamburger { display: flex; position: static; /* Ya no es absolute */ }
+    .logo-central { margin: 0 auto; transform: translateX(-15px); /* Ajuste visual para centrar con hamburguesa */ }
+    .logo-top { height: 70px; }
+    
+    .about-container, .contact-container { grid-template-columns: 1fr; text-align: center; }
+    .hero { background: linear-gradient(to bottom, #000000 0%, #000000 40%, #ffffff 100%); }
+    .hero-content h1 { font-size: 2.5rem; }
+    
+    .especialidad-item { flex-direction: column; text-align: center; }
+    .esp-img { width: 100%; }
+}
+
+
+
+
+
+
+/* --- ESTILOS DE TESTIMONIOS (MODERNO DARK) --- */
+
+/* Hero pequeño para páginas internas */
+.hero-mini {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to bottom, #000000 0%, #111111 100%);
+    padding-top: 80px;
+}
+
+.testimonio-section {
+    background-color: #000; /* Fondo Negro Puro */
+    padding: 0; /* Sin padding para que el video toque los bordes si se quiere */
+    overflow: hidden;
+    position: relative;
+    min-height: 80vh; /* Altura de pantalla casi completa por testimonio */
     display: flex;
     align-items: center;
-    gap: 40px;
-    margin-bottom: 60px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 40px;
 }
 
-/* Imagen de la especialidad */
-.esp-img {
-    flex: 1;
-    min-width: 300px; /* Tamaño mínimo */
+.bg-darker {
+    background-color: #050505; /* Un negro sutilmente diferente para alternar */
 }
 
-.esp-img img {
+.testimonio-container {
+    display: flex;
     width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.esp-img img:hover {
-    transform: scale(1.03);
+/* Layout Reversible (Texto izq, Video der) */
+.reverse-layout {
+    flex-direction: row-reverse;
 }
 
-/* Texto de la especialidad */
-.esp-texto {
-    flex: 1.5;
+/* --- VIDEOS Y EFECTO FADE --- */
+.video-wrapper {
+    flex: 1;
+    position: relative;
+    height: 80vh; /* Altura imponente */
+    overflow: hidden;
+    min-width: 50%;
 }
 
-.esp-texto h2 {
+.video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Esto hace que el video llene el espacio sin deformarse */
+    opacity: 0.8; /* Un poco oscuro para que sea elegante */
+    transition: opacity 0.3s;
+}
+
+.video-wrapper video:hover {
+    opacity: 1;
+}
+
+/* LA MAGIA DEL DEGRADADO (OVERLAY) */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 25%; /* Qué tanto entra el degradado en el video */
+    z-index: 2;
+    pointer-events: none; /* Permite dar click al video a través del degradado */
+}
+
+/* Si el video está a la izquierda, el negro viene de la derecha */
+.overlay-right {
+    right: 0;
+    background: linear-gradient(to right, transparent 0%, #000000 100%);
+}
+
+/* Si el video está a la derecha, el negro viene de la izquierda */
+.overlay-left {
+    left: 0;
+    background: linear-gradient(to left, transparent 0%, #000000 100%); /* Ojo al BG del section */
+}
+/* Corrección para la sección darker */
+.bg-darker .overlay-left {
+    background: linear-gradient(to left, transparent 0%, #050505 100%);
+}
+
+
+/* --- TEXTOS --- */
+.text-wrapper {
+    flex: 0.8;
+    padding: 60px;
+    color: #fff;
+    z-index: 10;
+}
+
+.align-left { text-align: left; padding-right: 10%; }
+.align-right { text-align: right; padding-left: 10%; }
+
+.cita-icon {
+    font-size: 6rem;
+    color: var(--oro);
+    line-height: 1;
+    font-family: serif;
+    opacity: 0.5;
+    display: block;
+    margin-bottom: -20px;
+}
+
+.text-wrapper h2 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.paciente-name {
+    color: var(--oro);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.testimonio-body {
+    font-size: 1.1rem;
+    color: #ccc;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+/* Botón Dorado Especial */
+.btn-gold {
+    display: inline-block;
+    border: 1px solid var(--oro);
+    color: var(--oro);
+    padding: 15px 40px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    transition: 0.4s;
+}
+
+.btn-gold:hover {
+    background-color: var(--oro);
     color: #000;
-    margin-bottom: 15px;
-    font-size: 1.8rem;
 }
 
-.esp-texto p {
-    font-size: 1rem;
-    color: #444;
-}
-
-/* Adaptación para celular (columna vertical) */
-@media (max-width: 768px) {
-    .especialidad-item {
-        flex-direction: column;
-        text-align: center;
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .testimonio-container { flex-direction: column !important; }
+    .video-wrapper { width: 100%; height: 50vh; }
+    
+    /* En celular, el degradado debe ser de abajo hacia arriba */
+    .video-overlay { 
+        width: 100%; height: 30%; top: auto; bottom: 0; left: 0;
+        background: linear-gradient(to bottom, transparent 0%, #000 100%) !important;
     }
-    .esp-img {
-        width: 100%;
-    }
+    
+    .text-wrapper { text-align: center !important; padding: 40px 20px; }
+    .cita-icon { margin: 0 auto; display: inline-block; }
 }
