@@ -19,13 +19,16 @@
                 <li><a href="#inicio">INICIO</a></li>
                 <li><a href="#historia">HISTORIA</a></li>
             </ul>
+            
             <div class="logo-central">
-                <img src="img/logo.png" alt="Sthetica Dental" class="logo-top">
+                <a href="index.html"><img src="img/logo.png" alt="Sthetica Dental" class="logo-top"></a>
             </div>
+            
             <ul class="nav-links right-links">
-                <li><a href="#servicios">SERVICIOS</a></li>
+                <li><a href="#servicios">ESPECIALIDADES</a></li>
                 <li><a href="#contacto">CONTACTO</a></li>
             </ul>
+            
             <div class="hamburger" onclick="toggleMenu()">
                 <span></span><span></span><span></span>
             </div>
@@ -35,8 +38,10 @@
     <div class="mobile-menu" id="mobileMenu">
         <a href="#inicio" onclick="toggleMenu()">INICIO</a>
         <a href="#historia" onclick="toggleMenu()">HISTORIA</a>
-        <a href="#servicios" onclick="toggleMenu()">SERVICIOS</a>
+        <a href="#servicios" onclick="toggleMenu()">ESPECIALIDADES</a>
         <a href="#contacto" onclick="toggleMenu()">CONTACTO</a>
+        <a href="equipo.html" onclick="toggleMenu()" style="color: #D4AF37;">VER DOCTORES</a>
+        <a href="testimonios.html" onclick="toggleMenu()" style="color: #fff;">TESTIMONIOS</a>
     </div>
 
     <section id="inicio" class="hero reveal">
@@ -56,6 +61,10 @@
                 <span class="subtitle">NUESTRA TRAYECTORIA</span>
                 <h2>El Arte de la Odontología</h2>
                 <p>Combinamos experiencia clínica con visión artística para devolverte la confianza en instalaciones de primer nivel.</p>
+                
+                <div style="margin-top: 30px;">
+                    <a href="testimonios.html" class="btn-primary" style="background: transparent; color: #000 !important; border: 1px solid #000;">Ver Historias de Éxito</a>
+                </div>
             </div>
             <div class="about-img">
                 <img src="img/fachada.png" alt="Fachada Sthetica Dental" class="fachada-img">
@@ -85,10 +94,10 @@
             </div>
         </div>
 
-        <div style="text-align: center; margin-top: 40px;">
+        <div style="text-align: center; margin-top: 50px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
             <a href="especialidades.html" class="btn-primary">Ver todos los detalles</a>
+            <a href="equipo.html" class="btn-primary" style="background-color: transparent; border: 1px solid #000; color: #000 !important;">Conoce a nuestros Doctores</a>
         </div>
-
     </section>
 
     <section id="contacto" class="contact reveal">
@@ -98,12 +107,19 @@
                 <h2>Visítanos</h2>
                 <p>Jr. Antonio Lobato N°611<br>El Tambo - Huancayo</p>
                 <p>Celular: 947 060 793</p>
+                
                 <div class="map-container">
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.666986423403!2d-75.2104526!3d-12.0664531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910e964516315269%3A0x629562723f5f303!2sJr.%20Antonio%20Lobato%20611%2C%20Huancayo%2012006!5e0!3m2!1ses!2spe!4v1703698000000!5m2!1ses!2spe" 
-                        width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d975.4408530306944!2d-75.21769423048102!3d-12.05979269926112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910e97007d8b42bb%3A0x1887d13ce6e59411!2sClinica%20Sthetica%20Dental%20-%20Ortodoncia%20-%20implantes%20dentales%20-%20est%C3%A9tica%20dental%20-%20pr%C3%B3tesis%20dental%20-%20Odontopediatr%C3%ADa%20huancayo.!5e0!3m2!1ses!2spe!4v1767197255892!5m2!1ses!2spe" 
+                        width="100%" 
+                        height="300" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
+
             </div>
             <div class="contact-form">
                 <form>

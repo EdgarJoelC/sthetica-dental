@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestro Equipo | Sthetica Dental</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links left-links">
+                <li><a href="index.html#inicio">INICIO</a></li>
+                <li><a href="index.html#historia">HISTORIA</a></li>
+            </ul>
+            <div class="logo-central">
+                <a href="index.html"><img src="img/logo.png" alt="Sthetica Dental" class="logo-top"></a>
+            </div>
+            <ul class="nav-links right-links">
+                <li><a href="equipo.html" style="color: #D4AF37;">DOCTORES</a></li>
+                <li><a href="index.html#contacto">CONTACTO</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" onclick="toggleMenu()">INICIO</a>
+        <a href="equipo.html" onclick="toggleMenu()">DOCTORES</a>
+        <a href="index.html#contacto" onclick="toggleMenu()">CONTACTO</a>
+    </div>
+
+    <section class="hero" style="min-height: 40vh; padding-top: 150px; background: linear-gradient(to bottom, #000 0%, #333 100%);">
+        <div class="hero-content">
+            <span class="subtitle">STAFF PROFESIONAL</span>
+            <h1>Conoce a tus Doctores</h1>
+            <p>Experiencia y especialización al servicio de tu sonrisa.</p>
+        </div>
+    </section>
+
+    <section class="team-section reveal">
+        <div class="team-container">
+            
+            <h2 class="category-title">Especialistas Certificados</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="img-box"><img src="img/dr-ernesto.jpg" alt="Dr. Ernesto Carmona"></div>
+                    <h3>Dr. Ernesto Carmona Fernandez</h3>
+                    <span class="specialty">Cirugía Bucal y Maxilofacial</span>
+                </div>
+                <div class="team-card">
+                    <div class="img-box"><img src="img/dr-alfonso.jpg" alt="Dr. Alfonso Camarena"></div>
+                    <h3>Dr. Alfonso Denis Camarena Santillan</h3>
+                    <span class="specialty">Implantología Oral</span>
+                </div>
+                <div class="team-card">
+                    <div class="img-box"><img src="img/dr-mark.jpg" alt="Dr. Mark Pérez"></div>
+                    <h3>Dr. Mark Pérez Torres</h3>
+                    <span class="specialty">Ortodoncia y Ortopedia Maxilar</span>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <h2 class="category-title">Odontopediatría (Niños)</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="img-box"><img src="img/dra-silvia.jpg" alt="Dra. Silvia De La Cruz"></div>
+                    <h3>Dra. Silvia Beatriz De La Cruz Campos</h3>
+                    <span class="specialty">Odontopediatría</span>
+                </div>
+                <div class="team-card">
+                    <div class="img-box"><img src="img/dra-amy.jpg" alt="Dra. Amy Suazo"></div>
+                    <h3>Dra. Amy Nathalie Suazo Suazo</h3>
+                    <span class="specialty">Odontopediatría</span>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <h2 class="category-title">Odontología General e Integral</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="img-box"><img src="img/dra-sammy.jpg" alt="Dra. Sammy Paucar"></div>
+                    <h3>Dra. Sammy Gitzel Paucar Barsola</h3>
+                    <span class="specialty">Odontóloga General</span>
+                </div>
+                <div class="team-card">
+                    <div class="img-box"><img src="img/dr-eduard.jpg" alt="Dr. Eduard Pariona"></div>
+                    <h3>Dr. Eduard Luis Pariona Hidalgo</h3>
+                    <span class="specialty">Odontólogo General</span>
+                </div>
+                <div class="team-card">
+                    <div class="img-box"><img src="img/dra-emely.jpg" alt="Dra. Emely Hinostroza"></div>
+                    <h3>Dra. Emely Mayela Hinostroza De La Cruz</h3>
+                    <span class="specialty">Odontóloga General</span>
+                </div>
+                <div class="team-card">
+                    <div class="img-box"><img src="img/dr-robert.jpg" alt="Dr. Robert Garcia"></div>
+                    <h3>Dr. Robert Garcia Euloquio</h3>
+                    <span class="specialty">Odontólogo General</span>
+                </div>
+                <div class="team-card">
+                    <div class="img-box"><img src="img/dra-nohely.jpg" alt="Dra. Nohely Yaringaño"></div>
+                    <h3>Dra. Nohely Yaringaño Mallma</h3>
+                    <span class="specialty">Odontóloga General</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div style="text-align:center; padding: 40px; background: #000; color: #fff;">
+        <p>&copy; 2024 Sthetica Dental</p>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

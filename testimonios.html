@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historias Reales | Sthetica Dental</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: #000;"> <header>
+        <nav class="navbar">
+            <ul class="nav-links left-links">
+                <li><a href="index.html#inicio">INICIO</a></li>
+                <li><a href="index.html#historia">HISTORIA</a></li>
+            </ul>
+            <div class="logo-central">
+                <a href="index.html"><img src="img/logo.png" alt="Sthetica Dental" class="logo-top"></a>
+            </div>
+            <ul class="nav-links right-links">
+                <li><a href="index.html#servicios">ESPECIALIDADES</a></li>
+                <li><a href="index.html#contacto">CONTACTO</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" onclick="toggleMenu()">INICIO</a>
+        <a href="index.html#historia" onclick="toggleMenu()">HISTORIA</a>
+        <a href="index.html#servicios" onclick="toggleMenu()">ESPECIALIDADES</a>
+        <a href="index.html#contacto" onclick="toggleMenu()">CONTACTO</a>
+    </div>
+
+    <section class="hero-mini">
+        <div class="hero-content">
+            <span class="subtitle">VOCES REALES</span>
+            <h1>Historias que inspiran</h1>
+            <p style="color: #fff;">La satisfacción de nuestros pacientes es nuestra mejor carta de presentación.</p>
+        </div>
+    </section>
+
+    <section class="testimonio-section">
+        <div class="testimonio-container">
+            
+            <div class="video-wrapper fade-right">
+                <video controls poster="img/poster-carol.jpg">
+                    <source src="img/testimonio-carol.mp4" type="video/mp4">
+                    Tu navegador no soporta videos.
+                </video>
+                <div class="video-overlay overlay-right"></div>
+            </div>
+
+            <div class="text-wrapper align-left">
+                <span class="cita-icon">“</span>
+                <h2>Mejoró mi relación conmigo misma</h2>
+                <p class="paciente-name">Carol Ríos — Diseño de Sonrisa</p>
+                <p class="testimonio-body">
+                    "Mi experiencia fue excelente. El doctor me brindó calidez, seguridad y sobre todo conocimiento. No solo mejoró mi sonrisa, sino también mi autoestima."
+                </p>
+                <a href="index.html#contacto" class="btn-gold">Quiero el mismo resultado</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="testimonio-section bg-darker">
+        <div class="testimonio-container reverse-layout">
+            
+            <div class="text-wrapper align-right">
+                <span class="cita-icon">“</span>
+                <h2>Atención especializada y con garantía</h2>
+                <p class="paciente-name">Paciente de Ortodoncia</p>
+                <p class="testimonio-body">
+                    "He recibido la mejor atención, son muy amables. Se nota que el doctor es una persona especializada. Recomiendo la clínica al 100% por el cambio que he visto en mis dientes."
+                </p>
+                <a href="index.html#contacto" class="btn-gold">Agendar Evaluación</a>
+            </div>
+
+            <div class="video-wrapper fade-left">
+                <video controls poster="img/poster-orto.jpg">
+                    <source src="img/testimonio-orto.mp4" type="video/mp4">
+                    Tu navegador no soporta videos.
+                </video>
+                <div class="video-overlay overlay-left"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer style="background: #000; padding: 50px 0; text-align: center; border-top: 1px solid #333;">
+        <img src="img/logo.png" alt="Logo" style="width: 150px; opacity: 0.5;">
+        <p style="color: #666; font-size: 0.8rem; margin-top: 20px;">&copy; 2025 Sthetica Dental</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
