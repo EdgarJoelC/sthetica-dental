@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio Digital | Sthetica Dental</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: #000;">
+
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links left-links">
+                <li><a href="index.html#inicio">INICIO</a></li>
+                <li><a href="index.html#historia">HISTORIA</a></li>
+            </ul>
+            <div class="logo-central">
+                <a href="index.html"><img src="img/logo.png" alt="Sthetica Dental" class="logo-top"></a>
+            </div>
+            <ul class="nav-links right-links">
+                <li><a href="index.html#servicios">ESPECIALIDADES</a></li>
+                <li><a href="index.html#contacto">CONTACTO</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" onclick="toggleMenu()">INICIO</a>
+        <a href="laboratorio.html" onclick="toggleMenu()" style="color: #D4AF37;">LABORATORIO</a>
+        <a href="index.html#contacto" onclick="toggleMenu()">CONTACTO</a>
+    </div>
+
+    <section class="lab-section">
+        <div class="lab-container">
+            
+            <div class="lab-text">
+                <span class="subtitle">TECNOLOGÍA IN-HOUSE</span>
+                <h1>Laboratorio Digital Propio</h1>
+                <p>
+                    En Sthetica Dental no dependemos de terceros. Contamos con nuestro propio laboratorio de alta tecnología integrado en la clínica.
+                </p>
+                <ul class="lab-benefits">
+                    <li>✓ <strong>Rapidez Inmediata:</strong> Prótesis y carillas en tiempo récord.</li>
+                    <li>✓ <strong>Control Total:</strong> Supervisamos cada micra de tu diseño.</li>
+                    <li>✓ <strong>Ajustes al Instante:</strong> Sin esperas ni citas extra.</li>
+                </ul>
+                <br>
+                <a href="index.html#contacto" class="btn-gold">Agendar Cita</a>
+            </div>
+
+            <div class="lab-image-wrapper">
+                <img src="img/laboratorio-bg.jpg" alt="Laboratorio Dental">
+                
+                <div class="fade-overlay"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer style="background: #000; padding: 50px 0; text-align: center; border-top: 1px solid #333;">
+        <img src="img/logo.png" alt="Logo" style="width: 150px; opacity: 0.5;">
+        <p style="color: #666; font-size: 0.8rem; margin-top: 20px;">&copy; 2025 Sthetica Dental</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
