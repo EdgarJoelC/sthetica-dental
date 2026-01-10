@@ -1,0 +1,1203 @@
+/* ================= VARIABLES & RESET ================= */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+:root {
+    --negro-header: #000000;
+    --blanco-fondo: #ffffff;
+    --gris-claro-fondo: #f9f9f9;
+    --texto-oscuro: #222222;
+    --texto-gris: #666666;
+    --plata-acento: #c0c0c0;
+    --oro: #D4AF37;
+    --fuente: 'Montserrat', sans-serif;
+    --verde-wa: #25d366;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ================= BODY: FONDO UNIFICADO ================= */
+body {
+    background-color: var(--blanco-fondo);
+    color: var(--texto-oscuro);
+    font-family: var(--fuente);
+    line-height: 1.6;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+
+    /* Imagen fija */
+    background-image: url('../img/fachada.png'); 
+    background-attachment: fixed;
+    background-position: center top; 
+    background-repeat: no-repeat;
+    background-size: cover; 
+    position: relative;
+}
+
+/* Sombra global (Degradado del header) */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, 
+        rgba(0,0,0,0.9) 0%, 
+        rgba(0,0,0,0.4) 40%, 
+        rgba(0,0,0,0.8) 100%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ================= HEADER ================= */
+header {
+    width: 100%;
+    padding: 15px 0;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    background: transparent;
+}
+
+.navbar {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+}
+
+.nav-links { display: flex; list-style: none; gap: 40px; }
+.left-links { justify-self: end; padding-right: 50px; }
+.right-links { justify-self: start; padding-left: 50px; }
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    font-weight: 300;
+    transition: 0.4s;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    white-space: nowrap;
+}
+.nav-links a:hover { color: var(--oro); }
+
+.logo-central { display: flex; justify-content: center; align-items: center; }
+.logo-top {
+    height: 90px; width: auto;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+    transition: transform 0.3s;
+}
+.logo-top:hover { transform: scale(1.05); }
+
+.hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; }
+.hamburger span { background: #ffffff; height: 2px; width: 25px; }
+
+.mobile-menu {
+    position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
+    background: #000; display: flex; flex-direction: column;
+    justify-content: center; align-items: center; gap: 30px;
+    transition: 0.5s; z-index: 1500;
+}
+.mobile-menu.active { right: 0; }
+.mobile-menu a { color: #ffffff; text-decoration: none; font-size: 1.2rem; letter-spacing: 2px; }
+
+/* ================= HERO ================= */
+/* Reemplaza tu bloque .hero actual por este: */
+/* Código del HERO corregido */
+.hero {
+    /* Define la oscuridad (0.6 es 60%) y la foto */
+    background-color: transparent;
+    
+
+    /* LA CLAVE: Esta línea fusiona el negro con la foto. Es imposible que se separen */
+    background-blend-mode: multiply; 
+
+    /* Asegura que la imagen cubra todo el espacio */
+    background-size: cover;
+    background-position: center;
+    
+    /* El resto de tus ajustes */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 100px;
+}
+/* Esto crea la capa oscura perfecta */
+/* CAPA NEGRA (Corrección Definitiva) */
+
+/* TÍTULO PRINCIPAL (Parte blanca: "El verdadero placer de una") */
+.hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    font-weight: 300; /* Letra fina y elegante */
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+    /* El !important es clave para quitar las mayúsculas forzadas que vimos antes */
+    text-transform: none !important; 
+}
+
+/* PARTE DORADA (Slogan: "buena sonrisa") */
+.text-gold {
+    font-family: 'Playfair Display', serif; /* Aquí activamos la fuente de lujo */
+    color: #D4AF37;       /* Dorado */
+    font-style: italic;   /* Cursiva */
+    font-weight: 400;     
+    font-size: 1.1em;     /* Un poco más grande para destacar */
+    letter-spacing: 1px;
+}
+.hero-content p { color: #f0f0f0; font-size: 1.1rem; letter-spacing: 1px; margin-bottom: 30px; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
+.hero-content .subtitle { color: var(--oro); letter-spacing: 6px; font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
+
+/* ================= GENERALES ================= */
+h1, h2, h3 { color: var(--texto-oscuro); font-weight: 700; text-transform: uppercase; }
+h1 { font-size: clamp(2rem, 6vw, 4rem); }
+.subtitle { font-size: 0.7rem; letter-spacing: 5px; color: var(--texto-gris); display: block; margin-bottom: 20px; text-transform: uppercase; font-weight: 600; }
+
+.services, .contact, .team-section { padding: 100px 5%; }
+
+/* Estilo Base Botón */
+.btn-primary {
+    display: inline-block; padding: 15px 35px; text-decoration: none; 
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 2px; 
+    text-transform: uppercase; border: none; transition: 0.4s; 
+    cursor: pointer; text-align: center;
+}
+
+/* ================= HISTORIA (TEXTO DERECHA) ================= */
+.about {
+    background: transparent;
+    position: relative;
+    min-height: 80vh; 
+    display: flex;
+    align-items: flex-end; /* Alinea al fondo */
+    padding-bottom: 0;
+}
+.about::before { display: none; }
+
+.about-container {
+    max-width: 1400px; margin: 0 auto; width: 100%; padding: 0 5%;
+    display: flex; 
+    justify-content: flex-end; /* Alineación Derecha */
+    align-items: flex-end; 
+}
+
+.about-text { 
+    max-width: 600px; 
+    text-align: right; 
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+    padding-bottom: 100px;
+    z-index: 10;
+}
+.about-text h2 { color: #ffffff; font-size: 2.5rem; margin-bottom: 20px; }
+.about-text p { color: #e0e0e0; font-size: 1.1rem; margin-bottom: 30px; }
+.about-text .subtitle { color: var(--oro); }
+.about-img, .fachada-img { display: none; }
+
+.about-text div { display: flex; justify-content: flex-end; gap: 15px; flex-wrap: wrap; }
+
+/* ================= SERVICIOS (FONDO OPACO) ================= */
+.services.bg-light {
+    background-color: var(--gris-claro-fondo);
+    position: relative; z-index: 20;
+}
+
+/* Contacto */
+.contact { background: var(--blanco-fondo); position: relative; z-index: 20; }
+input, textarea { width: 100%; background: transparent; border: none; border-bottom: 1px solid #ddd; color: var(--texto-oscuro); padding: 15px 0; margin-bottom: 20px; outline: none; font-family: var(--fuente); }
+input:focus, textarea:focus { border-bottom-color: var(--texto-oscuro); }
+.map-container { margin-top: 30px; border: 1px solid #eee; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+/* ================= CONTACTO (MAPA IZQ - FORMULARIO DER) ================= */
+.contact-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide en 2 columnas iguales */
+    gap: 60px;
+    align-items: center; /* Centra verticalmente */
+}
+
+/* Aseguramos que el mapa y el texto se queden en su columna */
+.contact-info {
+    text-align: left;
+}
+
+/* Ajuste para móvil: vuelve a una sola columna */
+@media (max-width: 900px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .contact-info {
+        text-align: center;
+    }
+}
+/* WhatsApp */
+.whatsapp-float { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background-color: var(--verde-wa); border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 2000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: 0.3s; }
+.whatsapp-float svg { width: 30px; fill: white; }
+.whatsapp-float:hover { transform: scale(1.15); }
+
+/* Animaciones */
+.reveal { opacity: 0; transform: translateY(30px); transition: all 1.2s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* SLIDER */
+.slider-container { width: 100%; overflow: hidden; background: #ffffff; padding: 30px 0; margin-top: 30px; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+.slider-track { display: flex; width: calc(350px * 14); animation: scroll-right 40s linear infinite; }
+.slide { width: 350px; color: var(--texto-oscuro); font-family: var(--fuente); font-size: 1rem; font-weight: 500; letter-spacing: 2px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; border-right: 1px solid #eee; }
+@keyframes scroll-right { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+.slider-container:hover .slider-track { animation-play-state: paused; }
+
+/* --- OTROS --- */
+.team-container { max-width: 1200px; margin: 0 auto; }
+.category-title { text-align: center; margin: 40px 0 30px 0; color: var(--oro); font-size: 1.5rem; letter-spacing: 2px; }
+.team-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-bottom: 50px; }
+.team-card { background: #fff; width: 250px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-radius: 8px; padding-bottom: 20px; transition: transform 0.3s ease; border: 1px solid #eee; }
+.team-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+.img-box { width: 100%; height: 250px; background-color: #ddd; border-radius: 8px 8px 0 0; overflow: hidden; }
+.img-box img { width: 100%; height: 100%; object-fit: cover; }
+.team-card h3 { margin: 15px 10px 5px; font-size: 0.95rem; color: var(--texto-oscuro); font-weight: 700; }
+.team-card .specialty { font-size: 0.8rem; color: var(--texto-gris); font-weight: 400; text-transform: uppercase; letter-spacing: 1px; }
+.divider { border: 0; height: 1px; background: #eee; margin: 40px auto; width: 80%; }
+.especialidad-item { display: flex; align-items: center; gap: 40px; margin-bottom: 60px; border-bottom: 1px solid #ddd; padding-bottom: 40px; }
+.esp-img { flex: 1; min-width: 300px; }
+.esp-img img { width: 100%; height: 250px; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: transform 0.3s; }
+.esp-img img:hover { transform: scale(1.03); }
+.esp-texto { flex: 1.5; }
+.esp-texto h2 { color: #000; margin-bottom: 15px; font-size: 1.8rem; }
+.esp-texto p { font-size: 1rem; color: #444; }
+
+/* MEDIA QUERIES (Móvil) */
+@media (max-width: 1100px) {
+    .navbar { display: flex; justify-content: space-between; padding: 0 20px; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; position: static; }
+    .logo-central { margin: 0 auto; transform: translateX(-15px); }
+    .logo-top { height: 70px; }
+    .about-container, .contact-container { grid-template-columns: 1fr; text-align: center; }
+    body::before { background: rgba(0,0,0,0.7); }
+    .hero-content h1 { font-size: 2.5rem; }
+    .especialidad-item { flex-direction: column; text-align: center; }
+    .esp-img { width: 100%; }
+    .about-container { justify-content: center; }
+    .about-text { text-align: center; }
+    .about-text div { justify-content: center; }
+}
+
+/* --- ESTILOS EXTRA --- */
+.hero-mini { height: 50vh; display: flex; justify-content: center; align-items: center; text-align: center; background: linear-gradient(to bottom, #000000 0%, #111111 100%); padding-top: 80px; }
+.testimonio-section { background-color: #000; padding: 0; overflow: hidden; position: relative; min-height: 80vh; display: flex; align-items: center; }
+.bg-darker { background-color: #050505; }
+.testimonio-container { display: flex; width: 100%; max-width: 1400px; margin: 0 auto; align-items: center; justify-content: space-between; }
+.reverse-layout { flex-direction: row-reverse; }
+.video-wrapper { flex: 1; position: relative; height: 80vh; overflow: hidden; min-width: 50%; }
+.video-wrapper video { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: opacity 0.3s; }
+.video-wrapper video:hover { opacity: 1; }
+.video-overlay { position: absolute; top: 0; bottom: 0; width: 25%; z-index: 2; pointer-events: none; }
+.overlay-right { right: 0; background: linear-gradient(to right, transparent 0%, #000000 100%); }
+.overlay-left { left: 0; background: linear-gradient(to left, transparent 0%, #000000 100%); }
+.bg-darker .overlay-left { background: linear-gradient(to left, transparent 0%, #050505 100%); }
+.text-wrapper { flex: 0.8; padding: 60px; color: #fff; z-index: 10; }
+.align-left { text-align: left; padding-right: 10%; }
+.align-right { text-align: right; padding-left: 10%; }
+.cita-icon { font-size: 6rem; color: var(--oro); line-height: 1; font-family: serif; opacity: 0.5; display: block; margin-bottom: -20px; }
+.text-wrapper h2 { font-size: 2.5rem; color: #fff; margin-bottom: 10px; line-height: 1.2; }
+.paciente-name { color: var(--oro); text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 30px; font-weight: 600; }
+.testimonio-body { font-size: 1.1rem; color: #ccc; line-height: 1.8; margin-bottom: 40px; font-style: italic; }
+.btn-gold { display: inline-block; border: 1px solid var(--oro); color: var(--oro); padding: 15px 40px; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; transition: 0.4s; }
+.btn-gold:hover { background-color: var(--oro); color: #000; }
+@media (max-width: 900px) {
+    .testimonio-container { flex-direction: column !important; }
+    .video-wrapper { width: 100%; height: 50vh; }
+    .video-overlay { width: 100%; height: 30%; top: auto; bottom: 0; left: 0; background: linear-gradient(to bottom, transparent 0%, #000 100%) !important; }
+    .text-wrapper { text-align: center !important; padding: 40px 20px; }
+    .cita-icon { margin: 0 auto; display: inline-block; }
+}
+.lab-section { background-color: #000; min-height: 100vh; display: flex; align-items: center; position: relative; padding-top: 80px; overflow: hidden; }
+.lab-container { display: flex; width: 100%; max-width: 1400px; margin: 0 auto; align-items: center; justify-content: space-between; }
+.lab-text { flex: 1; padding: 0 5%; color: #fff; z-index: 10; }
+.lab-text h1 { font-size: 3rem; color: #fff; margin-bottom: 20px; }
+.lab-text p { font-size: 1.1rem; color: #ccc; line-height: 1.8; margin-bottom: 30px; }
+.lab-benefits { list-style: none; margin-bottom: 40px; }
+.lab-benefits li { margin-bottom: 15px; color: #ddd; font-size: 1rem; }
+.lab-benefits strong { color: var(--oro); }
+.lab-image-wrapper { flex: 1.2; position: relative; height: 100vh; }
+.lab-image-wrapper img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+.fade-overlay { position: absolute; top: 0; left: 0; width: 40%; height: 100%; background: linear-gradient(to right, #000000 0%, transparent 100%); pointer-events: none; }
+@media (max-width: 900px) {
+    .lab-container { flex-direction: column; }
+    .lab-section { padding-top: 100px; padding-bottom: 50px; height: auto; display: block; }
+    .lab-text { padding: 40px 20px; text-align: center; }
+    .lab-benefits { text-align: left; display: inline-block; }
+    .lab-image-wrapper { height: 50vh; width: 100%; }
+    .fade-overlay { width: 100%; height: 30%; top: 0; left: 0; background: linear-gradient(to bottom, #000 0%, transparent 100%); }
+}
+
+/* ================================================================= */
+/* ================= CORRECCIÓN FORZADA DE BOTONES ================= */
+/* ================================================================= */
+
+/* --- 1. Botón "AGENDAR CITA" (Hero) --- */
+.hero-btns .btn-primary {
+    background-color: transparent !important;
+    color: #fff !important;
+    border: 1px solid #fff !important;
+}
+.hero-btns .btn-primary:hover {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+/* --- 2. Botón "VER HISTORIAS DE ÉXITO" (Historia) --- */
+/* Identificado por href="testimonios.html" */
+a[href*="testimonios"].btn-primary {
+    background-color: transparent !important;
+    color: #ffffff !important; /* CORREGIDO: Letras Blancas en reposo */
+    border: 1px solid #ffffff !important;
+}
+a[href*="testimonios"].btn-primary:hover {
+    background-color: #ffffff !important; /* Fondo Blanco */
+    color: #000000 !important; /* Letras Negras */
+}
+
+/* --- 3. Botón "LABORATORIO PROPIO" (Historia) --- */
+/* Identificado por href="laboratorio.html" */
+a[href*="laboratorio"].btn-primary {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: 1px solid #000000 !important;
+}
+a[href*="laboratorio"].btn-primary:hover {
+    background-color: #ffffff !important; /* Fondo Blanco */
+    color: #000000 !important; /* Letras Negras */
+}
+
+/* --- 4. Botón "CONOCE A NUESTROS DOCTORES" (Servicios) --- */
+/* Identificado por href="equipo.html" */
+a[href*="equipo"].btn-primary {
+    background-color: transparent !important;
+    color: #000000 !important; /* Letras Negras en reposo */
+    border: 1px solid #000000 !important;
+}
+a[href*="equipo"].btn-primary:hover {
+    background-color: #000000 !important; /* CORREGIDO: Fondo NEGRO */
+    color: #ffffff !important; /* CORREGIDO: Letras BLANCAS */
+}
+
+/* --- 5. Botón "VER TODOS LOS DETALLES" (Servicios) --- */
+/* Identificado por href="especialidades.html" */
+a[href*="especialidades"].btn-primary {
+    background-color: #222222 !important;
+    color: #ffffff !important;
+    border: 1px solid #222222 !important;
+}
+a[href*="especialidades"].btn-primary:hover {
+    background-color: #ffffff !important;
+    color: #222222 !important;
+}
+/* ================= CONVENIOS ================= */
+.convenios {
+    padding: 80px 5%;
+    background-color: var(--blanco-fondo); /* Fondo blanco para tapar la foto fija */
+    position: relative;
+    z-index: 20; /* Asegura que esté encima del fondo */
+    text-align: center;
+    border-bottom: 1px solid #eee; /* Línea sutil de separación con contacto */
+}
+
+.convenios h2 {
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+}
+
+.logos-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px; /* Espacio entre logos */
+    flex-wrap: wrap;
+}
+
+.logo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.logo-item:hover {
+    transform: translateY(-5px); /* Pequeña elevación al pasar el mouse */
+}
+
+.logo-item img {
+    height: 120px; /* Tamaño controlado del logo */
+    width: auto;
+    object-fit: contain;
+    /* Efecto: Escala de grises en reposo */
+    filter: grayscale(100%) opacity(0.7); 
+    transition: all 0.4s ease;
+    margin-bottom: 15px;
+}
+
+/* AL PASAR EL MOUSE: Color original */
+.logo-item:hover img {
+    filter: grayscale(0%) opacity(1);
+}
+
+.logo-item p {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--texto-gris);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+/* ================= FOOTER PREMIUM (ESTILO REFERENCIA) ================= */
+.main-footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 80px 0 0 0;
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 50;
+    border-top: 4px solid var(--oro); /* Detalle dorado arriba */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr; /* 3 Columnas */
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+/* COLUMNA 1: LOGO */
+.footer-logo {
+    height: 80px;
+    width: auto;
+    margin-bottom: 20px;
+    filter: brightness(0) invert(1); /* Vuelve el logo blanco si es oscuro */
+}
+
+.footer-desc {
+    color: #ccc;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+.btn-footer {
+    background-color: #fff !important;
+    color: #000 !important;
+    border: 1px solid #fff;
+    padding: 12px 30px;
+    font-size: 0.85rem;
+}
+.btn-footer:hover {
+    background-color: transparent !important;
+    color: #fff !important;
+}
+
+/* COLUMNAS 2 y 3: TÍTULOS */
+.footer-col h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    margin-top: 10px; /* Separación visual */
+}
+
+/* Enlaces */
+.footer-links {
+    list-style: none;
+}
+.footer-links li {
+    margin-bottom: 12px;
+}
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.footer-links a:hover {
+    color: var(--oro);
+    padding-left: 5px; /* Pequeño movimiento al pasar mouse */
+}
+
+/* Textos informativos */
+.footer-col p {
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+/* BARRA INFERIOR (COPYRIGHT) */
+.footer-bar {
+    border-top: 1px solid #333;
+    padding: 25px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #050505;
+}
+
+.copyright {
+    color: #888;
+    font-size: 0.8rem;
+}
+
+.copyright strong {
+    color: var(--oro); /* "Agencia Captivx" en dorado */
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a svg {
+    width: 20px;
+    height: 20px;
+    fill: #fff;
+    transition: 0.3s;
+}
+
+.social-icons a:hover svg {
+    fill: var(--oro);
+    transform: translateY(-3px);
+}
+
+/* RESPONSIVE (Móvil) */
+@media (max-width: 900px) {
+    .footer-container {
+        grid-template-columns: 1fr; /* Una sola columna */
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .footer-desc {
+        margin: 0 auto 25px auto; /* Centrar texto */
+    }
+    
+    .footer-bar {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+/* ================= SECCIÓN LABORATORIO (CORREGIDO FINAL) ================= */
+.lab-section {
+    background-color: #000000;
+    /* 1. SOLUCIÓN AL TEXTO SOBREPUESTO: */
+    /* Agregamos mucho padding arriba para bajar el contenido y que no toque el menú */
+    padding-top: 180px; 
+    padding-bottom: 80px;
+    
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh; /* Ocupa toda la pantalla */
+    display: flex;
+    align-items: center;
+}
+
+.lab-container.full-width-layout {
+    /* 2. SOLUCIÓN AL ZOOM: */
+    /* Usamos el 100% del ancho para que el video siempre toque el borde derecho */
+    width: 100%; 
+    max-width: 100%; /* Quitamos el límite para que no se centre al alejar zoom */
+    padding: 0; /* Quitamos padding general */
+    
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+/* --- TEXTO (IZQUIERDA) --- */
+.lab-text {
+    flex: 0 0 45%; /* El texto ocupa el 45% del ancho de la pantalla */
+    z-index: 10;
+    /* Margen izquierdo para separar del borde de la pantalla */
+    padding-left: 8%; 
+    padding-right: 40px;
+}
+
+.lab-text h1 {
+    color: #fff;
+    font-size: 3.5rem; 
+    margin-bottom: 25px;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+.lab-text p {
+    color: #ccc;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.lab-text strong { color: #fff; font-weight: 600; }
+
+.lab-features { margin-top: 30px; list-style: none; }
+.lab-features li {
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    color: var(--oro);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* --- VIDEO (DERECHA - PEGADO AL BORDE) --- */
+.lab-video-container {
+    flex: 1; /* Toma todo el espacio restante a la derecha */
+    height: 100vh; /* Altura completa de la pantalla */
+    position: absolute; /* Lo sacamos del flujo normal para pegarlo bien */
+    top: 0;
+    right: 0;
+    width: 60%; /* Ancho del video (ajustable) */
+    
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Alinea el video a la derecha */
+    
+    /* MÁSCARA DE DIFUMINADO (CORREGIDA) */
+    /* Transparente a la izquierda -> Negro a la derecha */
+    /* Esto hace que el video se "funda" suavemente con el fondo negro del texto */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%, black 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 20%, black 100%);
+    
+    pointer-events: none; /* Para que no interfiera con clics si se superpone */
+}
+
+.lab-video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+/* RESPONSIVE (MÓVIL) */
+@media (max-width: 1000px) {
+    .lab-section {
+        padding-top: 120px; /* Menos padding en móvil */
+        min-height: auto;
+        display: block; /* Bloque normal en vez de flex */
+    }
+    
+    .lab-container.full-width-layout {
+        flex-direction: column;
+        display: block;
+    }
+    
+    .lab-text {
+        width: 100%;
+        padding: 0 20px; /* Padding normal a los lados */
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .lab-video-container {
+        position: relative; /* Vuelve al flujo normal */
+        width: 100%;
+        height: 400px;
+        right: auto;
+        top: auto;
+        
+        /* En móvil el degradado es de arriba hacia abajo */
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+        mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+    }
+}
+
+/* 2. ARREGLO CONVENIOS (Logos a Color -> Blanco y Negro) */
+.convenios { z-index: 20; position: relative; background: #fff; }
+
+.logo-item img {
+    filter: grayscale(0%) opacity(1) !important; /* Normal: A COLOR */
+    transition: all 0.4s ease;
+}
+.logo-item:hover img {
+    filter: grayscale(100%) opacity(0.6) !important; /* Hover: GRIS */
+    transform: scale(1.05);
+}
+
+/* 3. NUEVO FOOTER PREMIUM (Negro y Dorado) */
+.main-footer {
+    background-color: #000;
+    color: #fff;
+    padding-top: 80px;
+    border-top: 5px solid #D4AF37;
+    position: relative;
+    z-index: 50;
+}
+.footer-container {
+    max-width: 1200px; margin: 0 auto; padding: 0 5% 60px 5%;
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 50px;
+}
+.footer-logo { filter: brightness(0) invert(1); height: 70px; width: auto; margin-bottom: 20px;}
+.footer-col h3 { color: #fff; font-size: 1.3rem; margin-bottom: 20px; }
+.footer-links a { color: #aaa; text-decoration: none; }
+.footer-links a:hover { color: #D4AF37; }
+.footer-bottom { background-color: #111; padding: 20px 0; text-align: center; border-top: 1px solid #222; }
+.footer-bottom strong { color: #D4AF37; }
+
+/* Móvil Footer */
+@media (max-width: 900px) {
+    .footer-container { grid-template-columns: 1fr; text-align: center; }
+    .social-icons { justify-content: center; }
+}
+
+/* 4. CORRECCIÓN CONTACTO (Mapa Izquierda / Form Derecha) */
+.contact-container {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 60px;
+    align-items: center;
+}
+@media (max-width: 900px) {
+    .contact-container { grid-template-columns: 1fr !important; }
+}
+/* ================= BANNER COOKIES ================= */
+.cookie-banner {
+    position: fixed;
+    bottom: -100%; /* Oculto al principio */
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95); /* Negro casi sólido */
+    color: #fff;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    z-index: 3000; /* Encima de todo */
+    border-top: 1px solid var(--oro);
+    transition: bottom 0.5s ease-in-out;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
+}
+
+.cookie-banner p {
+    font-size: 0.9rem;
+    margin: 0;
+    color: #ccc;
+}
+
+.cookie-banner.show {
+    bottom: 0; /* Sube y se muestra */
+}
+
+/* En móvil, que se vea en columna */
+@media (max-width: 768px) {
+    .cookie-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+}
+/* CORRECCIÓN FINAL FOOTER: Iconos lejos del WhatsApp */
+@media (max-width: 900px) {
+    .social-icons {
+        margin-right: 0 !important; /* En celular quitamos el margen lateral */
+        margin-bottom: 80px; /* Y agregamos espacio ABAJO para que WhatsApp no tape */
+    }
+}
+
+/* ================================================================= */
+/* ============= SOLUCIÓN DEFINITIVA: SLIDER Y TEXTO =============== */
+/* ================================================================= */
+
+/* 1. SLIDER BLOQUEADO A LA IZQUIERDA (45%) */
+.about-slider.slide-left-effect {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60vw; /* Ancho fijo */
+    height: 510px;
+    z-index: 5;
+    pointer-events: none; /* Permite clics en botones de abajo */
+    overflow: hidden; 
+}
+
+/* 2. IMÁGENES DENTRO DEL SLIDER */
+.about-slider.slide-left-effect img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transform: translateX(100%); 
+    transition: transform 1.2s ease-in-out, opacity 1s ease-in-out;
+    
+    /* MÁSCARA SUTIL (Difuminado arriba y derecha) */
+    -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%), 
+                        linear-gradient(to bottom, transparent 0%, black 10%, black 100%);
+    mask-image: linear-gradient(to right, black 85%, transparent 100%), 
+                linear-gradient(to bottom, transparent 0%, black 10%, black 100%);
+    
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+}
+
+/* 3. ESTADOS DE ANIMACIÓN */
+.about-slider.slide-left-effect img.active {
+    opacity: 0.9;
+    transform: translateX(0);
+}
+.about-slider.slide-left-effect img.exit {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+/* 4. TEXTO EMPUJADO A LA DERECHA (50%) */
+.about-container {
+    width: 50vw !important; 
+    margin-left: 50vw !important; /* Margen para no chocar */
+    display: flex !important;
+    justify-content: flex-end !important;
+}
+
+/* 5. RESTAURAR EN MÓVIL */
+@media (max-width: 1100px) {
+    .about-container {
+        width: 100% !important;
+        margin-left: 0 !important;
+        justify-content: center !important;
+    }
+    .about-slider.slide-left-effect {
+        position: relative;
+        width: 100%;
+        height: 300px;
+    }
+}
+
+/* ================= CARRUSEL DE ESPECIALIDADES (CORREGIDO DARK) ================= */
+.specialty-section {
+    width: 100%;
+    min-height: 100vh;
+    background: transparent !important; /* <--- IMPORTANTE: Fondo transparente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+.specialty-container {
+    width: 90%;
+    max-width: 1400px;
+    height: 600px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* El Slider en sí */
+.specialty-slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* CADA DIAPOSITIVA (Slide) */
+.specialty-slide {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+    transform: scale(0.95);
+    pointer-events: none;
+}
+
+/* Slide Activa */
+.specialty-slide.active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: all;
+    z-index: 2;
+}
+
+/* TEXTO (Izquierda) - AHORA EN BLANCO */
+.sp-content {
+    flex: 1;
+    padding-right: 50px;
+    padding-left: 5%;
+    z-index: 10;
+}
+.sp-content h2 {
+    font-size: 3rem;
+    color: #ffffff; /* <--- CAMBIO: Texto blanco */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8); /* Sombra para leer mejor */
+}
+.sp-content p {
+    font-size: 1.1rem;
+    color: #e0e0e0; /* <--- CAMBIO: Gris claro */
+    margin-bottom: 30px;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+}
+
+/* IMAGEN (Derecha) */
+.sp-image {
+    flex: 1.2;
+    height: 100%;
+    position: relative;
+    /* Efecto Fantasma / Difuminado */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%, black 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 20%, black 100%);
+}
+.sp-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* BOTONES DE NAVEGACIÓN (Flechas) */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5); /* Fondo semitransparente */
+    border: 1px solid #fff; /* Borde blanco */
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 20;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-btn:hover {
+    background-color: #D4AF37;
+    border-color: #D4AF37;
+    color: #000;
+}
+.prev-btn { left: 0; }
+.next-btn { right: 0; }
+/* --- BOTÓN DENTRO DEL SLIDER (NUEVO) --- */
+.sp-content .btn-primary {
+    background-color: #ffffff !important; /* Fondo Blanco Sólido */
+    color: #000000 !important;          /* Texto Negro */
+    border: 2px solid #ffffff !important; /* Borde Blanco */
+    margin-top: 25px;                   /* Un poco más de espacio arriba */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Sombra suave para que "flote" */
+}
+
+/* Al pasar el mouse (Hover) */
+.sp-content .btn-primary:hover {
+    background-color: #D4AF37 !important; /* Fondo Dorado */
+    border-color: #D4AF37 !important;     /* Borde Dorado */
+    color: #ffffff !important;          /* Texto Blanco */
+    transform: translateY(-3px);          /* Pequeña elevación */
+}
+/* RESPONSIVE (Celular) */
+@media (max-width: 900px) {
+    .specialty-slide { flex-direction: column-reverse; text-align: center; }
+    .sp-content { padding: 20px; }
+    .sp-image { width: 100%; height: 300px; -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 100%); mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 100%); }
+    .sp-content h2 { font-size: 2rem; }
+    .nav-btn { top: auto; bottom: 20px; }
+    .prev-btn { left: 20px; }
+    .next-btn { right: 20px; }
+}
+/* FORZAR VISIBILIDAD DEL BOTÓN */
+.scroll-top-btn {
+    z-index: 9999 !important; /* Capa superior absoluta */
+}
+
+/* ========================================================= */
+/* ============ REPARACIÓN URGENTE: BOTÓN ARRIBA =========== */
+/* ========================================================= */
+
+.scroll-top-btn {
+    position: fixed !important; /* Lo saca del flujo para que no ocupe espacio abajo */
+    bottom: 30px !important;    /* Lo pega al fondo de la pantalla */
+    left: 30px !important;      /* Lo pega a la izquierda */
+    width: 50px !important;     /* Tamaño fijo */
+    height: 50px !important;    /* Tamaño fijo */
+    background-color: #D4AF37 !important; /* Fondo Dorado */
+    color: #000000 !important;  /* Flecha negra */
+    border-radius: 50% !important; /* Círculo perfecto */
+    
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-decoration: none !important;
+    
+    z-index: 9999 !important; /* Encima de todo */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important;
+    
+    /* Animación de entrada */
+    opacity: 0; 
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+/* Estado visible (controlado por JS) */
+.scroll-top-btn.show-btn {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
+
+/* Al pasar el mouse */
+.scroll-top-btn:hover {
+    background-color: #000000 !important; /* Fondo negro */
+    color: #D4AF37 !important; /* Flecha dorada */
+    transform: translateY(-5px) !important;
+}
+
+/* Arreglo del ícono SVG */
+.scroll-top-btn svg {
+    width: 20px !important;
+    height: 20px !important;
+    fill: currentColor !important;
+}
+
+/* Ajuste para celular */
+@media (max-width: 900px) {
+    .scroll-top-btn {
+        bottom: 90px !important; /* Un poco más arriba para no chocar */
+        left: 20px !important;
+        width: 45px !important;
+        height: 45px !important;
+    }
+}
+/* ================= LABORATORIO ESTILO CINEMÁTICO ================= */
+
+.lab-section-cinema {
+    background-color: #000;
+    padding-top: 120px; /* Espacio para el menú */
+    overflow: hidden; /* Evita barras de scroll horizontales */
+}
+
+/* Contenedor de cada Fila (Flexbox) */
+.lab-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80vh; /* Cada sección ocupa casi toda la pantalla */
+    position: relative;
+    padding: 0;
+}
+
+/* --- MITAD TEXTO --- */
+.lab-content {
+    width: 45%;
+    padding: 0 5%;
+    z-index: 2; /* El texto siempre encima */
+}
+
+.lab-content h1 {
+    font-size: 3.5rem;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.lab-content p {
+    color: #ccc;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.lab-subtitle {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* --- MITAD IMAGEN/VIDEO --- */
+.lab-media {
+    width: 55%; /* Ocupa un poco más de la mitad */
+    height: 80vh;
+    position: relative;
+}
+
+.lab-media img, 
+.lab-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen para llenar el espacio sin deformar */
+}
+
+/* --- LA MAGIA: LOS DIFUMINADOS (FADES) --- */
+
+/* 1. Difuminado para la imagen de la DERECHA (Fila 1) 
+   Crea un negro sólido a la izquierda que se vuelve transparente hacia la derecha */
+.fade-overlay-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%; /* El degradado ocupa el 40% de la imagen */
+    height: 100%;
+    background: linear-gradient(to right, #000 10%, transparent 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* 2. Difuminado para el video de la IZQUIERDA (Fila 2) 
+   Crea un negro sólido a la derecha que se vuelve transparente hacia la izquierda */
+.fade-overlay-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(to left, #000 10%, transparent 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* --- RESPONSIVE (Celular) --- */
+@media (max-width: 900px) {
+    .lab-row {
+        flex-direction: column;
+        min-height: auto;
+        padding-bottom: 60px;
+    }
+
+    /* Para invertir el orden en celular si quieres (primero imagen luego texto) */
+    /* .reverse-mobile { flex-direction: column-reverse; } */
+
+    .lab-content {
+        width: 100%;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .lab-media {
+        width: 100%;
+        height: 300px; /* Altura fija en celular */
+    }
+
+    /* En celular, cambiamos el difuminado para que sea de abajo hacia arriba */
+    .fade-overlay-left, .fade-overlay-right {
+        width: 100%;
+        height: 30%;
+        background: linear-gradient(to bottom, #000, transparent);
+    }
+    
+    .fade-overlay-right {
+        top: auto; 
+        bottom: 0;
+        background: linear-gradient(to top, #000, transparent);
+    }
+}
