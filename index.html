@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sthetica Dental | Clínica Huancayo</title>
+    
+    <link rel="icon" type="image/png" href="img/icono.png">
+    <link rel="apple-touch-icon" href="img/icono.png">
+
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -47,32 +51,33 @@
 
     <section id="inicio" class="hero reveal">
         <div class="hero-content">
-            <span class="subtitle">BIENVENIDO A LA EXCELENCIA</span>
-            <h1>Diseñamos tu mejor sonrisa</h1>
-            <p>Especialistas en Estética Dental Avanzada.</p>
+            <span class="subtitle">BIENVENIDO A STHETICA DENTAL</span>
+            <h1>El verdadero placer de una <br> <span class="text-gold">buena sonrisa</span></h1>  
+            <p>Combinamos tecnología avanzada y arte para crear sonrisas que transforman vidas. Tu salud y estética en manos expertas.</p>          <p>Especialistas en Estética Dental Avanzada.</p>
             <div class="hero-btns">
-                <a href="#contacto" class="btn-primary">Agendar Cita</a>
+                <a href="https://clinicastheticadental.700cd.com/panel_director/cal_separar/index_separar.php?fbclid=IwY2xjawPLiSpleHRuA2FlbQIxMABicmlkETFXQVM1T1FYeEZBVU5oUXFDc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHoGvCh8Zu_gxiBJ17x_Q2KdsEOIwz_OJuD-opTdDIPC9Hm9zu1z4ylWGY-gF_aem_RDl-kXg_B73wvFl6jIQyKA" target="_blank" class="btn-primary">Agendar Cita</a>
             </div>
         </div>
     </section>
 
     <section id="historia" class="about reveal">
-        <div class="about-container">
+        <div class="about-slider slide-left-effect" style=>
+             <img src="img/IMG_9371.jpg" class="active">
+             <img src="img/IMG_9296.jpg">
+             <img src="img/IMG_9395.jpg">
+             <img src="img/IMG_9420.jpg">
+        </div>
+
+        <div class="about-container" style="width: 50%; margin-left: 50%; position: relative; z-index: 10;">
             <div class="about-text">
                 <span class="subtitle">NUESTRA TRAYECTORIA</span>
                 <h2>El Arte de la Odontología</h2>
                 <p>Combinamos experiencia clínica con visión artística para devolverte la confianza en instalaciones de primer nivel.</p>
                 
                 <div style="margin-top: 30px; display: flex; gap: 15px; flex-wrap: wrap;">
-                    
-                    <a href="testimonios.html" class="btn-primary" style="background: transparent; color: #000 !important; border: 1px solid #000;">Ver Historias de Éxito</a>
-                    
-                    <a href="laboratorio.html" class="btn-primary" style="background: #000; color: #fff !important; border: 1px solid #000;">Laboratorio Propio</a>
-                
+                    <a href="testimonios.html" class="btn-primary">Ver Historias de Éxito</a>
+                    <a href="laboratorio.html" class="btn-primary" style="background: #000; color: #fff; border: 1px solid #000;">Laboratorio Propio</a>
                 </div>
-            </div>
-            <div class="about-img">
-                <img src="img/fachada.png" alt="Fachada Sthetica Dental" class="fachada-img">
             </div>
         </div>
     </section>
@@ -101,12 +106,31 @@
 
         <div style="text-align: center; margin-top: 50px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
             <a href="especialidades.html" class="btn-primary">Ver todos los detalles</a>
-            <a href="equipo.html" class="btn-primary" style="background-color: transparent; border: 1px solid #000; color: #000 !important;">Conoce a nuestros Doctores</a>
+            <a href="equipo.html" class="btn-primary" style="background-color: transparent; border: 1px solid #000; color: #000;">Conoce a nuestros Doctores</a>
+        </div>
+    </section>
+
+    <section id="convenios" class="convenios reveal">
+        <div class="convenios-container">
+            <span class="subtitle" style="display: block; text-align: center; color: #D4AF37; letter-spacing: 5px; margin-bottom: 20px;">ALIANZAS ESTRATÉGICAS</span>
+            <h2 style="text-align: center; color: #000; margin-bottom: 50px;">Nuestros Convenios</h2>
+            
+            <div class="logos-grid">
+                <div class="logo-item">
+                    <img src="img/excelenti.png" alt="Colegio Excélenti">
+                    <p>Colegio Excélenti</p>
+                </div>
+                <div class="logo-item">
+                    <img src="img/maestro-redentor.jpg" alt="Colegio Maestro Redentor">
+                    <p>Colegio Maestro Redentor</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="contacto" class="contact reveal">
         <div class="contact-container">
+            
             <div class="contact-info">
                 <span class="subtitle">UBICACIÓN</span>
                 <h2>Visítanos</h2>
@@ -115,7 +139,7 @@
                 
                 <div class="map-container">
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d975.4408530306944!2d-75.21769423048102!3d-12.05979269926112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910e97007d8b42bb%3A0x1887d13ce6e59411!2sClinica%20Sthetica%20Dental%20-%20Ortodoncia%20-%20implantes%20dentales%20-%20est%C3%A9tica%20dental%20-%20pr%C3%B3tesis%20dental%20-%20Odontopediatr%C3%ADa%20huancayo.!5e0!3m2!1ses!2spe!4v1767197255892!5m2!1ses!2spe" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.763412284027!2d-75.2196254252009!3d-12.059792688178009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910e97007d8b42bb%3A0x1887d13ce6e59411!2sClinica%20Sthetica%20Dental%20-%20Ortodoncia%20-%20implantes%20dentales%20-%20est%C3%A9tica%20dental%20-%20pr%C3%B3tesis%20dental%20-%20Odontopediatr%C3%ADa%20huancayo.!5e0!3m2!1ses-419!2spe!4v1767632495002!5m2!1ses-419!2spe" 
                         width="100%" 
                         height="300" 
                         style="border:0;" 
@@ -124,19 +148,79 @@
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
-
             </div>
+
             <div class="contact-form">
-                <form>
-                    <input type="text" placeholder="Nombre completo" required>
-                    <input type="email" placeholder="Correo electrónico" required>
-                    <textarea placeholder="Mensaje" rows="4"></textarea>
+                <form action="https://formsubmit.co/Stheticadentalodontomarkc@gmail.com" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://stheticadental.com/index.html">
+                    
+                    <input type="text" name="nombre" placeholder="Nombre completo" required>
+                    <input type="email" name="email" placeholder="Correo electrónico" required>
+                    <textarea name="mensaje" placeholder="Mensaje" rows="4" required></textarea>
+                    
                     <button type="submit" class="btn-primary">Enviar Mensaje</button>
                 </form>
             </div>
+
         </div>
     </section>
 
+    <div id="cookieBanner" class="cookie-banner">
+        <p>Utilizamos cookies para mejorar tu experiencia en Sthetica Dental. Al continuar navegando, aceptas nuestra política.</p>
+        <button id="acceptCookies" class="btn-primary" style="padding: 10px 20px; font-size: 0.7rem;">Aceptar</button>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            
+            <div class="footer-col">
+                <img src="img/logo.png" alt="Sthetica Dental" class="footer-logo">
+                <p class="footer-desc">Combinamos experiencia clínica con visión artística para devolverte la confianza en tu sonrisa.</p>
+                <a href="https://clinicastheticadental.700cd.com/panel_director/cal_separar/index_separar.php?fbclid=IwY2xjawPLiSpleHRuA2FlbQIxMABicmlkETFXQVM1T1FYeEZBVU5oUXFDc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHoGvCh8Zu_gxiBJ17x_Q2KdsEOIwz_OJuD-opTdDIPC9Hm9zu1z4ylWGY-gF_aem_RDl-kXg_B73wvFl6jIQyKA" target="_blank" class="btn-primary btn-footer">Agendar Cita</a>
+            </div>
+
+            <div class="footer-col">
+                <h3>Páginas</h3>
+                <ul class="footer-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#servicios">Especialidades</a></li>
+                    <li><a href="#historia">Historia</a></li>
+                    <li><a href="laboratorio.html">Laboratorio</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Atención:</h3>
+                <p>Lunes – Sábado</p>
+                
+                <h3>Horario:</h3>
+                <p>9:00 AM – 1:00 PM <br> 3:00 PM – 8:00 PM</p>
+                
+                <h3>Contacto:</h3>
+                <p>Síguenos en nuestras redes sociales</p>
+            </div>
+        </div>
+
+        <div class="footer-bar">
+            <div class="copyright">
+                Copyright © 2026 Sthetica Dental | Desarrollado por <strong>Agencia Captivx</strong>
+            </div>
+            
+            <div class="social-icons" style="margin-right: 100px;"> 
+                <a href="https://www.facebook.com/stheticadental" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/clinicastheticadental/" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <a href="#" id="scrollTopBtn" class="scroll-top-btn" title="Volver arriba">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor" width="20"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
+    </a>
     <script src="js/main.js"></script>
 </body>
 </html>

@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Especialidades | Sthetica Dental</title>
+    
+    <link rel="icon" type="image/png" href="img/icono.png">
+    <link rel="apple-touch-icon" href="img/icono.png">
+
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -26,96 +30,142 @@
                 <li><a href="especialidades.html" style="color: #D4AF37;">ESPECIALIDADES</a></li>
                 <li><a href="index.html#contacto">CONTACTO</a></li>
             </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
         </nav>
     </header>
 
-    <section class="hero" style="min-height: 40vh; padding-top: 150px; background: linear-gradient(to bottom, #000 0%, #333 100%);">
-        <div class="hero-content">
-            <span class="subtitle">NUESTROS SERVICIOS</span>
-            <h1>Especialidades Clínicas</h1>
-            <p>Tecnología avanzada y especialistas certificados para cada necesidad.</p>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" onclick="toggleMenu()">INICIO</a>
+        <a href="index.html#historia" onclick="toggleMenu()">HISTORIA</a>
+        <a href="especialidades.html" onclick="toggleMenu()" style="color: #D4AF37;">ESPECIALIDADES</a>
+        <a href="index.html#contacto" onclick="toggleMenu()">CONTACTO</a>
+    </div>
+
+    <section class="specialty-section">
+        
+        <div class="specialty-container">
+            <button class="nav-btn prev-btn" id="prevSpecialty">&#10094;</button>
+
+            <div class="specialty-slider" id="specialtySlider">
+                
+                <div class="specialty-slide active">
+                    <div class="sp-content">
+                        <h2>Odontología General</h2>
+                        <p>El primer paso hacia una salud bucal perfecta. Realizamos diagnósticos integrales, limpiezas profundas, restauraciones estéticas y prevención para mantener tu sonrisa sana.</p>
+                        <a href="index.html#contacto" class="btn-primary">Agendar Cita</a>
+                    </div>
+                    <div class="sp-image">
+                        <img src="img/esp-general.png" alt="Odontología General">
+                    </div>
+                </div>
+
+                <div class="specialty-slide">
+                    <div class="sp-content">
+                        <h2>Endodoncia</h2>
+                        <p>Salvamos tus dientes naturales. Tratamiento especializado de conductos para eliminar el dolor y la infección en la raíz del diente, evitando su extracción.</p>
+                        <a href="index.html#contacto" class="btn-primary">Agendar Cita</a>
+                    </div>
+                    <div class="sp-image">
+                        <img src="img/esp-endodoncia.png" alt="Endodoncia">
+                    </div>
+                </div>
+
+                <div class="specialty-slide">
+                    <div class="sp-content">
+                        <h2>Rehabilitación Oral</h2>
+                        <p>Recupera la función y estética completa. Diseñamos coronas, puentes y prótesis dentales de alta precisión para devolverte la capacidad de comer y sonreír.</p>
+                        <a href="index.html#contacto" class="btn-primary">Agendar Cita</a>
+                    </div>
+                    <div class="sp-image">
+                        <img src="img/esp-rehabilitacion.png" alt="Rehabilitación Oral">
+                    </div>
+                </div>
+
+                <div class="specialty-slide">
+                    <div class="sp-content">
+                        <h2>Implantología Oral</h2>
+                        <p>La solución definitiva para dientes perdidos. Colocamos implantes de titanio biocompatible que funcionan como raíces artificiales para dientes fijos.</p>
+                        <a href="index.html#contacto" class="btn-primary">Agendar Cita</a>
+                    </div>
+                    <div class="sp-image">
+                        <img src="img/esp-implantes.png" alt="Implantología Oral">
+                    </div>
+                </div>
+
+                <div class="specialty-slide">
+                    <div class="sp-content">
+                        <h2>Ortodoncia y Ortopedia</h2>
+                        <p>Alineación perfecta. Corregimos la posición de los dientes y la mordida mediante brackets estéticos, metálicos o alineadores invisibles.</p>
+                        <a href="index.html#contacto" class="btn-primary">Agendar Cita</a>
+                    </div>
+                    <div class="sp-image">
+                        <img src="img/esp-ortodoncia.png" alt="Ortodoncia">
+                    </div>
+                </div>
+
+                <div class="specialty-slide">
+                    <div class="sp-content">
+                        <h2>Cirugía Maxilofacial</h2>
+                        <p>Intervenciones complejas en manos expertas. Extracciones de terceros molares (muelas del juicio) y tratamiento de patologías bucales.</p>
+                        <a href="index.html#contacto" class="btn-primary">Agendar Cita</a>
+                    </div>
+                    <div class="sp-image">
+                        <img src="img/esp-cirugia.png" alt="Cirugía Maxilofacial">
+                    </div>
+                </div>
+
+                <div class="specialty-slide">
+                    <div class="sp-content">
+                        <h2>Odontopediatría</h2>
+                        <p>Atención especializada para niños. Cuidamos la salud dental de tus hijos con técnicas amigables y sin dolor, fomentando hábitos saludables.</p>
+                        <a href="index.html#contacto" class="btn-primary">Agendar Cita</a>
+                    </div>
+                    <div class="sp-image">
+                        <img src="img/esp-pediatria.png" alt="Odontopediatría">
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="nav-btn next-btn" id="nextSpecialty">&#10095;</button>
         </div>
+
     </section>
 
-    <section class="services bg-light reveal">
-        <div class="about-container" style="display: block; max-width: 900px;">
-            
-            <div class="especialidad-item">
-                <div class="esp-img">
-                    <img src="img/esp-general.jpg" alt="Odontología General">
-                </div>
-                <div class="esp-texto">
-                    <h2>Odontología General</h2>
-                    <p>El primer paso hacia una salud bucal perfecta. Realizamos diagnósticos integrales, limpiezas profundas, restauraciones estéticas (curaciones) y prevención de enfermedades para mantener tu sonrisa sana.</p>
-                </div>
-            </div>
+    <a href="#" id="scrollTopBtn" class="scroll-top-btn" title="Volver arriba">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor" width="20"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
+    </a>
 
-            <div class="especialidad-item">
-                <div class="esp-img">
-                    <img src="img/esp-endodoncia.jpg" alt="Endodoncia">
-                </div>
-                <div class="esp-texto">
-                    <h2>Endodoncia</h2>
-                    <p>Salvamos tus dientes naturales. Tratamiento especializado de conductos para eliminar el dolor y la infección en la raíz del diente, evitando su extracción.</p>
-                </div>
+    <div id="cookieBanner" class="cookie-banner">
+        <p>Utilizamos cookies para mejorar tu experiencia en Sthetica Dental. Al continuar navegando, aceptas nuestra política.</p>
+        <button id="acceptCookies" class="btn-primary" style="padding: 10px 20px; font-size: 0.7rem;">Aceptar</button>
+    </div>
+    
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <img src="img/logo.png" alt="Sthetica Dental" class="footer-logo">
+                <p class="footer-desc">Combinamos experiencia clínica con visión artística.</p>
             </div>
-
-            <div class="especialidad-item">
-                <div class="esp-img">
-                    <img src="img/esp-rehabilitacion.jpg" alt="Rehabilitación Oral">
-                </div>
-                <div class="esp-texto">
-                    <h2>Rehabilitación Oral</h2>
-                    <p>Recupera la función y estética completa. Diseñamos coronas, puentes y prótesis dentales de alta precisión para devolverte la capacidad de comer y sonreír con confianza.</p>
-                </div>
+            <div class="footer-col">
+                <h3>Menú</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="equipo.html">Doctores</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
             </div>
-
-            <div class="especialidad-item">
-                <div class="esp-img">
-                    <img src="img/esp-implantes.jpg" alt="Implantología Oral">
-                </div>
-                <div class="esp-texto">
-                    <h2>Implantología Oral</h2>
-                    <p>La solución definitiva para dientes perdidos. Colocamos implantes de titanio biocompatible que se integran al hueso, funcionando como raíces artificiales para dientes fijos y seguros.</p>
-                </div>
+            <div class="footer-col">
+                <h3>Horario</h3>
+                <p>9:00 AM – 8:00 PM</p>
             </div>
-
-            <div class="especialidad-item">
-                <div class="esp-img">
-                    <img src="img/esp-ortodoncia.jpg" alt="Ortodoncia">
-                </div>
-                <div class="esp-texto">
-                    <h2>Ortodoncia y Ortopedia Maxilar</h2>
-                    <p>Alineación perfecta. Corregimos la posición de los dientes y la mordida mediante brackets estéticos, metálicos o alineadores invisibles, mejorando tanto la salud como la belleza de tu perfil.</p>
-                </div>
-            </div>
-
-            <div class="especialidad-item">
-                <div class="esp-img">
-                    <img src="img/esp-cirugia.jpg" alt="Cirugía Maxilofacial">
-                </div>
-                <div class="esp-texto">
-                    <h2>Cirugía Maxilofacial</h2>
-                    <p>Intervenciones complejas en manos expertas. Realizamos extracciones de terceros molares (muelas del juicio), cirugía de mandíbula y tratamiento de patologías bucales.</p>
-                </div>
-            </div>
-
-            <div class="especialidad-item">
-                <div class="esp-img">
-                    <img src="img/esp-pediatria.jpg" alt="Odontopediatría">
-                </div>
-                <div class="esp-texto">
-                    <h2>Odontopediatría</h2>
-                    <p>Atención especializada para niños. Cuidamos la salud dental de tus hijos con técnicas amigables y sin dolor, fomentando hábitos saludables desde la infancia.</p>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 60px;">
-                <a href="index.html#contacto" class="btn-primary">Reservar Cita Ahora</a>
-            </div>
-
         </div>
-    </section>
+        <div class="footer-bar">
+            <div class="copyright">Copyright © 2026 Sthetica Dental</div>
+        </div>
+    </footer>
 
     <script src="js/main.js"></script>
 </body>
