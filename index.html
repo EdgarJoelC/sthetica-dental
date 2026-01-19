@@ -10,6 +10,33 @@
 
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        .btn-historia-hover {
+            display: block;
+            width: 100%;
+            text-align: center;
+            border: 1px solid #fff;
+            color: #fff;
+            padding: 12px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            background-color: transparent;
+            box-sizing: border-box;
+        }
+        /* AQUÍ ESTÁ LA MAGIA: Al pasar el mouse, se invierte */
+        .btn-historia-hover:hover {
+            background-color: #fff; /* Fondo blanco */
+            color: #000; /* Letra negra */
+            border-color: #fff;
+        }
+    </style>
 </head>
 <body>
 
@@ -51,21 +78,28 @@
 
     <section id="inicio" class="hero reveal">
         <div class="hero-content">
-            <span class="subtitle">BIENVENIDO A STHETICA DENTAL</span>
-            <h1>El verdadero placer de una <br> <span class="text-gold">buena sonrisa</span></h1>  
-            <p>Combinamos tecnología avanzada y arte para crear sonrisas que transforman vidas. Tu salud y estética en manos expertas.</p>          <p>Especialistas en Estética Dental Avanzada.</p>
-            <div class="hero-btns">
+            <span class="subtitle" style="font-family: 'Montserrat', sans-serif; font-weight: 400; letter-spacing: 4px; font-size: 0.9rem;">BIENVENIDO A</span>
+            
+            <h1 style="margin-top: 15px; font-family: 'Libre Caslon Text', serif; font-style: italic; font-weight: 400; letter-spacing: 0px; line-height: 1.1; font-size: clamp(3rem, 8vw, 5.5rem);">
+                Sthetica <span style="color: #D4AF37;">Dental</span>
+            </h1>
+            
+            <p style="font-family: 'Montserrat', sans-serif; font-size: 1.1rem; margin-top: 20px; color: #ddd; font-weight: 400;">
+                Especialistas en Estética Dental Avanzada.
+            </p>
+
+            <div class="hero-btns" style="margin-top: 30px;">
                 <a href="https://clinicastheticadental.700cd.com/panel_director/cal_separar/index_separar.php?fbclid=IwY2xjawPLiSpleHRuA2FlbQIxMABicmlkETFXQVM1T1FYeEZBVU5oUXFDc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHoGvCh8Zu_gxiBJ17x_Q2KdsEOIwz_OJuD-opTdDIPC9Hm9zu1z4ylWGY-gF_aem_RDl-kXg_B73wvFl6jIQyKA" target="_blank" class="btn-primary">Agendar Cita</a>
             </div>
         </div>
     </section>
 
     <section id="historia" class="about reveal">
-        <div class="about-slider slide-left-effect" style=>
+        <div class="about-slider slide-left-effect">
              <img src="img/IMG_9371.jpg" class="active">
              <img src="img/IMG_9296.jpg">
              <img src="img/IMG_9395.jpg">
-             <img src="img/IMG_9420.jpg">
+             <img src="img/IMG_9420.jpg"> 
         </div>
 
         <div class="about-container" style="width: 50%; margin-left: 50%; position: relative; z-index: 10;">
@@ -74,9 +108,15 @@
                 <h2>El Arte de la Odontología</h2>
                 <p>Combinamos experiencia clínica con visión artística para devolverte la confianza en instalaciones de primer nivel.</p>
                 
-                <div style="margin-top: 30px; display: flex; gap: 15px; flex-wrap: wrap;">
-                    <a href="testimonios.html" class="btn-primary">Ver Historias de Éxito</a>
-                    <a href="laboratorio.html" class="btn-primary" style="background: #000; color: #fff; border: 1px solid #000;">Laboratorio Propio</a>
+                <div style="margin-top: 30px; display: flex; flex-direction: column; gap: 15px; max-width: 600px;">
+                    <a href="historia.html" class="btn-historia-hover">
+                        RESEÑA HISTÓRICA
+                    </a>
+                    
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <a href="testimonios.html" class="btn-primary" style="flex: 1; text-align: center; white-space: nowrap;">Ver Historias de Éxito</a>
+                        <a href="laboratorio.html" class="btn-primary" style="background: #000; color: #fff; border: 1px solid #000; flex: 1; text-align: center; white-space: nowrap;">Laboratorio Propio</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -123,6 +163,10 @@
                 <div class="logo-item">
                     <img src="img/maestro-redentor.jpg" alt="Colegio Maestro Redentor">
                     <p>Colegio Maestro Redentor</p>
+                </div>
+                <div class="logo-item">
+                    <img src="img/continental.png" alt="Universidad Continental">
+                    <p>Universidad Continental</p>
                 </div>
             </div>
         </div>
@@ -224,3 +268,4 @@
     <script src="js/main.js"></script>
 </body>
 </html>
+
