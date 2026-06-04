@@ -1,0 +1,2203 @@
+/* ================= VARIABLES & RESET ================= */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+:root {
+    --negro-header: #000000;
+    --blanco-fondo: #ffffff;
+    --gris-claro-fondo: #f9f9f9;
+    --texto-oscuro: #222222;
+    --texto-gris: #666666;
+    --plata-acento: #c0c0c0;
+    --oro: #D4AF37;
+    --fuente: 'Montserrat', sans-serif;
+    --verde-wa: #25d366;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ================= BODY: FONDO UNIFICADO ================= */
+body {
+    background-color: var(--blanco-fondo);
+    color: var(--texto-oscuro);
+    font-family: var(--fuente);
+    line-height: 1.6;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+
+    /* Imagen fija */
+    background-image: url('../img/fachada.png'); 
+    background-attachment: fixed;
+    background-position: center top; 
+    background-repeat: no-repeat;
+    background-size: cover; 
+    position: relative;
+}
+
+/* Sombra global (Degradado del header) */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, 
+        rgba(0,0,0,0.9) 0%, 
+        rgba(0,0,0,0.4) 40%, 
+        rgba(0,0,0,0.8) 100%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ================= HEADER ================= */
+header {
+    width: 100%;
+    padding: 15px 0;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    background: transparent;
+}
+
+.navbar {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+}
+
+.nav-links { display: flex; list-style: none; gap: 40px; }
+.left-links { justify-self: end; padding-right: 50px; }
+.right-links { justify-self: start; padding-left: 50px; }
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    font-weight: 300;
+    transition: 0.4s;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    white-space: nowrap;
+}
+.nav-links a:hover { color: var(--oro); }
+
+.logo-central { display: flex; justify-content: center; align-items: center; }
+.logo-top {
+    height: 90px; width: auto;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+    transition: transform 0.3s;
+}
+.logo-top:hover { transform: scale(1.05); }
+
+.hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; }
+.hamburger span { background: #ffffff; height: 2px; width: 25px; }
+
+.mobile-menu {
+    position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
+    background: #000; display: flex; flex-direction: column;
+    justify-content: center; align-items: center; gap: 30px;
+    transition: 0.5s; z-index: 1500;
+}
+.mobile-menu.active { right: 0; }
+.mobile-menu a { color: #ffffff; text-decoration: none; font-size: 1.2rem; letter-spacing: 2px; }
+
+/* ================= HERO ================= */
+/* Reemplaza tu bloque .hero actual por este: */
+/* Código del HERO corregido */
+.hero {
+    /* Define la oscuridad (0.6 es 60%) y la foto */
+    background-color: transparent;
+    
+
+    /* LA CLAVE: Esta línea fusiona el negro con la foto. Es imposible que se separen */
+    background-blend-mode: multiply; 
+
+    /* Asegura que la imagen cubra todo el espacio */
+    background-size: cover;
+    background-position: center;
+    
+    /* El resto de tus ajustes */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 100px;
+}
+/* Esto crea la capa oscura perfecta */
+/* CAPA NEGRA (Corrección Definitiva) */
+
+/* TÍTULO PRINCIPAL (Parte blanca: "El verdadero placer de una") */
+.hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    font-weight: 300; /* Letra fina y elegante */
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+    /* El !important es clave para quitar las mayúsculas forzadas que vimos antes */
+    text-transform: none !important; 
+}
+
+/* PARTE DORADA (Slogan: "buena sonrisa") */
+.text-gold {
+    font-family: 'Playfair Display', serif; /* Aquí activamos la fuente de lujo */
+    color: #D4AF37;       /* Dorado */
+    font-style: italic;   /* Cursiva */
+    font-weight: 400;     
+    font-size: 1.1em;     /* Un poco más grande para destacar */
+    letter-spacing: 1px;
+}
+.hero-content p { color: #f0f0f0; font-size: 1.1rem; letter-spacing: 1px; margin-bottom: 30px; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
+.hero-content .subtitle { color: var(--oro); letter-spacing: 6px; font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
+
+/* ================= GENERALES ================= */
+h1, h2, h3 { color: var(--texto-oscuro); font-weight: 700; text-transform: uppercase; }
+h1 { font-size: clamp(2rem, 6vw, 4rem); }
+.subtitle { font-size: 0.7rem; letter-spacing: 5px; color: var(--texto-gris); display: block; margin-bottom: 20px; text-transform: uppercase; font-weight: 600; }
+
+.services, .contact, .team-section { padding: 100px 5%; }
+
+/* Estilo Base Botón */
+.btn-primary {
+    display: inline-block; padding: 15px 35px; text-decoration: none; 
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 2px; 
+    text-transform: uppercase; border: none; transition: 0.4s; 
+    cursor: pointer; text-align: center;
+}
+
+/* ================= HISTORIA (TEXTO DERECHA) ================= */
+.about {
+    background: transparent;
+    position: relative;
+    min-height: 80vh; 
+    display: flex;
+    align-items: flex-end; /* Alinea al fondo */
+    padding-bottom: 0;
+}
+.about::before { display: none; }
+
+.about-container {
+    max-width: 1400px; margin: 0 auto; width: 100%; padding: 0 5%;
+    display: flex; 
+    justify-content: flex-end; /* Alineación Derecha */
+    align-items: flex-end; 
+}
+
+.about-text { 
+    max-width: 600px; 
+    text-align: right; 
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+    padding-bottom: 100px;
+    z-index: 10;
+}
+.about-text h2 { color: #ffffff; font-size: 2.5rem; margin-bottom: 20px; }
+.about-text p { color: #e0e0e0; font-size: 1.1rem; margin-bottom: 30px; }
+.about-text .subtitle { color: var(--oro); }
+.about-img, .fachada-img { display: none; }
+
+.about-text div { display: flex; justify-content: flex-end; gap: 15px; flex-wrap: wrap; }
+
+/* ================= SERVICIOS (FONDO OPACO) ================= */
+.services.bg-light {
+    background-color: var(--gris-claro-fondo);
+    position: relative; z-index: 20;
+}
+
+/* Contacto */
+.contact { background: var(--blanco-fondo); position: relative; z-index: 20; }
+input, textarea { width: 100%; background: transparent; border: none; border-bottom: 1px solid #ddd; color: var(--texto-oscuro); padding: 15px 0; margin-bottom: 20px; outline: none; font-family: var(--fuente); }
+input:focus, textarea:focus { border-bottom-color: var(--texto-oscuro); }
+.map-container { margin-top: 30px; border: 1px solid #eee; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+/* ================= CONTACTO (MAPA IZQ - FORMULARIO DER) ================= */
+.contact-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide en 2 columnas iguales */
+    gap: 60px;
+    align-items: center; /* Centra verticalmente */
+}
+
+/* Aseguramos que el mapa y el texto se queden en su columna */
+.contact-info {
+    text-align: left;
+}
+
+/* Ajuste para móvil: vuelve a una sola columna */
+@media (max-width: 900px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .contact-info {
+        text-align: center;
+    }
+}
+/* WhatsApp */
+.whatsapp-float { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background-color: var(--verde-wa); border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 2000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: 0.3s; }
+.whatsapp-float svg { width: 30px; fill: white; }
+.whatsapp-float:hover { transform: scale(1.15); }
+
+/* Animaciones */
+.reveal { opacity: 0; transform: translateY(30px); transition: all 1.2s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* SLIDER */
+.slider-container { width: 100%; overflow: hidden; background: #ffffff; padding: 30px 0; margin-top: 30px; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+.slider-track { display: flex; width: calc(350px * 14); animation: scroll-right 40s linear infinite; }
+.slide { width: 350px; color: var(--texto-oscuro); font-family: var(--fuente); font-size: 1rem; font-weight: 500; letter-spacing: 2px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; border-right: 1px solid #eee; }
+@keyframes scroll-right { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+.slider-container:hover .slider-track { animation-play-state: paused; }
+
+/* --- OTROS --- */
+.team-container { max-width: 1200px; margin: 0 auto; }
+.category-title { text-align: center; margin: 40px 0 30px 0; color: var(--oro); font-size: 1.5rem; letter-spacing: 2px; }
+.team-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-bottom: 50px; }
+.team-card { background: #fff; width: 250px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-radius: 8px; padding-bottom: 20px; transition: transform 0.3s ease; border: 1px solid #eee; }
+.team-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+.img-box { width: 100%; height: 250px; background-color: #ddd; border-radius: 8px 8px 0 0; overflow: hidden; }
+.img-box img { width: 100%; height: 100%; object-fit: cover; }
+.team-card h3 { margin: 15px 10px 5px; font-size: 0.95rem; color: var(--texto-oscuro); font-weight: 700; }
+.team-card .specialty { font-size: 0.8rem; color: var(--texto-gris); font-weight: 400; text-transform: uppercase; letter-spacing: 1px; }
+.divider { border: 0; height: 1px; background: #eee; margin: 40px auto; width: 80%; }
+.especialidad-item { display: flex; align-items: center; gap: 40px; margin-bottom: 60px; border-bottom: 1px solid #ddd; padding-bottom: 40px; }
+.esp-img { flex: 1; min-width: 300px; }
+.esp-img img { width: 100%; height: 250px; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: transform 0.3s; }
+.esp-img img:hover { transform: scale(1.03); }
+.esp-texto { flex: 1.5; }
+.esp-texto h2 { color: #000; margin-bottom: 15px; font-size: 1.8rem; }
+.esp-texto p { font-size: 1rem; color: #444; }
+
+/* MEDIA QUERIES (Móvil) */
+@media (max-width: 1100px) {
+    .navbar { display: flex; justify-content: space-between; padding: 0 20px; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; position: static; }
+    .logo-central { margin: 0 auto; transform: translateX(-15px); }
+    .logo-top { height: 70px; }
+    .about-container, .contact-container { grid-template-columns: 1fr; text-align: center; }
+    body::before { background: rgba(0,0,0,0.7); }
+    .hero-content h1 { font-size: 2.5rem; }
+    .especialidad-item { flex-direction: column; text-align: center; }
+    .esp-img { width: 100%; }
+    .about-container { justify-content: center; }
+    .about-text { text-align: center; }
+    .about-text div { justify-content: center; }
+}
+
+/* --- ESTILOS EXTRA --- */
+.hero-mini { height: 50vh; display: flex; justify-content: center; align-items: center; text-align: center; background: linear-gradient(to bottom, #000000 0%, #111111 100%); padding-top: 80px; }
+.testimonio-section { background-color: #000; padding: 0; overflow: hidden; position: relative; min-height: 80vh; display: flex; align-items: center; }
+.bg-darker { background-color: #050505; }
+.testimonio-container { display: flex; width: 100%; max-width: 1400px; margin: 0 auto; align-items: center; justify-content: space-between; }
+.reverse-layout { flex-direction: row-reverse; }
+.video-wrapper { flex: 1; position: relative; height: 80vh; overflow: hidden; min-width: 50%; }
+.video-wrapper video { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: opacity 0.3s; }
+.video-wrapper video:hover { opacity: 1; }
+.video-overlay { position: absolute; top: 0; bottom: 0; width: 25%; z-index: 2; pointer-events: none; }
+.overlay-right { right: 0; background: linear-gradient(to right, transparent 0%, #000000 100%); }
+.overlay-left { left: 0; background: linear-gradient(to left, transparent 0%, #000000 100%); }
+.bg-darker .overlay-left { background: linear-gradient(to left, transparent 0%, #050505 100%); }
+.text-wrapper { flex: 0.8; padding: 60px; color: #fff; z-index: 10; }
+.align-left { text-align: left; padding-right: 10%; }
+.align-right { text-align: right; padding-left: 10%; }
+.cita-icon { font-size: 6rem; color: var(--oro); line-height: 1; font-family: serif; opacity: 0.5; display: block; margin-bottom: -20px; }
+.text-wrapper h2 { font-size: 2.5rem; color: #fff; margin-bottom: 10px; line-height: 1.2; }
+.paciente-name { color: var(--oro); text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 30px; font-weight: 600; }
+.testimonio-body { font-size: 1.1rem; color: #ccc; line-height: 1.8; margin-bottom: 40px; font-style: italic; }
+.btn-gold { display: inline-block; border: 1px solid var(--oro); color: var(--oro); padding: 15px 40px; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; transition: 0.4s; }
+.btn-gold:hover { background-color: var(--oro); color: #000; }
+@media (max-width: 900px) {
+    .testimonio-container { flex-direction: column !important; }
+    .video-wrapper { width: 100%; height: 50vh; }
+    .video-overlay { width: 100%; height: 30%; top: auto; bottom: 0; left: 0; background: linear-gradient(to bottom, transparent 0%, #000 100%) !important; }
+    .text-wrapper { text-align: center !important; padding: 40px 20px; }
+    .cita-icon { margin: 0 auto; display: inline-block; }
+}
+.lab-section { background-color: #000; min-height: 100vh; display: flex; align-items: center; position: relative; padding-top: 80px; overflow: hidden; }
+.lab-container { display: flex; width: 100%; max-width: 1400px; margin: 0 auto; align-items: center; justify-content: space-between; }
+.lab-text { flex: 1; padding: 0 5%; color: #fff; z-index: 10; }
+.lab-text h1 { font-size: 3rem; color: #fff; margin-bottom: 20px; }
+.lab-text p { font-size: 1.1rem; color: #ccc; line-height: 1.8; margin-bottom: 30px; }
+.lab-benefits { list-style: none; margin-bottom: 40px; }
+.lab-benefits li { margin-bottom: 15px; color: #ddd; font-size: 1rem; }
+.lab-benefits strong { color: var(--oro); }
+.lab-image-wrapper { flex: 1.2; position: relative; height: 100vh; }
+.lab-image-wrapper img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+.fade-overlay { position: absolute; top: 0; left: 0; width: 40%; height: 100%; background: linear-gradient(to right, #000000 0%, transparent 100%); pointer-events: none; }
+@media (max-width: 900px) {
+    .lab-container { flex-direction: column; }
+    .lab-section { padding-top: 100px; padding-bottom: 50px; height: auto; display: block; }
+    .lab-text { padding: 40px 20px; text-align: center; }
+    .lab-benefits { text-align: left; display: inline-block; }
+    .lab-image-wrapper { height: 50vh; width: 100%; }
+    .fade-overlay { width: 100%; height: 30%; top: 0; left: 0; background: linear-gradient(to bottom, #000 0%, transparent 100%); }
+}
+
+/* ================================================================= */
+/* ================= CORRECCIÓN FORZADA DE BOTONES ================= */
+/* ================================================================= */
+
+/* --- 1. Botón "AGENDAR CITA" (Hero) --- */
+.hero-btns .btn-primary {
+    background-color: transparent !important;
+    color: #fff !important;
+    border: 1px solid #fff !important;
+}
+.hero-btns .btn-primary:hover {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+/* --- 2. Botón "VER HISTORIAS DE ÉXITO" (Historia) --- */
+/* Identificado por href="testimonios.html" */
+a[href*="testimonios"].btn-primary {
+    background-color: transparent !important;
+    color: #ffffff !important; /* CORREGIDO: Letras Blancas en reposo */
+    border: 1px solid #ffffff !important;
+}
+a[href*="testimonios"].btn-primary:hover {
+    background-color: #ffffff !important; /* Fondo Blanco */
+    color: #000000 !important; /* Letras Negras */
+}
+
+/* --- 3. Botón "LABORATORIO PROPIO" (Historia) --- */
+/* Identificado por href="laboratorio.html" */
+a[href*="laboratorio"].btn-primary {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: 1px solid #000000 !important;
+}
+a[href*="laboratorio"].btn-primary:hover {
+    background-color: #ffffff !important; /* Fondo Blanco */
+    color: #000000 !important; /* Letras Negras */
+}
+
+/* --- 4. Botón "CONOCE A NUESTROS DOCTORES" (Servicios) --- */
+/* Identificado por href="equipo.html" */
+a[href*="equipo"].btn-primary {
+    background-color: transparent !important;
+    color: #000000 !important; /* Letras Negras en reposo */
+    border: 1px solid #000000 !important;
+}
+a[href*="equipo"].btn-primary:hover {
+    background-color: #000000 !important; /* CORREGIDO: Fondo NEGRO */
+    color: #ffffff !important; /* CORREGIDO: Letras BLANCAS */
+}
+
+/* --- 5. Botón "VER TODOS LOS DETALLES" (Servicios) --- */
+/* Identificado por href="especialidades.html" */
+a[href*="especialidades"].btn-primary {
+    background-color: #222222 !important;
+    color: #ffffff !important;
+    border: 1px solid #222222 !important;
+}
+a[href*="especialidades"].btn-primary:hover {
+    background-color: #ffffff !important;
+    color: #222222 !important;
+}
+/* ================= CONVENIOS ================= */
+.convenios {
+    padding: 80px 5%;
+    background-color: var(--blanco-fondo); /* Fondo blanco para tapar la foto fija */
+    position: relative;
+    z-index: 20; /* Asegura que esté encima del fondo */
+    text-align: center;
+    border-bottom: 1px solid #eee; /* Línea sutil de separación con contacto */
+}
+
+.convenios h2 {
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+}
+
+.logos-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px; /* Espacio entre logos */
+    flex-wrap: wrap;
+}
+
+.logo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.logo-item:hover {
+    transform: translateY(-5px); /* Pequeña elevación al pasar el mouse */
+}
+
+.logo-item img {
+    height: 120px; /* Tamaño controlado del logo */
+    width: auto;
+    object-fit: contain;
+    /* Efecto: Escala de grises en reposo */
+    filter: grayscale(100%) opacity(0.7); 
+    transition: all 0.4s ease;
+    margin-bottom: 15px;
+}
+
+/* AL PASAR EL MOUSE: Color original */
+.logo-item:hover img {
+    filter: grayscale(0%) opacity(1);
+}
+
+.logo-item p {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--texto-gris);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+/* ================= FOOTER PREMIUM (ESTILO REFERENCIA) ================= */
+.main-footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 80px 0 0 0;
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 50;
+    border-top: 4px solid var(--oro); /* Detalle dorado arriba */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr; /* 3 Columnas */
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+/* COLUMNA 1: LOGO */
+.footer-logo {
+    height: 80px;
+    width: auto;
+    margin-bottom: 20px;
+    filter: brightness(0) invert(1); /* Vuelve el logo blanco si es oscuro */
+}
+
+.footer-desc {
+    color: #ccc;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+.btn-footer {
+    background-color: #fff !important;
+    color: #000 !important;
+    border: 1px solid #fff;
+    padding: 12px 30px;
+    font-size: 0.85rem;
+}
+.btn-footer:hover {
+    background-color: transparent !important;
+    color: #fff !important;
+}
+
+/* COLUMNAS 2 y 3: TÍTULOS */
+.footer-col h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    margin-top: 10px; /* Separación visual */
+}
+
+/* Enlaces */
+.footer-links {
+    list-style: none;
+}
+.footer-links li {
+    margin-bottom: 12px;
+}
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.footer-links a:hover {
+    color: var(--oro);
+    padding-left: 5px; /* Pequeño movimiento al pasar mouse */
+}
+
+/* Textos informativos */
+.footer-col p {
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+/* BARRA INFERIOR (COPYRIGHT) */
+.footer-bar {
+    border-top: 1px solid #333;
+    padding: 25px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #050505;
+}
+
+.copyright {
+    color: #888;
+    font-size: 0.8rem;
+}
+
+.copyright strong {
+    color: var(--oro); /* "Agencia Captivx" en dorado */
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a svg {
+    width: 20px;
+    height: 20px;
+    fill: #fff;
+    transition: 0.3s;
+}
+
+.social-icons a:hover svg {
+    fill: var(--oro);
+    transform: translateY(-3px);
+}
+
+/* RESPONSIVE (Móvil) */
+@media (max-width: 900px) {
+    .footer-container {
+        grid-template-columns: 1fr; /* Una sola columna */
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .footer-desc {
+        margin: 0 auto 25px auto; /* Centrar texto */
+    }
+    
+    .footer-bar {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+/* ================= SECCIÓN LABORATORIO (CORREGIDO FINAL) ================= */
+.lab-section {
+    background-color: #000000;
+    /* 1. SOLUCIÓN AL TEXTO SOBREPUESTO: */
+    /* Agregamos mucho padding arriba para bajar el contenido y que no toque el menú */
+    padding-top: 180px; 
+    padding-bottom: 80px;
+    
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh; /* Ocupa toda la pantalla */
+    display: flex;
+    align-items: center;
+}
+
+.lab-container.full-width-layout {
+    /* 2. SOLUCIÓN AL ZOOM: */
+    /* Usamos el 100% del ancho para que el video siempre toque el borde derecho */
+    width: 100%; 
+    max-width: 100%; /* Quitamos el límite para que no se centre al alejar zoom */
+    padding: 0; /* Quitamos padding general */
+    
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+/* --- TEXTO (IZQUIERDA) --- */
+.lab-text {
+    flex: 0 0 45%; /* El texto ocupa el 45% del ancho de la pantalla */
+    z-index: 10;
+    /* Margen izquierdo para separar del borde de la pantalla */
+    padding-left: 8%; 
+    padding-right: 40px;
+}
+
+.lab-text h1 {
+    color: #fff;
+    font-size: 3.5rem; 
+    margin-bottom: 25px;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+.lab-text p {
+    color: #ccc;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.lab-text strong { color: #fff; font-weight: 600; }
+
+.lab-features { margin-top: 30px; list-style: none; }
+.lab-features li {
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    color: var(--oro);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* --- VIDEO (DERECHA - PEGADO AL BORDE) --- */
+.lab-video-container {
+    flex: 1; /* Toma todo el espacio restante a la derecha */
+    height: 100vh; /* Altura completa de la pantalla */
+    position: absolute; /* Lo sacamos del flujo normal para pegarlo bien */
+    top: 0;
+    right: 0;
+    width: 60%; /* Ancho del video (ajustable) */
+    
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Alinea el video a la derecha */
+    
+    /* MÁSCARA DE DIFUMINADO (CORREGIDA) */
+    /* Transparente a la izquierda -> Negro a la derecha */
+    /* Esto hace que el video se "funda" suavemente con el fondo negro del texto */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%, black 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 20%, black 100%);
+    
+    pointer-events: none; /* Para que no interfiera con clics si se superpone */
+}
+
+.lab-video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+/* RESPONSIVE (MÓVIL) */
+@media (max-width: 1000px) {
+    .lab-section {
+        padding-top: 120px; /* Menos padding en móvil */
+        min-height: auto;
+        display: block; /* Bloque normal en vez de flex */
+    }
+    
+    .lab-container.full-width-layout {
+        flex-direction: column;
+        display: block;
+    }
+    
+    .lab-text {
+        width: 100%;
+        padding: 0 20px; /* Padding normal a los lados */
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .lab-video-container {
+        position: relative; /* Vuelve al flujo normal */
+        width: 100%;
+        height: 400px;
+        right: auto;
+        top: auto;
+        
+        /* En móvil el degradado es de arriba hacia abajo */
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+        mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+    }
+}
+
+/* 2. ARREGLO CONVENIOS (Logos a Color -> Blanco y Negro) */
+.convenios { z-index: 20; position: relative; background: #fff; }
+
+.logo-item img {
+    filter: grayscale(0%) opacity(1) !important; /* Normal: A COLOR */
+    transition: all 0.4s ease;
+}
+.logo-item:hover img {
+    filter: grayscale(100%) opacity(0.6) !important; /* Hover: GRIS */
+    transform: scale(1.05);
+}
+
+/* 3. NUEVO FOOTER PREMIUM (Negro y Dorado) */
+.main-footer {
+    background-color: #000;
+    color: #fff;
+    padding-top: 80px;
+    border-top: 5px solid #D4AF37;
+    position: relative;
+    z-index: 50;
+}
+.footer-container {
+    max-width: 1200px; margin: 0 auto; padding: 0 5% 60px 5%;
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 50px;
+}
+.footer-logo { filter: brightness(0) invert(1); height: 70px; width: auto; margin-bottom: 20px;}
+.footer-col h3 { color: #fff; font-size: 1.3rem; margin-bottom: 20px; }
+.footer-links a { color: #aaa; text-decoration: none; }
+.footer-links a:hover { color: #D4AF37; }
+.footer-bottom { background-color: #111; padding: 20px 0; text-align: center; border-top: 1px solid #222; }
+.footer-bottom strong { color: #D4AF37; }
+
+/* Móvil Footer */
+@media (max-width: 900px) {
+    .footer-container { grid-template-columns: 1fr; text-align: center; }
+    .social-icons { justify-content: center; }
+}
+
+/* 4. CORRECCIÓN CONTACTO (Mapa Izquierda / Form Derecha) */
+.contact-container {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 60px;
+    align-items: center;
+}
+@media (max-width: 900px) {
+    .contact-container { grid-template-columns: 1fr !important; }
+}
+/* ================= BANNER COOKIES ================= */
+.cookie-banner {
+    position: fixed;
+    bottom: -100%; /* Oculto al principio */
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95); /* Negro casi sólido */
+    color: #fff;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    z-index: 3000; /* Encima de todo */
+    border-top: 1px solid var(--oro);
+    transition: bottom 0.5s ease-in-out;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
+}
+
+.cookie-banner p {
+    font-size: 0.9rem;
+    margin: 0;
+    color: #ccc;
+}
+
+.cookie-banner.show {
+    bottom: 0; /* Sube y se muestra */
+}
+
+/* En móvil, que se vea en columna */
+@media (max-width: 768px) {
+    .cookie-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+}
+/* CORRECCIÓN FINAL FOOTER: Iconos lejos del WhatsApp */
+@media (max-width: 900px) {
+    .social-icons {
+        margin-right: 0 !important; /* En celular quitamos el margen lateral */
+        margin-bottom: 80px; /* Y agregamos espacio ABAJO para que WhatsApp no tape */
+    }
+}
+
+/* ================================================================= */
+/* ============= SOLUCIÓN DEFINITIVA: SLIDER Y TEXTO =============== */
+/* ================================================================= */
+
+/* 1. SLIDER BLOQUEADO A LA IZQUIERDA (45%) */
+.about-slider.slide-left-effect {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60vw; /* Ancho fijo */
+    height: 510px;
+    z-index: 5;
+    pointer-events: none; /* Permite clics en botones de abajo */
+    overflow: hidden; 
+}
+
+/* 2. IMÁGENES DENTRO DEL SLIDER */
+.about-slider.slide-left-effect img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transform: translateX(100%); 
+    transition: transform 1.2s ease-in-out, opacity 1s ease-in-out;
+    
+    /* MÁSCARA SUTIL (Difuminado arriba y derecha) */
+    -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%), 
+                        linear-gradient(to bottom, transparent 0%, black 10%, black 100%);
+    mask-image: linear-gradient(to right, black 85%, transparent 100%), 
+                linear-gradient(to bottom, transparent 0%, black 10%, black 100%);
+    
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+}
+
+/* 3. ESTADOS DE ANIMACIÓN */
+.about-slider.slide-left-effect img.active {
+    opacity: 0.9;
+    transform: translateX(0);
+}
+.about-slider.slide-left-effect img.exit {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+/* 4. TEXTO EMPUJADO A LA DERECHA (50%) */
+.about-container {
+    width: 50vw !important; 
+    margin-left: 50vw !important; /* Margen para no chocar */
+    display: flex !important;
+    justify-content: flex-end !important;
+}
+
+/* 5. RESTAURAR EN MÓVIL */
+@media (max-width: 1100px) {
+    .about-container {
+        width: 100% !important;
+        margin-left: 0 !important;
+        justify-content: center !important;
+    }
+    .about-slider.slide-left-effect {
+        position: relative;
+        width: 100%;
+        height: 300px;
+    }
+}
+
+/* ================= CARRUSEL DE ESPECIALIDADES (CORREGIDO DARK) ================= */
+.specialty-section {
+    width: 100%;
+    min-height: 100vh;
+    background: transparent !important; /* <--- IMPORTANTE: Fondo transparente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+.specialty-container {
+    width: 90%;
+    max-width: 1400px;
+    height: 600px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* El Slider en sí */
+.specialty-slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* CADA DIAPOSITIVA (Slide) */
+.specialty-slide {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+    transform: scale(0.95);
+    pointer-events: none;
+}
+
+/* Slide Activa */
+.specialty-slide.active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: all;
+    z-index: 2;
+}
+
+/* TEXTO (Izquierda) - AHORA EN BLANCO */
+.sp-content {
+    flex: 1;
+    padding-right: 50px;
+    padding-left: 5%;
+    z-index: 10;
+}
+.sp-content h2 {
+    font-size: 3rem;
+    color: #ffffff; /* <--- CAMBIO: Texto blanco */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8); /* Sombra para leer mejor */
+}
+.sp-content p {
+    font-size: 1.1rem;
+    color: #e0e0e0; /* <--- CAMBIO: Gris claro */
+    margin-bottom: 30px;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+}
+
+/* IMAGEN (Derecha) */
+.sp-image {
+    flex: 1.2;
+    height: 100%;
+    position: relative;
+    /* Efecto Fantasma / Difuminado */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%, black 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 20%, black 100%);
+}
+.sp-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* BOTONES DE NAVEGACIÓN (Flechas) */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5); /* Fondo semitransparente */
+    border: 1px solid #fff; /* Borde blanco */
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 20;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-btn:hover {
+    background-color: #D4AF37;
+    border-color: #D4AF37;
+    color: #000;
+}
+.prev-btn { left: 0; }
+.next-btn { right: 0; }
+/* --- BOTÓN DENTRO DEL SLIDER (NUEVO) --- */
+.sp-content .btn-primary {
+    background-color: #ffffff !important; /* Fondo Blanco Sólido */
+    color: #000000 !important;          /* Texto Negro */
+    border: 2px solid #ffffff !important; /* Borde Blanco */
+    margin-top: 25px;                   /* Un poco más de espacio arriba */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Sombra suave para que "flote" */
+}
+
+/* Al pasar el mouse (Hover) */
+.sp-content .btn-primary:hover {
+    background-color: #D4AF37 !important; /* Fondo Dorado */
+    border-color: #D4AF37 !important;     /* Borde Dorado */
+    color: #ffffff !important;          /* Texto Blanco */
+    transform: translateY(-3px);          /* Pequeña elevación */
+}
+/* RESPONSIVE (Celular) */
+@media (max-width: 900px) {
+    .specialty-slide { flex-direction: column-reverse; text-align: center; }
+    .sp-content { padding: 20px; }
+    .sp-image { width: 100%; height: 300px; -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 100%); mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 100%); }
+    .sp-content h2 { font-size: 2rem; }
+    .nav-btn { top: auto; bottom: 20px; }
+    .prev-btn { left: 20px; }
+    .next-btn { right: 20px; }
+}
+/* FORZAR VISIBILIDAD DEL BOTÓN */
+.scroll-top-btn {
+    z-index: 9999 !important; /* Capa superior absoluta */
+}
+
+/* ========================================================= */
+/* ============ REPARACIÓN URGENTE: BOTÓN ARRIBA =========== */
+/* ========================================================= */
+
+.scroll-top-btn {
+    position: fixed !important; /* Lo saca del flujo para que no ocupe espacio abajo */
+    bottom: 30px !important;    /* Lo pega al fondo de la pantalla */
+    left: 30px !important;      /* Lo pega a la izquierda */
+    width: 50px !important;     /* Tamaño fijo */
+    height: 50px !important;    /* Tamaño fijo */
+    background-color: #D4AF37 !important; /* Fondo Dorado */
+    color: #000000 !important;  /* Flecha negra */
+    border-radius: 50% !important; /* Círculo perfecto */
+    
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-decoration: none !important;
+    
+    z-index: 9999 !important; /* Encima de todo */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important;
+    
+    /* Animación de entrada */
+    opacity: 0; 
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+/* Estado visible (controlado por JS) */
+.scroll-top-btn.show-btn {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
+
+/* Al pasar el mouse */
+.scroll-top-btn:hover {
+    background-color: #000000 !important; /* Fondo negro */
+    color: #D4AF37 !important; /* Flecha dorada */
+    transform: translateY(-5px) !important;
+}
+
+/* Arreglo del ícono SVG */
+.scroll-top-btn svg {
+    width: 20px !important;
+    height: 20px !important;
+    fill: currentColor !important;
+}
+
+/* Ajuste para celular */
+@media (max-width: 900px) {
+    .scroll-top-btn {
+        bottom: 90px !important; /* Un poco más arriba para no chocar */
+        left: 20px !important;
+        width: 45px !important;
+        height: 45px !important;
+    }
+}
+/* ================= LABORATORIO ESTILO CINEMÁTICO ================= */
+
+.lab-section-cinema {
+    background-color: #000;
+    padding-top: 120px; /* Espacio para el menú */
+    overflow: hidden; /* Evita barras de scroll horizontales */
+}
+
+/* Contenedor de cada Fila (Flexbox) */
+.lab-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80vh; /* Cada sección ocupa casi toda la pantalla */
+    position: relative;
+    padding: 0;
+}
+
+/* --- MITAD TEXTO --- */
+.lab-content {
+    width: 45%;
+    padding: 0 5%;
+    z-index: 2; /* El texto siempre encima */
+}
+
+.lab-content h1 {
+    font-size: 3.5rem;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.lab-content p {
+    color: #ccc;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.lab-subtitle {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* --- MITAD IMAGEN/VIDEO --- */
+.lab-media {
+    width: 55%; /* Ocupa un poco más de la mitad */
+    height: 80vh;
+    position: relative;
+}
+
+.lab-media img, 
+.lab-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen para llenar el espacio sin deformar */
+}
+
+/* --- LA MAGIA: LOS DIFUMINADOS (FADES) --- */
+
+/* 1. Difuminado para la imagen de la DERECHA (Fila 1) 
+   Crea un negro sólido a la izquierda que se vuelve transparente hacia la derecha */
+.fade-overlay-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%; /* El degradado ocupa el 40% de la imagen */
+    height: 100%;
+    background: linear-gradient(to right, #000 10%, transparent 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* 2. Difuminado para el video de la IZQUIERDA (Fila 2) 
+   Crea un negro sólido a la derecha que se vuelve transparente hacia la izquierda */
+.fade-overlay-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(to left, #000 10%, transparent 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* --- RESPONSIVE (Celular) --- */
+@media (max-width: 900px) {
+    .lab-row {
+        flex-direction: column;
+        min-height: auto;
+        padding-bottom: 60px;
+    }
+
+    /* Para invertir el orden en celular si quieres (primero imagen luego texto) */
+    /* .reverse-mobile { flex-direction: column-reverse; } */
+
+    .lab-content {
+        width: 100%;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .lab-media {
+        width: 100%;
+        height: 300px; /* Altura fija en celular */
+    }
+
+    /* En celular, cambiamos el difuminado para que sea de abajo hacia arriba */
+    .fade-overlay-left, .fade-overlay-right {
+        width: 100%;
+        height: 30%;
+        background: linear-gradient(to bottom, #000, transparent);
+    }
+    
+    .fade-overlay-right {
+        top: auto; 
+        bottom: 0;
+        background: linear-gradient(to top, #000, transparent);
+    }
+}
+/* ========================================================= */
+/* BUSCAR: CORRECCION_MOVIL - AJUSTES PARA CELULAR           */
+/* ========================================================= */
+
+@media (max-width: 768px) {
+    /* 1. Alinea botones uno debajo de otro para que no se amontonen */
+    .hero-btns, 
+    .about-text div, 
+    .hero-buttons, 
+    .hero-btns-container {
+        display: flex !important;
+        flex-direction: column !important; 
+        align-items: center !important;
+        gap: 15px !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+
+    /* 2. Hace que los botones tengan el mismo ancho y no se desalineen */
+    .btn-primary, 
+    .btn-secondary, 
+    .btn-historia-hover,
+    .btn-gold {
+        width: 85% !important; 
+        max-width: 280px !important;
+        text-align: center !important;
+        margin: 0 auto !important;
+        display: block !important;
+    }
+
+    /* 3. Ajuste de la "X" para cerrar el menú */
+    /* Corrección para que la X sea clickable sí o sí */
+
+}
+/* ========================================================= */
+/* REEMPLAZAR: FIX_LOGO_ABSOLUTO - Centrado Matemático       */
+/* ========================================================= */
+@media (max-width: 1100px) {
+    .navbar {
+        position: relative !important; /* Referencia para el centro */
+        justify-content: flex-end !important; /* Manda la hamburguesa a la derecha */
+        min-height: 90px !important; /* Altura mínima para que quepa el logo */
+        padding-right: 25px !important; /* Espacio para la hamburguesa */
+    }
+
+    .logo-central {
+        position: absolute !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important; /* La clave del centro perfecto */
+        margin: 0 !important;
+        width: auto !important;
+        z-index: 10; /* Asegura que esté por encima */
+    }
+    
+    .logo-top {
+        height: 75px !important; /* Ajuste de tamaño seguro para móvil */
+    }
+}
+/* ========================================================= */
+/* BUSCAR: FIX_HISTORIA_MOVIL - Texto arriba, Slider abajo   */
+/* ========================================================= */
+@media (max-width: 1100px) {
+    /* 1. Convertimos la sección 'about' en una columna vertical */
+    .about {
+        display: flex !important;
+        flex-direction: column !important; /* Apila los elementos */
+        height: auto !important; /* Altura automática para que quepa todo */
+        min-height: auto !important;
+        padding-top: 50px !important;
+        padding-bottom: 0 !important;
+    }
+
+    /* 2. El TEXTO va primero (Orden 1) */
+    .about-container {
+        order: 1 !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+        padding: 0 20px 40px 20px !important; /* Espacio abajo para separar del slider */
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .about-text {
+        text-align: center !important;
+        margin: 0 auto !important;
+    }
+
+    /* Forzamos que los botones internos también se centren */
+    .about-text div {
+        justify-content: center !important;
+    }
+
+    /* 3. El CARRUSEL va segundo (Orden 2) y ocupa el ancho completo */
+    .about-slider.slide-left-effect {
+        order: 2 !important;
+        position: relative !important; /* Ya no absoluto, ahora ocupa su propio espacio */
+        width: 100% !important;
+        height: 350px !important; /* Altura suficiente para ver la foto */
+        left: auto !important;
+        bottom: auto !important;
+        margin-top: 0 !important;
+    }
+
+    /* Ajuste de la imagen dentro del slider para que no se recorte feo */
+    .about-slider.slide-left-effect img {
+        object-position: center top !important; /* Centra la parte importante de la foto */
+    }
+}
+/* ========================================================= */
+/* CORRECCIÓN FINAL X DE CIERRE (Visible hasta 1100px)       */
+/* ========================================================= */
+@media (max-width: 1100px) {
+    .close-menu {
+        position: absolute !important;
+        top: 25px !important;
+        right: 30px !important;
+        
+        /* ESTILO VISUAL */
+        font-size: 4rem !important; /* Más grande para verla bien */
+        color: #D4AF37 !important;  /* Dorado */
+        font-weight: 300 !important;
+        
+        /* FUNCIONALIDAD (CLAVE PARA EL CELULAR) */
+        display: block !important;
+        cursor: pointer !important;
+        z-index: 99999 !important; /* Encima de Dios si es necesario */
+        pointer-events: auto !important; /* Forza a recibir toques */
+        
+        /* Área de toque más grande (invisible pero tocable) */
+        padding: 20px !important; 
+        margin: -20px !important; /* Compensa el padding */
+    }
+}
+
+/* Ocultar la X en escritorio (pantallas gigantes) */
+@media (min-width: 1101px) {
+    .close-menu {
+        display: none !important;
+    }
+}
+/* ========================================================= */
+/* CARRUSEL ESPECIALIDADES (Estilo Cápsula Gris)             */
+/* ========================================================= */
+
+.slider-wrapper-interactive {
+    position: relative;
+    max-width: 1200px;
+    margin: 50px auto; /* Un poco más separado de arriba */
+    
+    /* EL FONDO GRIS QUE PEDISTE */
+    background-color: #f4f4f4; /* Gris muy suave y elegante */
+    border-radius: 20px;       /* Bordes redondeados */
+    padding: 30px 70px;        /* Espacio interno amplio */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Sombra suave para que flote */
+    border: 1px solid #e5e5e5; /* Borde sutil */
+    
+    display: flex;
+    align-items: center;
+}
+
+.slider-track-interactive {
+    display: flex;
+    gap: 0; 
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    cursor: grab;
+    
+    /* Ocultar barra scroll */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.slider-track-interactive::-webkit-scrollbar {
+    display: none;
+}
+
+.slider-track-interactive.active {
+    cursor: grabbing;
+    scroll-behavior: auto;
+}
+
+/* Los Textos */
+.slide-item {
+    min-width: 250px;
+    text-align: center;
+    /* Separador vertical elegante */
+    border-right: 1px solid #dcdcdc; 
+    font-size: 0.95rem;
+    font-weight: 600; /* Un poco más negrita para resaltar */
+    letter-spacing: 1px;
+    color: #444; /* Gris oscuro, no negro puro */
+    user-select: none;
+    padding: 5px 0; /* Ajuste vertical */
+}
+
+/* Quitar la línea del último elemento */
+.slide-item:last-child {
+    border-right: none;
+}
+
+/* Botones Flecha (Ahora blancos para contrastar con el gris) */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    background: #fff; /* Fondo blanco */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra pequeña */
+    border: none;
+    
+    color: #333;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.slider-btn:hover {
+    background-color: #000;
+    color: #D4AF37; /* Dorado al pasar el mouse */
+    transform: translateY(-50%) scale(1.1); /* Efecto pop */
+}
+
+.prev-btn-specialty { left: 20px; } /* Ajustados para quedar dentro de la cápsula */
+.next-btn-specialty { right: 20px; }
+
+/* Ajuste Móvil */
+@media (max-width: 768px) {
+    .slider-wrapper-interactive {
+        padding: 20px; /* Menos padding */
+        background-color: #f9f9f9; /* Un gris aún más suave en celular */
+        border-radius: 15px;
+    }
+    .slider-btn {
+        display: none; /* Sin flechas en celular */
+    }
+    .slide-item {
+        min-width: 180px;
+        font-size: 0.85rem;
+        border-right: 1px solid #eee;
+    }
+}
+/* ========================================================= */
+/* CONTACTO REDISEÑADO (Solo Mapa Grande)                    */
+/* ========================================================= */
+
+.contact-container {
+    display: block !important; /* Quita las columnas */
+    text-align: center !important; /* Centra textos */
+    max-width: 1000px !important; /* Ancho máximo contenido */
+    margin: 0 auto !important;
+}
+
+.contact-info {
+    width: 100% !important;
+    text-align: center !important;
+}
+
+/* El mapa más grande e impactante */
+.map-container {
+    margin-top: 40px !important;
+    width: 100% !important;
+    height: 500px !important; /* Altura forzada */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+    border-radius: 20px !important; /* Bordes redondos en el mapa */
+    overflow: hidden !important;
+}
+
+.map-container iframe {
+    height: 100% !important; /* Llena el contenedor */
+    width: 100% !important;
+}
+/* ========================================================= */
+/* AJUSTE SOLO PARA ESPECIALIDADES (Bajar imagen del tope)   */
+/* ========================================================= */
+
+/* Opción A: Bajar todo el bloque (Recomendado) */
+.specialty-section {
+    padding-top: 150px !important; /* Aumentamos de 100px a 150px para dar aire arriba */
+}
+
+/* Opción B: Si quieres bajar SOLO la imagen un poco más que el texto */
+.sp-image {
+    margin-top: 40px !important; /* Empuja solo la foto hacia abajo */
+}
+/* ========================================================= */
+/* CORRECCIÓN FINAL CELULAR: ESPECIALIDADES (Flechas Arriba) */
+/* ========================================================= */
+@media (max-width: 900px) {
+    
+    /* 1. FLECHAS: Las subimos para que floten sobre la IMAGEN */
+    .nav-btn {
+        top: 150px !important; /* Justo a la mitad de la foto (que mide 300px) */
+        bottom: auto !important;
+        transform: translateY(-50%) !important;
+        
+        /* Estilo más sutil para no tapar la foto */
+        background-color: rgba(255, 255, 255, 0.2) !important; 
+        border: 1px solid rgba(255, 255, 255, 0.5) !important;
+        backdrop-filter: blur(2px); /* Efecto vidrio */
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 1.2rem !important;
+    }
+
+    /* Pegarlas un poco más a los bordes */
+    .prev-btn { left: 10px !important; }
+    .next-btn { right: 10px !important; }
+
+    /* 2. BOTÓN AGENDAR: Ahora tiene todo el espacio abajo libre */
+    .sp-content {
+        padding: 20px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    .sp-content .btn-primary {
+        margin-top: 25px !important;
+        width: 90% !important; /* Más ancho para que sea fácil de tocar */
+        max-width: 300px !important;
+        text-align: center !important;
+        
+        /* Color sólido para resaltar */
+        background-color: #fff !important;
+        color: #000 !important;
+        border: none !important;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2) !important;
+    }
+
+    /* Ajuste de la imagen para asegurar que las flechas calcen bien */
+    .sp-image {
+        height: 300px !important; 
+        width: 100% !important;
+    }
+}
+/* ========================================================= */
+/* FORZAR CINTA NEGRA EDITORIAL (Slider de texto)            */
+/* ========================================================= */
+
+.slider-container { 
+    width: 100% !important; 
+    overflow: hidden !important; 
+    
+    /* CAMBIO A NEGRO */
+    background: #000000 !important; 
+    
+    padding: 25px 0 !important; 
+    margin-top: 0 !important; /* Pegado a la sección anterior */
+    border-top: 1px solid #222 !important; 
+    border-bottom: 1px solid #222 !important; 
+}
+
+.slider-track { 
+    display: flex !important; 
+    width: calc(300px * 14) !important; 
+    animation: scroll-right 40s linear infinite !important; 
+}
+
+.slide { 
+    width: 300px !important; 
+    
+    /* TEXTO BLANCO */
+    color: #ffffff !important; 
+    
+    font-family: 'Montserrat', sans-serif !important; 
+    font-size: 0.9rem !important; 
+    font-weight: 400 !important; 
+    letter-spacing: 3px !important; 
+    text-transform: uppercase !important;
+    display: flex !important; 
+    align-items: center !important; 
+    justify-content: center !important; 
+    
+    /* Quitamos las líneas grises viejas */
+    border-right: none !important; 
+    border: none !important; 
+}
+
+/* AGREGAR EL PUNTO DORADO ENTRE PALABRAS */
+.slide::after {
+    content: "•";
+    color: #D4AF37; /* Color Oro */
+    font-size: 1.5rem;
+    margin-left: 40px;
+    line-height: 0;
+}
+/* ========================================================= */
+/* SOLUCIÓN FINAL CARRUSEL: ETIQUETAS FLEXIBLES (AUTO-WIDTH) */
+/* ========================================================= */
+
+@media (max-width: 768px) {
+    
+    /* 1. La pista se comporta como una fila de etiquetas */
+    .slider-track-interactive {
+        display: flex !important;
+        gap: 15px !important; /* Espacio real entre elementos */
+        padding: 0 10px !important; /* Un poco de aire a los lados */
+    }
+
+    /* 2. Cada ítem se adapta a su contenido (NI MÁS, NI MENOS) */
+    .slide-item {
+        /* MAGIA AQUÍ: */
+        flex: 0 0 auto !important; /* No se estira ni se encoge, toma su tamaño real */
+        width: auto !important;     /* El ancho depende del texto */
+        min-width: 0 !important;    /* Reseteamos mínimos anteriores */
+        max-width: none !important; /* Quitamos límites máximos */
+        
+        /* Estética */
+        white-space: nowrap !important; /* Obliga a mantenerse en una sola línea */
+        padding: 10px 20px !important;  /* Espacio cómodo alrededor del texto */
+        font-size: 0.85rem !important;
+        
+        /* Borde redondeado individual para que parezcan botones/píldoras */
+        border-right: none !important; /* Quitamos la línea divisoria vieja */
+        background: #fff !important;   /* Fondo blanco para resaltar */
+        border-radius: 50px !important; /* Forma de cápsula */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
+        border: 1px solid #eee !important;
+    }
+    
+    /* 3. Ajuste del contenedor gris para darles espacio */
+    .slider-wrapper-interactive {
+        background: transparent !important; /* Quitamos el fondo gris general en móvil para limpieza */
+        box-shadow: none !important;
+        border: none !important;
+        padding: 10px 0 !important;
+    }
+}/* ========================================================= */
+/* CORRECCIÓN FINAL REAL: MOSTRAR IMAGEN COMPLETA (MÓVIL)    */
+/* ========================================================= */
+
+@media (max-width: 900px) {
+
+    /* 1. CONTENEDOR DE IMAGEN: Liberar la altura */
+    .sp-image {
+        /* Altura automática: crecerá lo que la foto necesite */
+        height: auto !important; 
+        
+        /* Quitamos restricciones anteriores */
+        flex: none !important; 
+        min-height: 0 !important;
+        
+        width: 100% !important;
+        margin-bottom: 25px !important; /* Espacio entre foto y texto */
+        overflow: visible !important; /* Asegurar que se vea todo */
+    }
+
+    /* 2. LA IMAGEN REAL: Proporción original sin recorte */
+    .sp-image img {
+        width: 100% !important;
+        height: auto !important;     /* Mantiene su forma original (no se estira) */
+        
+        /* CLAVE: Quitamos el 'cover' para que no recorte nada */
+        object-fit: unset !important; 
+        object-position: unset !important;
+    }
+    
+    /* Mantenemos el ajuste para subir todo el bloque y que no haya mucho hueco arriba */
+    .specialty-section {
+        padding-top: 70px !important;
+        align-items: flex-start !important;
+        height: auto !important; /* Permite scroll si la foto es muy alta */
+    }
+    
+    /* Asegurar que el texto de abajo tenga espacio */
+    .sp-content {
+        padding-bottom: 40px !important;
+    }
+}
+/* ================= ANIMACIÓN WHATSAPP (Latido) ================= */
+.whatsapp-float { /* Asegúrate de ponerle esta clase a tu botón verde */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+html {
+    scroll-behavior: smooth;
+}
+.history-hero {
+    height: 60vh; /* Un poco más alto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    
+    /* IMAGEN DE FONDO CON FILTRO OSCURO */
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('img/fondo-historia.jpg'); /* Asegúrate de tener esta imagen */
+    background-size: cover;
+    background-attachment: fixed; /* ESTO CREA EL EFECTO PARALLAX */
+    background-position: center;
+    
+    margin-top: 0;
+    border-bottom: 1px solid #222;
+}
+/* ===============================
+   HISTORIA – SCROLL EFFECT
+================================ */
+
+/* Fondo por sección */
+.historia-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.8s ease;
+    padding: 4rem 0;
+}
+
+/* Colores de fondo */
+.historia-section[data-bg="dark"] {
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+.historia-section[data-bg="gray"] {
+    background-color: #2b2b2b;
+    color: #ffffff;
+}
+
+.historia-section[data-bg="light"] {
+    background-color: #f5f3ef;
+    color: #1f1f1f;
+}
+
+/* Contenedor */
+.historia-wrapper {
+    width: 85%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* Invertir layout */
+.historia-wrapper.reverse {
+    direction: rtl;
+}
+.historia-wrapper.reverse > * {
+    direction: ltr;
+}
+
+/* Texto */
+.historia-text h2 {
+    font-family: 'Libre Caslon Text', serif;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+.historia-text p {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    max-width: 460px;
+}
+
+/* Numeración */
+.historia-step {
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    color: #d4af37;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* Imagen */
+.historia-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+}
+
+/* ===============================
+   ANIMACIONES
+================================ */
+
+.historia-image,
+.historia-text {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.9s ease;
+}
+
+/* Slides */
+.slide-right {
+    transform: translateX(80px);
+}
+
+.slide-left {
+    transform: translateX(-80px);
+}
+
+/* Activo */
+.historia-section.active .historia-image,
+.historia-section.active .historia-text {
+    opacity: 1;
+    transform: translate(0);
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+    .historia-wrapper {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .historia-text p {
+        margin: auto;
+    }
+}
+/* ==================================================
+   HISTORIA SCROLL – VERSION ESTABLE (SAFE)
+================================================== */
+
+/* Secciones */
+.historia-section {
+    padding: 120px 0;
+    transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+/* Fondos */
+.historia-section[data-bg="dark"] {
+    background-color: #050505;
+    color: #ffffff;
+}
+
+.historia-section[data-bg="gray"] {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.historia-section[data-bg="light"] {
+    background-color: #f4f1eb;
+    color: #111111;
+}
+
+/* Wrapper */
+.historia-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* Invertido */
+.historia-wrapper.reverse {
+    direction: rtl;
+}
+.historia-wrapper.reverse > * {
+    direction: ltr;
+}
+
+/* Texto */
+.historia-step {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 4px;
+    font-size: 0.85rem;
+    color: #D4AF37;
+    font-weight: 600;
+}
+
+.historia-text h2 {
+    font-family: 'Libre Caslon Text', serif;
+    font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+    margin: 20px 0;
+}
+
+.historia-text p {
+    max-width: 480px;
+    font-size: 1rem;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+/* Imagen */
+.historia-image {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+}
+
+.historia-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 1.2s ease, opacity 1.2s ease;
+}
+
+/* Animaciones base */
+.slide-right,
+.slide-left {
+    opacity: 0;
+}
+
+.slide-right {
+    transform: translateX(120px);
+}
+
+.slide-left {
+    transform: translateX(-120px);
+}
+
+/* Estado activo */
+.slide-active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .historia-wrapper {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .historia-text h2 {
+        font-size: 2.2rem;
+    }
+}
+/* ======================================================= */
+/* CORRECCIÓN DE COLORES OBLIGATORIA (FUERZA BRUTA)        */
+/* ======================================================= */
+
+/* 1. POR DEFECTO (Para las secciones oscuras: 1 y 2) */
+/* Obliga a todos los títulos y párrafos a ser BLANCOS */
+.historia-text h2 {
+    color: #ffffff !important; 
+}
+.historia-text p {
+    color: #e0e0e0 !important; /* Gris casi blanco */
+}
+
+/* 2. EXCEPCIÓN (Para la sección clara: la número 3) */
+/* Aquí detectamos la tercera sección y obligamos a que sea NEGRO */
+
+.editorial-section .historia-section:nth-child(3) h2 {
+    color: #000000 !important; /* Título Negro */
+}
+
+.editorial-section .historia-section:nth-child(3) p {
+    color: #333333 !important; /* Párrafo Gris Oscuro */
+}
+
+/* 3. SUBTÍTULOS (01, 02, 03) SIEMPRE DORADOS */
+.historia-step {
+    color: #D4AF37 !important;
+}
+/* ======================================================= */
+/* CORRECCIÓN FINAL: FONDO SÓLIDO Y VIDEO (NO TRANSPARENTE) */
+/* ======================================================= */
+
+/* 1. Forzamos el fondo BLANCO SÓLIDO en la sección 3 */
+.seccion-blanca {
+    background-color: #f4f4f0 !important; /* Color crema/blanco sólido */
+    position: relative;
+    z-index: 10; /* Asegura que esté por encima de la foto de fondo */
+    width: 100%; /* Ocupa todo el ancho para tapar lo de atrás */
+}
+
+/* 2. Ajuste del Video para que se quede quieto en su caja */
+.video-interno {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Rellena el cuadro sin deformarse */
+    display: block;
+    border-radius: 4px;
+}
+
+/* 3. Aseguramos que el texto sea NEGRO en esta sección blanca */
+.seccion-blanca h2 { color: #000000 !important; }
+.seccion-blanca p { color: #333333 !important; }
+/* ========================================= */
+/* BOTÓN VOLVER ARRIBA (DISEÑO PLANO)        */
+/* ========================================= */
+
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px; /* Tamaño ajustado */
+    height: 45px;
+    background-color: #D4AF37; /* Dorado plano exacto */
+    color: #000000; /* Flecha negra */
+    border-radius: 50%; /* Círculo perfecto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 1000;
+    
+    /* Estado inicial (oculto) */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    
+    /* SIN SOMBRAS NI BORDES PARA EL LOOK PLANO */
+    box-shadow: none;
+    border: none;
+}
+
+/* Ajuste del icono */
+.scroll-top-btn svg {
+    width: 22px;
+    height: 22px;
+    /* El grosor de línea ya está definido en el HTML (stroke-width="1.5") */
+}
+
+/* Cuando aparece */
+.scroll-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Hover sutil (solo cambia un poco el color, sin efectos locos) */
+.scroll-top-btn:hover {
+    background-color: #cda530; /* Un dorado ligeramente más oscuro al pasar el mouse */
+    transform: translateY(-2px); /* Un movimiento casi imperceptible */
+}
+/* ======================================================= */
+/* 1. ALINEACIÓN Y TAMAÑO DE LOGOS (SEGURO)                */
+/* ======================================================= */
+
+.logos-grid {
+    display: flex;
+    justify-content: center; /* Centra los logos horizontalmente */
+    align-items: center;     /* Los alinea verticalmente */
+    flex-wrap: wrap;         /* Permite que bajen ordenados en celulares */
+    gap: 60px;               /* Espacio entre ellos */
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px 0;
+    /* Importante: Asegura que el contenedor no cause scroll horizontal */
+    width: 100%; 
+}
+
+.logo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 250px;
+}
+
+.logo-item img {
+    height: 90px !important; /* Altura controlada */
+    width: auto !important;
+    object-fit: contain;
+    margin-bottom: 20px;
+    
+    /* TRUCO SUAVE ANTI-TEMBLOR (Solo afecta a la imagen) */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+/* ======================================================= */
+/* 2. ESTABILIZADOR SUAVE (SIN FONDO BLANCO)               */
+/* ======================================================= */
+
+/* Quitamos el color de fondo para que se vea tu foto de portada */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Solo aplicamos aceleración a los bloques grandes para que no vibren */
+section, header, footer {
+    -webkit-font-smoothing: antialiased; /* Suaviza el texto */
+    transform: translate3d(0, 0, 0);     /* Activa la GPU sin mover nada */
+}
+/* ========================================= */
+/* ESTABILIZADOR DE TEXTO (SOLO LETRAS)      */
+/* ========================================= */
+
+/* 1. Activa el suavizado de fuente en todo el sitio */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility; /* Hace que las letras se definan mejor */
+}
+
+/* 2. "Congela" los textos para que no vibren al hacer zoom/scroll */
+h1, h2, h3, p, a, span, li, label {
+    /* Truco de aceleración sin mover nada */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    
+    /* Evita el parpadeo de renderizado */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    
+    /* Asegura que el navegador no recalcule la posición en cada pixel */
+    will-change: transform, opacity; 
+}
+/* ========================================= */
+/* CORRECCIÓN: BOTÓN SEMI-TRANSPARENTE       */
+/* ========================================= */
+
+.hero-btns .btn-primary {
+    /* Fondo negro al 40% (0.4) */
+    background-color: rgba(0, 0, 0, 0.555) !important; 
+    border: 1px solid #fff;
+    backdrop-filter: blur(2px); /* Opcional: un toquecito borroso estilo Apple */
+}
+
+/* Aseguramos que el Hover siga siendo blanco */
+.hero-btns .btn-primary:hover {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+/* ========================================= */
+/* CAMBIO DE COLOR: BOTÓN SUBIR (AZUL)       */
+/* ========================================= */
+
+/* Sobrescribimos el color dorado por el nuevo azul grisáceo */
+.scroll-top-btn {
+    background-color: #4a6fa5 !important; /* Azul grisáceo principal */
+    color: #ffffff !important; /* Flecha blanca para mejor contraste */
+}
+
+/* Color al pasar el mouse (un azul un poco más oscuro) */
+.scroll-top-btn:hover {
+    background-color: #36537a !important; 
+    transform: translateY(-2px);
+}
+
+/* Si los subtítulos generales (clase .subtitle) tenían el color dorado en el CSS,
+   esto asegura que se vuelvan azules si no tienen estilo en línea en el HTML */
+.subtitle {
+    color: #4a6fa5; 
+}
+
+/* ========================================= */
+/* PARCHE UNIVERSAL: ADIÓS AMARILLO -> AZUL  */
+/* ========================================= */
+
+/* 1. La línea amarilla del Footer (esa raya superior) */
+.main-footer {
+    border-top-color: #4a6fa5 !important;
+}
+
+/* 2. El texto "Agencia Captivx" y otros resaltados en negrita del footer */
+.copyright strong, 
+.footer-col h3, 
+.contact-info span {
+    color: #4a6fa5 !important;
+}
+
+/* 3. TODOS los subtítulos de la web (Nuestra Trayectoria, Ubicación, etc.) */
+.subtitle {
+    color: #4a6fa5 !important;
+}
+
+/* 4. Enlaces específicos que tengan color dorado incrustado */
+/* Esto busca cualquier cosa pintada de amarillo en el HTML y la fuerza a azul */
+[style*="#D4AF37"], [style*="color: #D4AF37"] {
+    color: #4a6fa5 !important;
+}
+
+/* 5. La selección de texto (cuando sombreas con el mouse) */
+::selection {
+    background: #4a6fa5; /* Fondo azul */
+    color: #ffffff;      /* Letra blanca */
+}
+/* ========================================= */
+/* CORRECCIÓN: TEXTO LISTA LABORATORIO       */
+/* ========================================= */
+
+.lab-features-list li {
+    color: #ffffff !important; /* Texto blanco puro para que resalte en el fondo negro */
+    font-weight: 500;          /* Un poquito más gordito para que se lea mejor */
+    font-size: 1.1rem;         /* Opcional: un pelín más grande */
+}

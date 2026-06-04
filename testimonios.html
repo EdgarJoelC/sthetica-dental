@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historias Reales | Sthetica Dental</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: #000;"> <header>
+        <nav class="navbar">
+            <ul class="nav-links left-links">
+                <li><a href="index.html#inicio">INICIO</a></li>
+                <li><a href="index.html#historia">HISTORIA</a></li>
+            </ul>
+            <div class="logo-central">
+                <a href="index.html"><img src="img/logo.png" alt="Sthetica Dental" class="logo-top"></a>
+            </div>
+            <ul class="nav-links right-links">
+                <li><a href="index.html#servicios">ESPECIALIDADES</a></li>
+                <li><a href="index.html#contacto">CONTACTO</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+    
+    <span class="close-menu" onclick="toggleMenu()">&times;</span>
+
+    <a href="index.html" onclick="toggleMenu()">INICIO</a>
+    
+    <a href="index.html#historia" onclick="toggleMenu()">NOSOTROS</a>
+    
+    <a href="index.html#servicios" onclick="toggleMenu()">ESPECIALIDADES</a>
+    <a href="equipo.html" onclick="toggleMenu()" style="color: #D4AF37;">DOCTORES</a>
+    <a href="laboratorio.html" onclick="toggleMenu()">LABORATORIO</a>
+    <a href="testimonios.html" onclick="toggleMenu()">TESTIMONIOS</a>
+    <a href="index.html#contacto" onclick="toggleMenu()">CONTACTO</a>
+
+</div>
+
+    <section class="hero-mini">
+        <div class="hero-content">
+            <span class="subtitle">VOCES REALES</span>
+            <h1>Historias que inspiran</h1>
+            <p style="color: #fff;">La satisfacción de nuestros pacientes es nuestra mejor carta de presentación.</p>
+        </div>
+    </section>
+
+    <section class="testimonio-section">
+        <div class="testimonio-container">
+            
+            <div class="video-wrapper fade-right">
+                <video controls poster="img/poster-carol.jpg">
+                    <source src="img/testimonio-carol.mp4" type="video/mp4">
+                    Tu navegador no soporta videos.
+                </video>
+                <div class="video-overlay overlay-right"></div>
+            </div>
+
+            <div class="text-wrapper align-left">
+                <span class="cita-icon">“</span>
+                <h2>Mejoró mi relación conmigo misma</h2>
+                <p class="paciente-name">Carol Ríos — Diseño de Sonrisa</p>
+                <p class="testimonio-body">
+                    "Mi experiencia fue excelente. El doctor me brindó calidez, seguridad y sobre todo conocimiento. No solo mejoró mi sonrisa, sino también mi autoestima."
+                </p>
+                <a href="https://wa.me/51947060793?text=Hola,%20quisiera%20el%20mismo%20resultado%20de%20diseño%20de%20sonrisa" class="btn-gold" target="_blank">
+    Quiero el mismo resultado
+</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="testimonio-section bg-darker">
+        <div class="testimonio-container reverse-layout">
+            
+            <div class="text-wrapper align-right">
+                <span class="cita-icon">“</span>
+                <h2>Atención especializada y con garantía</h2>
+                <p class="paciente-name">Paciente de Ortodoncia</p>
+                <p class="testimonio-body">
+                    "He recibido la mejor atención, son muy amables. Se nota que el doctor es una persona especializada. Recomiendo la clínica al 100% por el cambio que he visto en mis dientes."
+                </p>
+                <a href="https://wa.me/51947060793?text=Hola,%20quisiera%20agendar%20una%20evaluación%20de%20ortodoncia" class="btn-gold" target="_blank">
+    Agendar Evaluación
+</a>
+            </div>
+
+            <div class="video-wrapper fade-left">
+                <video controls poster="img/poster-orto.jpg">
+                    <source src="img/testimonio-orto.mp4" type="video/mp4">
+                    Tu navegador no soporta videos.
+                </video>
+                <div class="video-overlay overlay-left"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="main-footer">
+    <div class="footer-container">
+        
+        <div class="footer-col">
+            <img src="img/logo.png" alt="Sthetica Dental" class="footer-logo">
+            <p class="footer-desc">Combinamos experiencia clínica con visión artística para devolverte la confianza en tu sonrisa.</p>
+            <a href="https://clinicastheticadental.700cd.com/panel_director/cal_separar/index_separar.php" target="_blank" class="btn-primary btn-footer">Agendar Cita</a>
+        </div>
+
+        <div class="footer-col">
+            <h3>Páginas</h3>
+            <ul class="footer-links">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+                <li><a href="index.html#servicios">Especialidades</a></li>
+                <li><a href="index.html#historia">Nosotros</a></li>
+                <li><a href="laboratorio.html">Laboratorio</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3>Atención:</h3>
+            <p>Lunes – Sábado</p>
+            
+            <h3>Horario:</h3>
+            <p>9:00 AM – 1:00 PM <br> 3:00 PM – 8:00 PM</p>
+            
+            <h3>Contacto:</h3>
+            <p style="margin-bottom: 15px;">Síguenos en nuestras redes sociales:</p>
+            
+            <div class="social-icons" style="justify-content: center; margin-bottom: 20px;">
+                <a href="https://www.facebook.com/stheticadental" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" style="width: 25px; fill: white;"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/clinicastheticadental/" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 25px; fill: white;"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer-bar">
+        <div class="copyright" style="width: 100%; text-align: center;">
+            Copyright © 2026 Sthetica Dental | Desarrollado por <strong>Agencia Captivx</strong>
+        </div>
+    </div>
+</footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sthetica Dental | Clínica Huancayo</title>
+    
+    <link rel="icon" type="image/png" href="img/icono.png">
+    <link rel="apple-touch-icon" href="img/icono.png">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        .btn-historia-hover {
+            display: block;
+            width: 100%;
+            text-align: center;
+            border: 1px solid #fff;
+            color: #fff;
+            padding: 12px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            background-color: transparent;
+            box-sizing: border-box;
+        }
+        /* AQUÍ ESTÁ LA MAGIA: Al pasar el mouse, se invierte */
+        .btn-historia-hover:hover {
+            background-color: #fff; /* Fondo blanco */
+            color: #000; /* Letra negra */
+            border-color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/51947060793" class="whatsapp-float" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.1 0-65.6-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.1-3.2-5.6-.3-8.6 2.5-11.4 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.2 1.9-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.7 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+    </a>
+
+    <header>
+    <nav class="navbar">
+        <ul class="nav-links left-links">
+            <li><a href="#inicio">INICIO</a></li>
+            <li><a href="#historia">HISTORIA</a></li>
+            <li><a href="#servicios">ESPECIALIDADES</a></li>
+        </ul>
+        
+        <div class="logo-central">
+            <a href="index.html"><img src="img/logo.png" alt="Sthetica Dental" class="logo-top"></a>
+        </div>
+        
+        <ul class="nav-links right-links">
+            <li><a href="escaner.html">ESCÁNER INTRAORAL</a></li> 
+            <li><a href="laboratorio.html">LABORATORIO</a></li>
+            <li><a href="#contacto">CONTACTO</a></li>
+        </ul>
+        
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+</header>
+
+    <div class="mobile-menu" id="mobileMenu">
+    
+    <span class="close-menu" onclick="toggleMenu()">×</span>
+
+    <a href="index.html" onclick="toggleMenu()">INICIO</a>
+    
+    <a href="index.html#historia" onclick="toggleMenu()">HISTORIA</a>
+    
+    <a href="index.html#servicios" onclick="toggleMenu()">ESPECIALIDADES</a>
+    
+    <a href="escaner.html" onclick="toggleMenu()" style="color: #4a6fa5;">ESCÁNER INTRAORAL</a>
+    
+    <a href="laboratorio.html" onclick="toggleMenu()">LABORATORIO</a>
+    
+    <a href="index.html#contacto" onclick="toggleMenu()">CONTACTO</a>
+
+</div>
+
+    <section id="inicio" class="hero reveal">
+        <div class="hero-content">
+<span class="subtitle" style="font-family: 'Montserrat', sans-serif; font-weight: 600; letter-spacing: 8px; font-size: 1.3rem; color: #000000; display: block; margin-bottom: 15px;">
+        BIENVENIDO
+    </span>            
+            <h1 style="margin-top: 15px; font-family: 'Libre Caslon Text', serif; font-style: italic; font-weight: 400; letter-spacing: 0px; line-height: 1.1; font-size: clamp(3rem, 8vw, 4.5rem);">
+                El verdadero placer de una buena sonrisa <span style="color: #D4AF37;"></span>
+            </h1>
+            
+            <p style="font-family: 'Montserrat', sans-serif; font-size: 1.1rem; margin-top: 20px; color: #ddd; font-weight: 400;">
+                Todas las especialidades en un mismo lugar.
+            </p>
+
+            <div class="hero-btns" style="margin-top: 30px;">
+                <a href="https://clinicastheticadental.700cd.com/panel_director/cal_separar/index_separar.php?fbclid=IwY2xjawPLiSpleHRuA2FlbQIxMABicmlkETFXQVM1T1FYeEZBVU5oUXFDc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHoGvCh8Zu_gxiBJ17x_Q2KdsEOIwz_OJuD-opTdDIPC9Hm9zu1z4ylWGY-gF_aem_RDl-kXg_B73wvFl6jIQyKA" target="_blank" class="btn-primary">Agendar Cita</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="historia" class="about reveal">
+        <div class="about-slider slide-left-effect">
+             <img src="img/IMG_9371.jpg" class="active">
+             <img src="img/IMG_9296.jpg">
+             <img src="img/IMG_9395.jpg">
+             <img src="img/IMG_9420.jpg"> 
+        </div>
+
+        <div class="about-container" style="width: 50%; margin-left: 50%; position: relative; z-index: 10;">
+            <div class="about-text">
+                <span class="subtitle" style="color: #4a6fa5;">NUESTRA TRAYECTORIA</span>
+                <h2>El Arte de la Odontología</h2>
+                <p>Combinamos experiencia clínica con visión artística para devolverte la confianza en instalaciones de primer nivel.</p>
+                
+                <div style="margin-top: 30px; display: flex; flex-direction: column; gap: 15px; max-width: 600px;">
+                    <a href="historia.html" class="btn-historia-hover">
+                        RESEÑA HISTÓRICA
+                    </a>
+                    
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <a href="testimonios.html" class="btn-primary" style="flex: 1; text-align: center; white-space: nowrap;">Testimonios</a>
+                        <a href="laboratorio.html" class="btn-primary" style="background: #000; color: #fff; border: 1px solid #000; flex: 1; text-align: center; white-space: nowrap;">Laboratorio Propio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="services reveal bg-light">
+    <span class="subtitle" style="text-align: center;">NUESTRAS ESPECIALIDADES</span>
+    
+    <div class="slider-wrapper-interactive">
+        <button class="slider-btn prev-btn-specialty">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+
+        <div class="slider-track-interactive" id="trackSpecialty">
+    <a href="odontologia-general.html" class="slide-item" style="text-decoration: none; color: inherit;">ODONTOLOGÍA GENERAL</a>
+    <a href="endodoncia.html" class="slide-item" style="text-decoration: none; color: inherit;">ENDODONCIA</a>
+    <a href="rehabilitacion.html" class="slide-item" style="text-decoration: none; color: inherit;">REHABILITACIÓN ORAL</a>
+    <a href="implantologia.html" class="slide-item" style="text-decoration: none; color: inherit;">IMPLANTOLOGÍA ORAL</a>
+    <a href="ortodoncia.html" class="slide-item" style="text-decoration: none; color: inherit;">ORTODONCIA Y ORTOPEDIA</a>
+    <a href="cirugia.html" class="slide-item" style="text-decoration: none; color: inherit;">CIRUGÍA MAXILOFACIAL</a>
+    <a href="odontopediatria.html" class="slide-item" style="text-decoration: none; color: inherit;">ODONTOPEDIATRÍA</a>
+    <a href="diseno-sonrisa.html" class="slide-item" style="text-decoration: none; color: inherit;">DISEÑO DE SONRISA</a>
+    <a href="periodoncia.html" class="slide-item" style="text-decoration: none; color: inherit;">PERIODONCIA</a>
+</div>
+
+        <button class="slider-btn next-btn-specialty">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+    </div>
+
+    <div style="text-align: center; margin-top: 50px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <a href="especialidades.html" class="btn-primary">Conoce nuestras especialidades</a>
+        <a href="equipo.html" class="btn-primary" style="background-color: transparent; border: 1px solid #000; color: #000;">Conoce a nuestros Doctores</a>
+    </div>
+</section>
+
+    <section id="convenios" class="convenios reveal">
+        <div class="convenios-container">
+            
+            <h2 style="text-align: center; color: #000; margin-bottom: 50px;">Nuestros Convenios</h2>
+            
+            <div class="logos-grid">
+                <div class="logo-item">
+                    <img src="img/excelenti.png" alt="Colegio Excélenti">
+                    <p>Colegio Excélenti</p>
+                </div>
+                <div class="logo-item">
+                    <img src="img/maestro-redentor.jpg" alt="Colegio Maestro Redentor">
+                    <p>Colegio Maestro Redentor</p>
+                </div>
+                <div class="logo-item">
+                    <img src="img/conti.png" alt="Universidad Continental">
+                    <p>Universidad Continental</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="contact reveal">
+        <div class="contact-container">
+            
+            <div class="contact-info">
+                <span class="subtitle">UBICACIÓN</span>
+                <h2>Visítanos</h2>
+                <p>Jr. Antonio Lobato N°611<br>El Tambo - Huancayo</p>
+                <p>Celular: 947 060 793</p>
+                
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.763412284027!2d-75.2196254252009!3d-12.059792688178009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910e97007d8b42bb%3A0x1887d13ce6e59411!2sClinica%20Sthetica%20Dental%20-%20Ortodoncia%20-%20implantes%20dentales%20-%20est%C3%A9tica%20dental%20-%20pr%C3%B3tesis%20dental%20-%20Odontopediatr%C3%ADa%20huancayo.!5e0!3m2!1ses-419!2spe!4v1767632495002!5m2!1ses-419!2spe" 
+                        width="100%" 
+                        height="300" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <p>Utilizamos cookies para mejorar tu experiencia en Sthetica Dental. Al continuar navegando, aceptas nuestra política.</p>
+        <button id="acceptCookies" class="btn-primary" style="padding: 10px 20px; font-size: 0.7rem;">Aceptar</button>
+    </div>
+
+    <footer class="main-footer">
+    <div class="footer-container">
+        
+        <div class="footer-col">
+            <img src="img/logo.png" alt="Sthetica Dental" class="footer-logo">
+            <p class="footer-desc">Combinamos experiencia clínica con visión artística para devolverte la confianza en tu sonrisa.</p>
+            <a href="https://clinicastheticadental.700cd.com/panel_director/cal_separar/index_separar.php" target="_blank" class="btn-primary btn-footer">Agendar Cita</a>
+        </div>
+
+        <div class="footer-col">
+            <h3>Páginas</h3>
+            <ul class="footer-links">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+                <li><a href="index.html#servicios">Especialidades</a></li>
+                <li><a href="index.html#historia">Nosotros</a></li>
+                <li><a href="laboratorio.html">Laboratorio</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3>Atención:</h3>
+            <p>Lunes – Sábado</p>
+            
+            <h3>Horario:</h3>
+            <p>9:00 AM – 1:00 PM <br> 3:00 PM – 8:00 PM</p>
+            
+            <h3>Contacto:</h3>
+            <p style="margin-bottom: 15px;">Síguenos en nuestras redes sociales:</p>
+            
+            <div class="social-icons" style="justify-content: center; margin-bottom: 20px;">
+                <a href="https://www.facebook.com/stheticadental" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" style="width: 25px; fill: white;"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/clinicastheticadental/" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 25px; fill: white;"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer-bar">
+        <div class="copyright" style="width: 100%; text-align: center;">
+            Copyright © 2026 Sthetica Dental | Desarrollado por <strong>Agencia Captivx</strong>
+        </div>
+    </div>
+</footer>
+    <a href="#" id="scrollTopBtn" class="scroll-top-btn" title="Volver arriba">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor" width="20"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
+    </a>
+    <script src="js/main.js"></script>
+</body>
+</html>

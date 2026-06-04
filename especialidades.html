@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Especialidades | Sthetica Dental</title>
+    
+    <link rel="icon" type="image/png" href="img/icono.png">
+    <link rel="apple-touch-icon" href="img/icono.png">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- ESTILOS DE LA NUEVA PÁGINA DE ESPECIALIDADES --- */
+        :root {
+            --oro: #D4AF37;
+            --azul: #4a6fa5;
+            --oscuro: #111;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            overflow-x: hidden; /* Evita scroll horizontal por las animaciones */
+        }
+
+        .specialties-header {
+            padding: 180px 20px 80px;
+            text-align: center;
+            background: transparent; /* TOTALMENTE TRANSPARENTE */
+        }
+
+        .specialties-header h1 {
+            font-family: 'Libre Caslon Text', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: #98a1f5; /* Texto blanco para que resalte con el fondo */
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeInUp 0.8s forwards;
+        }
+
+        .specialties-header p {
+            font-size: 1.1rem;
+            color: #dddddd; 
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0;
+            animation: fadeInUp 0.8s 0.2s forwards;
+        }
+        /* GRID DE ESPECIALIDADES */
+        .specialties-grid {
+            max-width: 1200px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        /* TARJETAS (BOTONES GRANDES) */
+        .spec-card {
+            background: #fff;
+            padding: 50px 40px;
+            text-decoration: none;
+            color: var(--oscuro);
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            min-height: 280px;
+        }
+
+        /* Animaciones de entrada escalonadas */
+        .from-left { opacity: 0; transform: translateX(-100px); animation: slideIn 0.8s forwards; }
+        .from-right { opacity: 0; transform: translateX(100px); animation: slideIn 0.8s forwards; }
+
+        .spec-card h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--oscuro);
+            transition: color 0.3s;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .spec-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #777;
+            transition: color 0.3s;
+        }
+
+        /* EFECTO HOVER */
+        /* EFECTO HOVER */
+        .spec-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--azul);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            background-color: var(--oscuro);
+        }
+
+        .spec-card:hover h2 { color: var(--azul); }
+        .spec-card:hover p { color: #aaa; }
+
+        /* Icono de flecha que aparece al hacer hover */
+        .spec-card::after {
+            content: '→';
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            font-size: 1.5rem;
+            color: var(--azul);
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.3s;
+        }
+
+        /* Icono de flecha que aparece al hacer hover */
+        .spec-card::after {
+            content: '→';
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            font-size: 1.5rem;
+            color: var(--oro);
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.3s;
+        }
+
+        .spec-card:hover::after {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* KEYFRAMES ANIMACIONES */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .specialties-grid { grid-template-columns: 1fr; }
+            .specialties-header { padding-top: 150px; }
+            .spec-card { min-height: auto; padding: 40px 30px; }
+            /* En móvil quitamos el desplazamiento lateral para que no rompa el diseño */
+            .from-left, .from-right { transform: translateY(50px); animation: fadeInUp 0.6s forwards; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links left-links">
+                <li><a href="index.html#inicio">INICIO</a></li>
+                <li><a href="index.html#historia">HISTORIA</a></li>
+                <li><a href="index.html#servicios">ESPECIALIDADES</a></li>
+            </ul>
+            <div class="logo-central">
+                <a href="index.html"><img src="img/logo.png" alt="Sthetica Dental" class="logo-top"></a>
+            </div>
+            <ul class="nav-links right-links">
+                <li><a href="escaner.html">ESCÁNER INTRAORAL</a></li> 
+                <li><a href="laboratorio.html">LABORATORIO</a></li>
+                <li><a href="index.html#contacto">CONTACTO</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <span class="close-menu" onclick="toggleMenu()">&times;</span>
+        <a href="index.html" onclick="toggleMenu()">INICIO</a>
+        <a href="index.html#historia" onclick="toggleMenu()">NOSOTROS</a>
+        <a href="index.html#servicios" onclick="toggleMenu()">ESPECIALIDADES</a>
+        <a href="equipo.html" onclick="toggleMenu()" style="color: #4a6fa5;">DOCTORES</a>
+        <a href="laboratorio.html" onclick="toggleMenu()">LABORATORIO</a>
+        <a href="testimonios.html" onclick="toggleMenu()">TESTIMONIOS</a>
+        <a href="index.html#contacto" onclick="toggleMenu()">CONTACTO</a>
+    </div>
+
+    <section class="specialties-header">
+        <h1>Nuestras Especialidades</h1>
+        <p>En Sthetica Dental ofrecemos tecnología de vanguardia y especialistas certificados para cada necesidad de tu salud bucal.</p>
+    </section>
+
+    <section class="specialties-grid">
+        <a href="odontologia-general.html" class="spec-card from-left" style="animation-delay: 0.1s;">
+            <h2>Odontología General</h2>
+            <p>Prevención, limpiezas profundas y diagnósticos integrales para mantener tu salud bucal siempre perfecta.</p>
+        </a>
+
+        <a href="endodoncia.html" class="spec-card from-right" style="animation-delay: 0.2s;">
+            <h2>Endodoncia</h2>
+            <p>Tratamientos especializados para salvar tus dientes naturales eliminando infecciones y dolor de raíz.</p>
+        </a>
+
+        <a href="rehabilitacion.html" class="spec-card from-left" style="animation-delay: 0.3s;">
+            <h2>Rehabilitación Oral</h2>
+            <p>Recupera la función y estética completa de tu boca con prótesis y coronas de alta precisión.</p>
+        </a>
+
+        <a href="implantologia.html" class="spec-card from-right" style="animation-delay: 0.4s;">
+            <h2>Implantología Oral</h2>
+            <p>La solución definitiva para recuperar dientes perdidos con implantes de titanio de última generación.</p>
+        </a>
+
+        <a href="ortodoncia.html" class="spec-card from-left" style="animation-delay: 0.5s;">
+            <h2>Ortodoncia y Ortopedia</h2>
+            <p>Alineación perfecta y corrección de mordida con brackets convencionales, estéticos o alineadores.</p>
+        </a>
+
+        <a href="cirugia.html" class="spec-card from-right" style="animation-delay: 0.6s;">
+            <h2>Cirugía Maxilofacial</h2>
+            <p>Extracciones complejas y cirugías de alta precisión realizadas por cirujanos maxilofaciales certificados.</p>
+        </a>
+
+        <a href="odontopediatria.html" class="spec-card from-left" style="animation-delay: 0.7s;">
+            <h2>Odontopediatría</h2>
+            <p>Cuidamos las sonrisas de los más pequeños con técnicas amigables y un ambiente diseñado para ellos.</p>
+        </a>
+
+        <a href="diseno-sonrisa.html" class="spec-card from-right" style="animation-delay: 0.8s;">
+            <h2>Diseño de Sonrisa</h2>
+            <p>Transformamos tu sonrisa combinando arte y odontología digital para resultados naturales y brillantes.</p>
+        </a>
+
+        <a href="periodoncia.html" class="spec-card from-left" style="animation-delay: 0.9s;">
+            <h2>Periodoncia</h2>
+            <p>Cuidado especializado de las encías y tejidos de soporte para evitar la pérdida de piezas dentales.</p>
+        </a>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <img src="img/logo.png" alt="Sthetica Dental" class="footer-logo">
+                <p class="footer-desc">Combinamos experiencia clínica con visión artística para devolverte la confianza en tu sonrisa.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Páginas</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                    <li><a href="especialidades.html">Especialidades</a></li>
+                    <li><a href="laboratorio.html">Laboratorio</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contacto:</h3>
+                <p>Jr. Antonio Lobato N°611<br>El Tambo - Huancayo</p>
+                <p>947 060 793</p>
+            </div>
+        </div>
+        <div class="footer-bar">
+            <div class="copyright" style="width: 100%; text-align: center;">
+                Copyright © 2026 Sthetica Dental | Desarrollado por <strong>Agencia Captivx</strong>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

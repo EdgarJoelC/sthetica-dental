@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periodoncia | Sthetica Dental</title>
+    
+    <link rel="icon" type="image/png" href="img/icono.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* 1. BLANCO TOTAL Y SIN FOTOS DE FONDO */
+        html, body {
+            background-color: #ffffff !important; 
+            background-image: none !important; 
+            margin: 0;
+            padding: 0;
+            min-height: 100vh; 
+            overflow-x: hidden;
+        }
+
+        /* 2. HEADER NEGRO */
+        header, .navbar {
+            background-color: #000000 !important;
+            position: relative;
+            z-index: 100;
+        }
+
+        /* 3. SECCIÓN RESPONSIVA CON FONDO TEXTURIZADO */
+        .detail-section {
+            background-color: #ffffff !important;
+            
+            background-image: 
+                linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px) !important;
+            background-size: 40px 40px; 
+            
+            display: flex;
+            flex-wrap: wrap; 
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 100px);
+            padding: 20px 5% 40px;
+            gap: 60px;
+            max-width: 100%; 
+            margin: 0 auto;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden; 
+        }
+
+        .detail-section::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(74, 111, 165, 0.08) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none; 
+        }
+
+        .detail-section::after {
+            content: '';
+            position: absolute;
+            bottom: -10%;
+            right: -5%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0, 0, 0, 0.04) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .detail-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            max-width: 1200px;
+            width: 100%;
+            position: relative;
+            z-index: 1; 
+        }
+
+        .detail-text {
+            flex: 1 1 400px; 
+            max-width: 500px;
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: slideInLeft 1s ease 0.2s forwards;
+        }
+
+        .detail-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .detail-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: clamp(2.5rem, 4vw, 3.5rem); 
+            color: #111;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            letter-spacing: -1.5px;
+        }
+
+        .detail-desc {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.15rem;
+            color: #444;
+            line-height: 1.7;
+            margin-bottom: 45px;
+        }
+
+        .btn-pill {
+            display: inline-block;
+            background-color: #4a6fa5; 
+            color: #fff !important;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(74, 111, 165, 0.3);
+            border: 2px solid transparent;
+        }
+
+        .btn-pill:hover {
+            background-color: #ffffff;
+            color: #4a6fa5 !important;
+            border-color: #4a6fa5;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(74, 111, 165, 0.15);
+        }
+
+        .detail-image-box {
+            flex: 1 1 400px; 
+            max-width: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: translateX(50px);
+            animation: slideInRight 1s ease 0.5s forwards;
+            position: relative;
+        }
+
+        .detail-image-box::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: -20px;
+            bottom: -20px;
+            left: 20px;
+            border: 2px solid #f0f0f0;
+            border-radius: 30px;
+            z-index: -1;
+            transition: all 0.5s ease;
+        }
+
+        .detail-image-box:hover::before {
+            top: 10px;
+            right: -10px;
+            bottom: -10px;
+            left: 10px;
+            border-color: #e0e0e0;
+        }
+
+        .detail-image-box img {
+            width: 100%;
+            max-height: 70vh; 
+            object-fit: cover; 
+            border-radius: 30px; 
+            box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @media (max-width: 992px) {
+            .detail-section {
+                padding-top: 120px; 
+            }
+            .detail-container {
+                flex-direction: column; 
+                text-align: center;
+            }
+            .detail-text, .detail-image-box { 
+                max-width: 100%; 
+                flex-basis: auto;
+            }
+            .detail-image-box img { max-height: 50vh; width: 90%; }
+            .detail-image-box::before { display: none; } 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links left-links">
+                <li><a href="index.html#inicio">INICIO</a></li>
+                <li><a href="index.html#historia">HISTORIA</a></li>
+                <li><a href="index.html#servicios">ESPECIALIDADES</a></li>
+            </ul>
+            <div class="logo-central">
+                <a href="index.html"><img src="img/logo.png" alt="Sthetica Dental" class="logo-top"></a>
+            </div>
+            <ul class="nav-links right-links">
+                <li><a href="escaner.html">ESCÁNER INTRAORAL</a></li> 
+                <li><a href="laboratorio.html">LABORATORIO</a></li>
+                <li><a href="index.html#contacto">CONTACTO</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <span class="close-menu" onclick="toggleMenu()">&times;</span>
+        <a href="index.html" onclick="toggleMenu()">INICIO</a>
+        <a href="index.html#historia" onclick="toggleMenu()">NOSOTROS</a>
+        <a href="index.html#servicios" onclick="toggleMenu()">ESPECIALIDADES</a>
+        <a href="equipo.html" onclick="toggleMenu()">DOCTORES</a>
+        <a href="laboratorio.html" onclick="toggleMenu()">LABORATORIO</a>
+        <a href="testimonios.html" onclick="toggleMenu()">TESTIMONIOS</a>
+        <a href="index.html#contacto" onclick="toggleMenu()">CONTACTO</a>
+    </div>
+
+    <section class="detail-section">
+        <div class="detail-container">
+            <div class="detail-text">
+                <span class="detail-subtitle">Especialidad</span>
+                <h1 class="detail-title">Periodoncia.</h1>
+                <p class="detail-desc">Cuidado especializado de las encías y los tejidos de soporte. Prevenimos, diagnosticamos y tratamos enfermedades periodontales para asegurar la base de tu sonrisa y evitar la pérdida de piezas dentales.</p>
+                
+                <a href="https://wa.me/51947060793?text=Hola,%20quisiera%20separar%20una%20cita%20para%20Periodoncia" class="btn-pill" target="_blank">
+                    Separar cita
+                </a>
+            </div>
+            
+            <div class="detail-image-box">
+                <img src="img/esp-periodoncia.png" alt="Periodoncia en Sthetica Dental">
+            </div>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

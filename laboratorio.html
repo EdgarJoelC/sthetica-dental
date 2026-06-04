@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio Digital | Sthetica Dental</title>
+    
+    <link rel="icon" type="image/png" href="img/icono.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body style="background-color: #000;">
+
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links left-links">
+                <li><a href="index.html#inicio">INICIO</a></li>
+                <li><a href="index.html#historia">HISTORIA</a></li>
+            </ul>
+            <div class="logo-central">
+                <a href="index.html"><img src="img/logo.png" alt="Sthetica Dental" class="logo-top"></a>
+            </div>
+            <ul class="nav-links right-links">
+                <li><a href="index.html#servicios">ESPECIALIDADES</a></li>
+                <li><a href="index.html#contacto">CONTACTO</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+    
+    <span class="close-menu" onclick="toggleMenu()">&times;</span>
+
+    <a href="index.html" onclick="toggleMenu()">INICIO</a>
+    
+    <a href="index.html#historia" onclick="toggleMenu()">NOSOTROS</a>
+    
+    <a href="index.html#servicios" onclick="toggleMenu()">ESPECIALIDADES</a>
+    <a href="equipo.html" onclick="toggleMenu()" style="color: #D4AF37;">DOCTORES</a>
+    <a href="laboratorio.html" onclick="toggleMenu()">LABORATORIO</a>
+    <a href="testimonios.html" onclick="toggleMenu()">TESTIMONIOS</a>
+    <a href="index.html#contacto" onclick="toggleMenu()">CONTACTO</a>
+
+</div>
+
+    <section class="lab-section-cinema">
+        
+        <div class="lab-row">
+            <div class="lab-content text-left">
+                <span class="subtitle">TECNOLOGÍA IN-HOUSE</span>
+                <h1>PRECISIÓN DIGITAL <span class="text-gold">CAD/CAM</span></h1>
+                <p>Integramos un laboratorio digital completo. Esto elimina tiempos de espera, garantizando que el diseño y frabricación de prótesis dentales, coronas, carillas, incrustaciones, etc. Sean resultados predecibles en función, estética, naturalidad y confort.</p>
+                <p>Gracias a nuestro flujo de trabajo mediante software nos permite brindar diagnósticos y plan de tratamiento adecuado para cada paciente.
+               
+                <ul class="lab-features-list">
+                    <li><i class="fas fa-check text-gold"></i> Diseño CAD/CAM milimétrico.</li>
+                    <li><i class="fas fa-check text-gold"></i> Impresión 3D y Fresado.</li>
+                    <li><i class="fas fa-check text-gold"></i> Sin moldes de pasta.</li>
+                </ul>
+            </div>
+            
+            <div class="lab-media media-right">
+                <div class="fade-overlay-left"></div> 
+                <img src="img/lab-tecnico.png" alt="Técnico Dental Exocad">
+            </div>
+        </div>
+
+        <div class="lab-row reverse-mobile">
+            <div class="lab-media media-left">
+                <div class="fade-overlay-right"></div>
+                <video src="img/video-lab.mp4" autoplay muted loop playsinline></video>
+            </div>
+            
+            <div class="lab-content text-right">
+    <h3 class="lab-subtitle">FLUJO <span class="text-gold">INTEGRADO</span></h3>
+    <p>Desde el escaneo intraoral hasta la impresión 3D o el fresado de circonio, todo el proceso ocurre bajo un mismo techo.</p>
+    
+    <img src="img/diagrama.png" alt="Flujo de trabajo CAD-CAM" style="width: 100%; max-width: 450px; border-radius: 8px; margin-top: 20px;">
+</div>
+        </div>
+
+        <div class="lab-row">
+            <div class="lab-content text-left">
+                <h3 class="lab-subtitle">ESPECIALISTAS EN <span class="text-gold">CERÁMICA DENTAL</span></h3>
+                <p>La tecnología nos da la precisión, pero <strong>el arte lo ponen las manos.</strong></p>
+                <p>Cada pieza dental recibe un acabado artesanal de estratificación en cerámica. Aplicamos texturas, translucidez y matices de color pincelada a pincelada para imitar la naturaleza de un diente natural.</p>
+                <p>No solo creamos dientes blancos; creamos sonrisas vivas y naturales.</p>
+                
+                <a href="https://clinicastheticadental.700cd.com/panel_director/cal_separar/index_separar.php" target="_blank" class="btn-primary" style="background: #fff; color: #000; margin-top: 20px;">Agendar Cita</a>
+            </div>
+            
+            <div class="lab-media media-right">
+                <div class="fade-overlay-left"></div> 
+                <img src="img/lab-ceramica.jpg" alt="Acabado dental en cerámica">
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="main-footer">
+    <div class="footer-container">
+        
+        <div class="footer-col">
+            <img src="img/logo.png" alt="Sthetica Dental" class="footer-logo">
+            <p class="footer-desc">Combinamos experiencia clínica con visión artística para devolverte la confianza en tu sonrisa.</p>
+            <a href="https://clinicastheticadental.700cd.com/panel_director/cal_separar/index_separar.php" target="_blank" class="btn-primary btn-footer">Agendar Cita</a>
+        </div>
+
+        <div class="footer-col">
+            <h3>Páginas</h3>
+            <ul class="footer-links">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+                <li><a href="index.html#servicios">Especialidades</a></li>
+                <li><a href="index.html#historia">Nosotros</a></li>
+                <li><a href="laboratorio.html">Laboratorio</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3>Atención:</h3>
+            <p>Lunes – Sábado</p>
+            
+            <h3>Horario:</h3>
+            <p>9:00 AM – 1:00 PM <br> 3:00 PM – 8:00 PM</p>
+            
+            <h3>Contacto:</h3>
+            <p style="margin-bottom: 15px;">Síguenos en nuestras redes sociales:</p>
+            
+            <div class="social-icons" style="justify-content: center; margin-bottom: 20px;">
+                <a href="https://www.facebook.com/stheticadental" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" style="width: 25px; fill: white;"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/clinicastheticadental/" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 25px; fill: white;"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer-bar">
+        <div class="copyright" style="width: 100%; text-align: center;">
+            Copyright © 2026 Sthetica Dental | Desarrollado por <strong>Agencia Captivx</strong>
+        </div>
+    </div>
+</footer>
+
+    <a href="#" id="scrollTopBtn" class="scroll-top-btn" title="Volver arriba">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor" width="20"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
