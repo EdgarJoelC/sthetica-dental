@@ -36,6 +36,26 @@
             color: #000; /* Letra negra */
             border-color: #fff;
         }
+        @media (max-width: 768px) {
+            /* Reduce el texto de "BIENVENIDO" */
+            #inicio .hero-content .subtitle {
+                font-size: 0.9rem !important;
+                letter-spacing: 4px !important;
+            }
+
+            /* Hace el título principal más pequeño en pantallas móviles */
+            #inicio .hero-content h1 {
+                font-size: 2.2rem !important;
+                line-height: 1.2 !important;
+            }
+
+            /* Reduce el subtítulo de especialidades */
+            #inicio .hero-content p {
+                font-size: 0.95rem !important;
+                margin-top: 15px !important;
+            }
+        }
+    
     </style>
 </head>
 <body>
