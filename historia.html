@@ -256,18 +256,19 @@
             <p>Hoy somos más que una clínica; somos un referente en Huancayo. Nuestro equipo multidisciplinario trabaja bajo una filosofía de perfeccionismo ético.</p>
         </div>
         
-        <div class="historia-image">
+        <div class="img-slot">
+            <!-- Asignamos el id para controlarlo por JS como en Los Álamos -->
             <video 
+                id="video-clinica-anim"
                 width="100%" 
                 height="100%" 
-                autoplay 
                 muted 
                 loop 
                 playsinline 
-                style="object-fit: cover; width: 100%; height: 100%;">
+                preload="auto"
+                style="object-fit: cover; width: 100%; height: 100%; display: block;">
                 
-                <source src="img/video1" type="video/mp4">
-                
+                <source src="img/video1.mp4" type="video/mp4">
                 <p>Tu navegador no soporta video HTML5.</p>
             </video>
         </div>
@@ -323,7 +324,21 @@
             </div>
         </div>
     </footer>
-    
+    <script>
+        // Forzar la carga y reproducción del video en bucle eliminando restricciones del navegador
+        document.addEventListener("DOMContentLoaded", () => {
+            const video = document.getElementById('video-clinica-anim');
+            if (video) {
+                // Forzar reproducción inmediata en bypass
+                video.play().catch(() => {
+                    // Si el navegador lo bloquea por seguridad, se activa al primer clic que el usuario haga en la pantalla
+                    document.addEventListener('click', () => {
+                        video.play();
+                    }, { once: true });
+                });
+            }
+        });
+    </script>
     <script src="js/main.js"></script>
 </body>
 </html>
