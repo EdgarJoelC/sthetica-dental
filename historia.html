@@ -160,6 +160,19 @@
             .year-mark { font-size: 5rem; top: -30px; left: 0; }
             .story-block::after { left: 20px; display: none; } /* Ocultar línea en móvil */
         }
+        @media (max-width: 768px) {
+    /* Centrar textos de Misión y Visión en móviles */
+    .historia-section[data-bg="gray"] p, 
+    .historia-section[data-bg="gray"] ul {
+        text-align: center !important;
+    }
+
+    /* Asegurar que los elementos de lista también se centren */
+    .historia-section[data-bg="gray"] ul {
+        padding-left: 0 !important;
+        list-style-position: inside !important;
+    }
+}
     </style>
 </head>
 <body>
