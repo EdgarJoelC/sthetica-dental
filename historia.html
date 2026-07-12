@@ -160,20 +160,41 @@
             .year-mark { font-size: 5rem; top: -30px; left: 0; }
             .story-block::after { left: 20px; display: none; } /* Ocultar línea en móvil */
         }
-        
-@media (max-width: 768px) {
-    /* Forzamos el centrado eliminando cualquier alineación forzada previa */
-    .historia-section[data-bg="gray"] .historia-text p, 
+        @media (max-width: 768px) {
+    /* 1. Reducimos los paddings excesivos que achican la pantalla en cel */
+    .editorial-section {
+        padding: 40px 10px !important;
+    }
+    
+    .historia-section[data-bg="gray"] {
+        padding: 30px 10px !important;
+    }
+
+    /* 2. Quitamos el min-width rígido de 300px y reseteamos márgenes */
+    .historia-section[data-bg="gray"] .historia-text {
+        flex: 1 1 100% !important;
+        min-width: 0 !important; /* Rompe el bloqueo de los 300px */
+        max-width: 100% !important;
+        padding: 0 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 3. Alineamos el texto de Misión y Visión al centro */
+    .historia-section[data-bg="gray"] .historia-text p,
+    .historia-section[data-bg="gray"] .historia-text h2,
     .historia-section[data-bg="gray"] .historia-text ul,
     .historia-section[data-bg="gray"] .historia-text li {
         text-align: center !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
     }
 
-    /* Quitamos el padding que empujaba la lista a la derecha */
+    /* 4. Arreglamos los guiones de las listas para que no floten a la izquierda */
     .historia-section[data-bg="gray"] .historia-text ul {
         padding-left: 0 !important;
+        list-style-position: inside !important;
+    }
+    
+    .historia-section[data-bg="gray"] .historia-text li {
+        margin-bottom: 15px !important;
     }
 }
     </style>
