@@ -19,7 +19,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        /* 1. BLANCO TOTAL Y SIN FOTOS DE FONDO */
         html, body {
             background-color: #ffffff !important; 
             background-image: none !important; 
@@ -29,14 +28,12 @@
             overflow-x: hidden;
         }
 
-        /* 2. HEADER NEGRO */
         header, .navbar {
             background-color: #000000 !important;
             position: relative;
             z-index: 100;
         }
 
-        /* 3. SECCIÓN RESPONSIVA CON FONDO TEXTURIZADO */
         .detail-section {
             background-color: #ffffff !important;
             
@@ -51,7 +48,7 @@
             justify-content: center;
             min-height: calc(100vh - 100px);
             padding: 20px 5% 40px;
-            gap: 20px; /* Reducido para dar más espacio horizontal */
+            gap: 20px; 
             max-width: 100%; 
             margin: 0 auto;
             box-sizing: border-box;
@@ -89,7 +86,7 @@
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            justify-content: space-between; /* Distribuye el texto a la izquierda y la imagen a la derecha */
+            justify-content: space-between; 
             gap: 40px;
             max-width: 1200px;
             width: 100%;
@@ -99,11 +96,11 @@
 
         .detail-text {
             flex: 1 1 450px; 
-            max-width: 550px; /* Un poco más ancho para albergar cómodamente el título */
+            max-width: 550px; 
             opacity: 0;
             transform: translateX(-50px);
             animation: slideInLeft 1s ease 0.2s forwards;
-            margin-right: 20px; /* Separa el texto de la imagen */
+            margin-right: 20px; 
         }
 
         .detail-subtitle {
@@ -120,7 +117,7 @@
         .detail-title {
             font-family: 'Montserrat', sans-serif;
             font-weight: 800;
-            font-size: clamp(2.5rem, 4vw, 3.5rem); /* Se mantiene el tamaño original */
+            font-size: clamp(2.5rem, 4vw, 3.5rem); 
             color: #111;
             line-height: 1.1;
             margin-bottom: 25px;
@@ -168,7 +165,7 @@
             transform: translateX(50px);
             animation: slideInRight 1s ease 0.5s forwards;
             position: relative;
-            margin-left: auto; /* Empuja la caja de la imagen firmemente hacia la derecha */
+            margin-left: auto; 
         }
 
         .detail-image-box::before {
@@ -210,7 +207,6 @@
             to { opacity: 1; transform: translateX(0); }
         }
 
-        /* Cambio de diseño para tablets y móviles */
         @media (max-width: 1024px) {
             .detail-section {
                 padding-top: 120px; 

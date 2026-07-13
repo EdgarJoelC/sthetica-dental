@@ -11,7 +11,6 @@
   gtag('config', 'AW-18319042422');
 </script>
     <meta charset="UTF-8">
-    <!-- Meta descripciones para SEO -->
 <meta name="description" content="Sthetica Dental: Clínica odontológica líder en Huancayo. Especialistas en brackets, implantes dentales, curaciones, odontología estética y cirugía. ¡Agenda tu cita de evaluación hoy!">
 <meta name="keywords" content="clínica dental Huancayo, brackets Huancayo, implantes dentales Huancayo, curaciones dentales Huancayo, odontología estética, blanqueamiento dental, Sthetica Dental, dentistas en Huancayo, endodoncia, ortodoncia">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +25,6 @@
     <style>
         body { background-color: #050505; color: #fff; }
         
-        /* Hero con Efecto Parallax (Requiere imagen de fondo) */
         .history-hero {
     height: 60vh;
     display: flex;
@@ -50,10 +48,9 @@
             color: #fff;
             text-shadow: 0 10px 30px rgba(0,0,0,0.5);
             opacity: 0;
-            animation: fadeInUp 1.5s ease forwards; /* Animación de entrada */
+            animation: fadeInUp 1.5s ease forwards; 
         }
         
-        /* Animación simple */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
@@ -69,11 +66,10 @@
             display: flex;
             align-items: center;
             gap: 80px;
-            margin-bottom: 150px; /* Más espacio entre historias */
+            margin-bottom: 150px; 
             position: relative;
         }
 
-        /* Línea conectora dorada entre historias */
         .story-block::after {
             content: '';
             position: absolute;
@@ -104,7 +100,6 @@
             margin-bottom: 25px;
         }
         
-        /* Subrayado dorado elegante */
         .story-text h2::after {
             content: '';
             display: block;
@@ -122,39 +117,37 @@
             font-weight: 300;
         }
 
-        /* IMAGEN REAL MEJORADA */
         .img-slot {
             flex: 1;
             height: 450px;
             position: relative;
             overflow: hidden;
-            border-radius: 4px; /* Sutil redondeo */
+            border-radius: 4px; 
             box-shadow: 0 20px 50px rgba(0,0,0,0.5);
             transition: transform 0.5s ease;
         }
         
         .img-slot:hover {
-            transform: scale(1.02); /* Pequeño zoom al pasar mouse */
+            transform: scale(1.02); 
         }
 
-        /* La imagen dentro del slot */
         .img-slot img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(20%) contrast(110%); /* Look cinemático */
+            filter: grayscale(20%) contrast(110%); 
             transition: 0.5s;
         }
         
         .img-slot:hover img {
-            filter: grayscale(0%) contrast(100%); /* Color full al hover */
+            filter: grayscale(0%) contrast(100%); 
         }
 
         .year-mark {
             font-family: 'Montserrat', sans-serif;
             font-size: 8rem;
             font-weight: 900;
-            color: rgba(255,255,255,0.03); /* Casi transparente */
+            color: rgba(255,255,255,0.03); 
             position: absolute;
             top: -60px;
             left: -40px;
@@ -170,10 +163,10 @@
             }
             .img-slot { width: 100%; height: 300px; }
             .year-mark { font-size: 5rem; top: -30px; left: 0; }
-            .story-block::after { left: 20px; display: none; } /* Ocultar línea en móvil */
+            .story-block::after { left: 20px; display: none; } 
         }
         @media (max-width: 768px) {
-    /* 1. Reducimos los paddings excesivos que achican la pantalla en cel */
+    
     .editorial-section {
         padding: 40px 10px !important;
     }
@@ -182,16 +175,14 @@
         padding: 30px 10px !important;
     }
 
-    /* 2. Quitamos el min-width rígido de 300px y reseteamos márgenes */
     .historia-section[data-bg="gray"] .historia-text {
         flex: 1 1 100% !important;
-        min-width: 0 !important; /* Rompe el bloqueo de los 300px */
+        min-width: 0 !important; 
         max-width: 100% !important;
         padding: 0 10px !important;
         box-sizing: border-box !important;
     }
 
-    /* 3. Alineamos el texto de Misión y Visión al centro */
     .historia-section[data-bg="gray"] .historia-text p,
     .historia-section[data-bg="gray"] .historia-text h2,
     .historia-section[data-bg="gray"] .historia-text ul,
@@ -199,7 +190,6 @@
         text-align: center !important;
     }
 
-    /* 4. Arreglamos los guiones de las listas para que no floten a la izquierda */
     .historia-section[data-bg="gray"] .historia-text ul {
         padding-left: 0 !important;
         list-style-position: inside !important;
@@ -282,7 +272,6 @@
     <section class="historia-section" data-bg="gray" style="padding: 60px 20px; font-size: 0.9rem;">
     <div class="historia-wrapper" style="display: flex; justify-content: space-between; gap: 40px; max-width: 1100px; margin: 0 auto; flex-wrap: wrap;">
         
-        <!-- COLUMNA 1: MISIÓN -->
         <div class="historia-text" style="flex: 1; min-width: 300px;">
             <h2 style="text-align: center; margin-bottom: 20px; font-size: 1.5rem;">MISIÓN</h2>
             <p style="text-align: justify; margin-bottom: 15px;">
@@ -299,7 +288,6 @@
             </p>
         </div>
 
-        <!-- COLUMNA 2: VISIÓN -->
         <div class="historia-text" style="flex: 1; min-width: 300px;">
             <h2 style="text-align: center; margin-bottom: 20px; font-size: 1.5rem;">VISIÓN</h2>
             <p style="text-align: justify; margin-bottom: 15px;">
@@ -328,7 +316,6 @@
         </div>
         
         <div class="img-slot">
-            <!-- Asignamos el id para controlarlo por JS como en Los Álamos -->
             <video 
                 id="video-clinica-anim"
                 width="100%" 
@@ -399,13 +386,10 @@
         </div>
     </footer>
     <script>
-        // Forzar la carga y reproducción del video en bucle eliminando restricciones del navegador
         document.addEventListener("DOMContentLoaded", () => {
             const video = document.getElementById('video-clinica-anim');
             if (video) {
-                // Forzar reproducción inmediata en bypass
                 video.play().catch(() => {
-                    // Si el navegador lo bloquea por seguridad, se activa al primer clic que el usuario haga en la pantalla
                     document.addEventListener('click', () => {
                         video.play();
                     }, { once: true });

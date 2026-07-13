@@ -22,11 +22,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        /* =========================================
-           ESTILOS ESPECÍFICOS PARA ESCÁNER
-           ========================================= */
         
-        /* 1. HERO (ENCABEZADO) */
         .scanner-hero {
             min-height: 70vh; 
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/scanner-bg.jpg'); 
@@ -44,7 +40,7 @@
             box-sizing: border-box;
         }
 
-        /* 2. SECCIÓN BLANCA (TEXTO + IMAGEN) */
+      
         .split-section {
             display: flex;
             flex-wrap: wrap;
@@ -71,7 +67,7 @@
             background-position: center;
         }
 
-        /* Efecto fusión escritorio (izquierda) */
+        
         .split-image::after {
             content: '';
             position: absolute;
@@ -83,7 +79,7 @@
             background: linear-gradient(to right, #ffffff 5%, rgba(255,255,255,0) 50%);
         }
 
-        /* 3. GRID TECNOLÓGICO (FONDO GRIS CLARO) */
+        
         .tech-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -124,16 +120,14 @@
             line-height: 1.6;
         }
 
-        /* 4. NUEVO: SECCIÓN CTA CON TEXTURA DE PUNTOS */
         .scanner-cta {
             padding: 100px 20px;
             text-align: center;
-            /* Fondo base negro profundo */
+            
             background-color: #080808;
-            /* MAGIA CSS: Patrón de puntos sutiles */
-            /* Crea un punto gris oscuro (#222) de 1px y el resto transparente */
+           
             background-image: radial-gradient(#222222 1.5px, transparent 1.5px);
-            /* Espaciado de los puntos (cuadrícula de 20x20px) */
+           
             background-size: 20px 20px;
             color: #fff;
         }
@@ -142,25 +136,22 @@
             font-family: 'Libre Caslon Text', serif;
             font-size: 2.5rem;
             margin-bottom: 20px;
-            /* COLOR CLARO SOLICITADO: Usamos el azul de la marca para resaltar */
+           
             color: #4a6fa5;
         }
 
         .scanner-cta p {
              max-width: 600px;
              margin: 0 auto 40px auto;
-             color: #ccc; /* Texto secundario en gris claro */
+             color: #ccc; 
         }
 
 
-        /* =========================================
-           RESPONSIVE
-           ========================================= */
+       
         @media (max-width: 1024px) {
             .split-section { flex-direction: column; }
             .split-content { padding: 60px 40px 40px 40px; text-align: center; }
             .split-image { height: 400px; min-height: 400px; background-position: center top; }
-            /* Efecto fusión tablet/móvil (arriba) */
             .split-image::after {
                  background: linear-gradient(to bottom, #ffffff 5%, rgba(255,255,255,0) 40%);
             }

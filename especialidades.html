@@ -22,7 +22,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
     <style>
-        /* --- ESTILOS DE LA NUEVA PÁGINA DE ESPECIALIDADES --- */
         :root {
             --oro: #D4AF37;
             --azul: #4a6fa5;
@@ -31,19 +30,19 @@
 
         body {
             background-color: #f9f9f9;
-            overflow-x: hidden; /* Evita scroll horizontal por las animaciones */
+            overflow-x: hidden; 
         }
 
         .specialties-header {
             padding: 180px 20px 80px;
             text-align: center;
-            background: transparent; /* TOTALMENTE TRANSPARENTE */
+            background: transparent; 
         }
 
         .specialties-header h1 {
             font-family: 'Libre Caslon Text', serif;
             font-size: clamp(2.5rem, 6vw, 4rem);
-            color: #98a1f5; /* Texto blanco para que resalte con el fondo */
+            color: #98a1f5; 
             margin-bottom: 20px;
             opacity: 0;
             animation: fadeInUp 0.8s forwards;
@@ -57,7 +56,6 @@
             opacity: 0;
             animation: fadeInUp 0.8s 0.2s forwards;
         }
-        /* GRID DE ESPECIALIDADES */
         .specialties-grid {
             max-width: 1200px;
             margin: 0 auto 100px;
@@ -67,7 +65,6 @@
             gap: 25px;
         }
 
-        /* TARJETAS (BOTONES GRANDES) */
         .spec-card {
             background: #fff;
             padding: 50px 40px;
@@ -84,7 +81,6 @@
             min-height: 280px;
         }
 
-        /* Animaciones de entrada escalonadas */
         .from-left { opacity: 0; transform: translateX(-100px); animation: slideIn 0.8s forwards; }
         .from-right { opacity: 0; transform: translateX(100px); animation: slideIn 0.8s forwards; }
 
@@ -106,8 +102,7 @@
             transition: color 0.3s;
         }
 
-        /* EFECTO HOVER */
-        /* EFECTO HOVER */
+       
         .spec-card:hover {
             transform: translateY(-10px);
             border-color: var(--azul);
@@ -118,7 +113,6 @@
         .spec-card:hover h2 { color: var(--azul); }
         .spec-card:hover p { color: #aaa; }
 
-        /* Icono de flecha que aparece al hacer hover */
         .spec-card::after {
             content: '→';
             position: absolute;
@@ -131,7 +125,6 @@
             transition: all 0.3s;
         }
 
-        /* Icono de flecha que aparece al hacer hover */
         .spec-card::after {
             content: '→';
             position: absolute;
@@ -149,7 +142,6 @@
             transform: translateX(0);
         }
 
-        /* KEYFRAMES ANIMACIONES */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
@@ -159,12 +151,10 @@
             to { opacity: 1; transform: translateX(0); }
         }
 
-        /* RESPONSIVE */
         @media (max-width: 768px) {
             .specialties-grid { grid-template-columns: 1fr; }
             .specialties-header { padding-top: 150px; }
             .spec-card { min-height: auto; padding: 40px 30px; }
-            /* En móvil quitamos el desplazamiento lateral para que no rompa el diseño */
             .from-left, .from-right { transform: translateY(50px); animation: fadeInUp 0.6s forwards; }
         }
     </style>
