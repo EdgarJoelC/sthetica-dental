@@ -266,9 +266,9 @@
                 <h1 class="detail-title">Periodoncia.</h1>
                 <p class="detail-desc">Cuidado especializado de las encías y los tejidos de soporte. Prevenimos, diagnosticamos y tratamos enfermedades periodontales para asegurar la base de tu sonrisa y evitar la pérdida de piezas dentales.</p>
                 
-                <a href="https://wa.me/51947060793?text=Hola,%20quisiera%20separar%20una%20cita%20para%20Periodoncia" class="btn-pill" target="_blank">
-                    Separar cita
-                </a>
+                <a href="https://wa.me/51947060793?text=Hola,%20quisiera%20separar%20una%20cita%20para%20Periodoncia" class="btn-pill" target="_blank" onclick="return gtag_report_conversion('https://wa.me/51947060793?text=Hola,%20quisiera%20separar%20una%20cita%20para%20Periodoncia');">
+    Separar cita
+</a>
             </div>
             
             <div class="detail-image-box">
@@ -276,6 +276,20 @@
             </div>
         </div>
     </section>
+    <script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18319042422/uW03CIbLgdEcEPbOmZ9E',
+        'event_callback': callback
+    });
+    return false;
+  }
+</script>
 
     <script src="js/main.js"></script>
 </body>

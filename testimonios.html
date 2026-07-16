@@ -82,7 +82,7 @@
                 <p class="testimonio-body">
                     "Mi experiencia fue excelente. El doctor me brindó calidez, seguridad y sobre todo conocimiento. No solo mejoró mi sonrisa, sino también mi autoestima."
                 </p>
-                <a href="https://wa.me/51947060793?text=Hola,%20quisiera%20el%20mismo%20resultado%20de%20diseño%20de%20sonrisa" class="btn-gold" target="_blank">
+                <a href="https://wa.me/51947060793?text=Hola,%20quisiera%20el%20mismo%20resultado%20de%20diseño%20de%20sonrisa" class="btn-gold" target="_blank" onclick="return gtag_report_conversion('https://wa.me/51947060793?text=Hola,%20quisiera%20el%20mismo%20resultado%20de%20diseño%20de%20sonrisa');">
     Quiero el mismo resultado
 </a>
             </div>
@@ -100,7 +100,7 @@
                 <p class="testimonio-body">
                     "He recibido la mejor atención, son muy amables. Se nota que el doctor es una persona especializada. Recomiendo la clínica al 100% por el cambio que he visto en mis dientes."
                 </p>
-                <a href="https://wa.me/51947060793?text=Hola,%20quisiera%20agendar%20una%20evaluación%20de%20ortodoncia" class="btn-gold" target="_blank">
+               <a href="https://wa.me/51947060793?text=Hola,%20quisiera%20agendar%20una%20evaluación%20de%20ortodoncia" class="btn-gold" target="_blank" onclick="return gtag_report_conversion('https://wa.me/51947060793?text=Hola,%20quisiera%20agendar%20una%20evaluación%20de%20ortodoncia');">
     Agendar Evaluación
 </a>
             </div>
@@ -167,7 +167,20 @@
         </div>
     </div>
 </footer>
-
+<script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18319042422/uW03CIbLgdEcEPbOmZ9E',
+        'event_callback': callback
+    });
+    return false;
+  }
+</script>
     <script src="js/main.js"></script>
 </body>
 </html>

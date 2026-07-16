@@ -271,9 +271,9 @@
                 <h1 class="detail-title">Odontopediatría.</h1>
                 <p class="detail-desc">Atención especializada para los más pequeños. Cuidamos la salud dental de tus hijos con técnicas amigables, preventivas y sin dolor, fomentando hábitos saludables desde la infancia. Además, realizamos ortodoncia interceptiva para el tratamiento en niños con crecimiento deficiente de los maxilares, y evaluamos y orientamos el cambio de la dentición de los dientes de leche a dientes permanentes para evitar malposiciones, todo en un ambiente diseñado especialmente para ellos.</p>
                 
-                <a href="https://wa.me/51947060793?text=Hola,%20quisiera%20separar%20una%20cita%20para%20Odontopediatría" class="btn-pill" target="_blank">
-                    Separar cita
-                </a>
+                <a href="https://wa.me/51947060793?text=Hola,%20quisiera%20separar%20una%20cita%20para%20Odontopediatría" class="btn-pill" target="_blank" onclick="return gtag_report_conversion('https://wa.me/51947060793?text=Hola,%20quisiera%20separar%20una%20cita%20para%20Odontopediatría');">
+    Separar cita
+</a>
             </div>
             
             <div class="detail-image-box">
@@ -281,6 +281,20 @@
             </div>
         </div>
     </section>
+    <script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18319042422/uW03CIbLgdEcEPbOmZ9E',
+        'event_callback': callback
+    });
+    return false;
+  }
+</script>
 
     <script src="js/main.js"></script>
 </body>

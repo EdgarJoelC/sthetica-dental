@@ -266,9 +266,9 @@
                 <h1 class="detail-title">Ortodoncia y Ortopedia.</h1>
                 <p class="detail-desc">Alineación perfecta y corrección de la mordida. Utilizamos brackets metálicos, estéticos y alineadores invisibles de alta tecnología para lograr una sonrisa funcional y armónica a cualquier edad.</p>
                 
-                <a href="https://wa.me/51947060793?text=Hola,%20quisiera%20separar%20una%20cita%20para%20Ortodoncia" class="btn-pill" target="_blank">
-                    Separar cita
-                </a>
+                <a href="https://wa.me/51947060793?text=Hola,%20quisiera%20separar%20una%20cita%20para%20Ortodoncia" class="btn-pill" target="_blank" onclick="return gtag_report_conversion('https://wa.me/51947060793?text=Hola,%20quisiera%20separar%20una%20cita%20para%20Ortodoncia');">
+    Separar cita
+</a>
             </div>
             
             <div class="detail-image-box">
@@ -276,7 +276,20 @@
             </div>
         </div>
     </section>
-
+    <script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18319042422/uW03CIbLgdEcEPbOmZ9E',
+        'event_callback': callback
+    });
+    return false;
+  }
+</script>
     <script src="js/main.js"></script>
 </body>
 </html>

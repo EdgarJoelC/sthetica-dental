@@ -106,7 +106,7 @@
                 <p>Cada pieza dental recibe un acabado artesanal de estratificación en cerámica. Aplicamos texturas, translucidez y matices de color pincelada a pincelada para imitar la naturaleza de un diente natural.</p>
                 <p>No solo creamos dientes blancos; creamos sonrisas vivas y naturales.</p>
                 
-                <a href="https://wa.me/51947060793" target="_blank" class="btn-primary" style="background: #fff; color: #000; margin-top: 20px;">Agendar Cita</a>
+                <a href="https://wa.me/51947060793?text=Hola,%20vengo%20de%20la%20página%20web%20y%20deseo%20más%20información." target="_blank" class="btn-primary" style="background: #fff; color: #000; margin-top: 20px;" onclick="return gtag_report_conversion('https://wa.me/51947060793?text=Hola,%20vengo%20de%20la%20página%20web%20y%20deseo%20más%20información.');">Agendar Cita</a>
             </div>
             
             <div class="lab-media media-right">
@@ -172,7 +172,20 @@
     <a href="#" id="scrollTopBtn" class="scroll-top-btn" title="Volver arriba">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor" width="20"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
     </a>
-
+    <script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18319042422/uW03CIbLgdEcEPbOmZ9E',
+        'event_callback': callback
+    });
+    return false;
+  }
+</script>
     <script src="js/main.js"></script>
 </body>
 </html>

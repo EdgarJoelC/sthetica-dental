@@ -265,9 +265,9 @@
                 <h1 class="detail-title">Odontología General e Integral.</h1>
                 <p class="detail-desc">El primer paso hacia una salud bucal perfecta. Realizamos diagnósticos integrales, limpiezas profundas, restauraciones estéticas y prevención para mantener tu sonrisa siempre sana y radiante.</p>
                 
-                <a href="https://wa.me/51947060793?text=Hola,%20quisiera%20separar%20una%20cita%20para%20Odontología%20General" class="btn-pill" target="_blank">
-                    Separar cita
-                </a>
+                <a href="https://wa.me/51947060793?text=Hola,%20quisiera%20separar%20una%20cita%20para%20Odontología%20General" class="btn-pill" target="_blank" onclick="return gtag_report_conversion('https://wa.me/51947060793?text=Hola,%20quisiera%20separar%20una%20cita%20para%20Odontología%20General');">
+    Separar cita
+</a>
             </div>
             
             <div class="detail-image-box">
@@ -275,7 +275,20 @@
             </div>
         </div>
     </section>
-
+    <script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18319042422/uW03CIbLgdEcEPbOmZ9E',
+        'event_callback': callback
+    });
+    return false;
+  }
+</script>
     <script src="js/main.js"></script>
 </body>
 </html>
